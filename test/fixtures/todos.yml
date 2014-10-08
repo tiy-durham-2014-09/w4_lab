@@ -4,10 +4,10 @@ one:
   item: MyString
   note: MyText
   date: 2014-10-08
-  complete?: false
+  complete: false
 
 two:
   item: MyString
   note: MyText
   date: 2014-10-08
-  complete?: false
+  complete: false
