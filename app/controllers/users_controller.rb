@@ -4,7 +4,9 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.json
   def index
+    @comments = Comment.all
     @users = User.all
+    @posts = Post.all
   end
 
   # GET /users/1
