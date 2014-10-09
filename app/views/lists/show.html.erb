@@ -5,5 +5,28 @@
   <%= @list.title %>
 </p>
 
+<table>
+  <thead>
+  <tr>
+    <th>Item</th>
+    <th>Note</th>
+    <th>Date</th>
+    <th>Complete?</th>
+  </tr>
+  </thead>
+  <tbody>
+    <% @list.todos.each do |todo| %>
+    <tr>
+        <td><%=	todo.item  %></td>
+        <td><%= todo.note  %></td>
+        <td><%=	todo.date  %></td>
+        <td><%=	todo.complete  %></td>
+    </tr>
+    <%  end %>
+  </tbody>
+</table>
+
+<br>
+
 <%= link_to 'Edit', edit_list_path(@list) %> |
 <%= link_to 'Back', lists_path %>
