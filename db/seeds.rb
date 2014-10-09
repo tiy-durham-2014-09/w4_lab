@@ -10,18 +10,18 @@ User.delete_all
 List.delete_all
 Todo.delete_all
 
-users = []
+@users = []
 
 10.times do
   user = User.create!(name: Faker::Name.name,
                email: Faker::Internet.email,
                password_digest: Faker::Internet.password
   )
-  user >> users
+  @users << user
 end
 
-users.each do
-  [1..3].times do |u|
-  List.create!(user_id: u.name, name: ["Stuff", "Work", "Project X", "Bucket List", "list 7", "Must be done today"].sample )
+@users.each do |u|
+  rand(1..3).times do
+    List.create!(user_id: u.id, name: ["Stuff", "Work", "Project X", "Bucket List", "list 7", "Must be done today"].sample )
   end
 end

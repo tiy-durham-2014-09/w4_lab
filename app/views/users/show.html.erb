@@ -15,5 +15,12 @@
   <%= @user.password_digest %>
 </p>
 
+<p>
+  <strong>Lists:</strong>
+  <% @user.lists.all.each do |l| %>
+    <li><%= link_to(l.name, list_path(l.id)) %></li>
+  <% end %>
+</p>
+
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>
