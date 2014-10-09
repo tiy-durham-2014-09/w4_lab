@@ -15,7 +15,7 @@ Todo.delete_all
 10.times do
   user = User.create!(name: Faker::Name.name,
                email: Faker::Internet.email,
-               password_digest: Faker::Internet.password)
+               password: Faker::Internet.password)
   @users << user
 end
 
@@ -25,3 +25,9 @@ end
   end
 end
 
+@users.each do |u|
+  rand(2..10).times do
+    task = [Faker::Hacker.verb, Faker::Hacker.adjective, Faker::Hacker.noun].join(" ")
+    Todo.create!(user_id: u.id, list_id: u.lists.sample.id, name: task, note: Faker::Company.bs)
+  end
+end
