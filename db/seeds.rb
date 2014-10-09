@@ -7,10 +7,21 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 User.delete_all
+List.delete_all
+Todo.delete_all
+
+users = []
 
 10.times do
-  User.create!(name: Faker::Name.name,
+  user = User.create!(name: Faker::Name.name,
                email: Faker::Internet.email,
                password_digest: Faker::Internet.password
   )
+  user >> users
+end
+
+users.each do
+  [1..3].times do |u|
+  List.create!(user_id: u.name, name: ["Stuff", "Work", "Project X", "Bucket List", "list 7", "Must be done today"].sample )
+  end
 end
