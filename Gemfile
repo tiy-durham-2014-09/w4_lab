@@ -40,6 +40,8 @@ gem 'bcrypt', '~> 3.1.7'
 
 gem 'foundation-rails', '~> 5.4.5'
 
+gem 'simple_form'
+
 group :development, :test do
   gem "better_errors"
   gem "binding_of_caller"

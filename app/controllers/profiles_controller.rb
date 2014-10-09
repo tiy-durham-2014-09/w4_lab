@@ -5,7 +5,8 @@ class ProfilesController < ApplicationController
   # GET /profiles
   # GET /profiles.json
   def index
-    @profiles = current_users.profiles
+    @profiles = current_user.profile
+
   end
 
   # GET /profiles/1
@@ -25,7 +26,8 @@ class ProfilesController < ApplicationController
   # POST /profiles
   # POST /profiles.json
   def create
-    @profile = current_user.profiles.build(profile_params)
+
+    @profile = current_user.build_profile(profile_params)
 
     respond_to do |format|
       if @profile.save
@@ -41,7 +43,7 @@ class ProfilesController < ApplicationController
   # PATCH/PUT /profiles/1
   # PATCH/PUT /profiles/1.json
   def update
-	  @profile = current_user.profiles.update(profile_params)
+	  @profile = current_user.profile.update(profile_params)
 
 	  respond_to do |format|
       if @profile.update(profile_params)
@@ -57,11 +59,11 @@ class ProfilesController < ApplicationController
   # DELETE /profiles/1
   # DELETE /profiles/1.json
   def destroy
-	  @profile = current_user.profiles.destroy(profile_params)
+	  @profile = current_user.profile.destroy(profile_params)
 
 	  @profile.destroy
     respond_to do |format|
-      format.html { redirect_to profiles_url, notice: 'Profile was successfully destroyed.' }
+      format.html { redirect_to profile_url, notice: 'Profile was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -69,7 +71,7 @@ class ProfilesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_profile
-      @profile = current_user.profiles.find(params[:id])
+      @profile = current_user.profile
     end
 
 	def ensure_user_owns_profile
@@ -80,6 +82,6 @@ class ProfilesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def profile_params
-      params.require(:profile).permit(:bio, :location, :website, :user_id)
+      params.require(:profile).permit(:bio, :location, :website)
     end
 end
