@@ -1,7 +1,6 @@
 <div class ="row">
   <h1 class="large-12 columns">Login</h1>
-
-  <%= form_for login_path, :method => :post do %>
+  <%= form_tag login_path, :method => :post do %>
   <div class="large-6 columns">
     <%= label_tag :email %>
     <%= text_field_tag :email %>

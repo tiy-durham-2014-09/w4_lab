@@ -13,4 +13,11 @@ class User < ActiveRecord::Base
   def to_s
     name
   end
+
+  # def authenticate
+  #   current_user_id = session[:current_user_id]
+  #   unless current_user_id
+  #     redirect_to new_login_path, notice: "You must be logged in to see this."
+  #   end
+  # end
 end
