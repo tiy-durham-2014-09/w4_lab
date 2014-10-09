@@ -26,7 +26,7 @@ Profile.delete_all
 
   rand(2..10).times do
     Post.create!(user: user,
-                 message: Faker::Lorem.characters(10..141),
+                 message: Faker::Lorem.sentence(1,false,20).to_s.truncate(141),
                  location: [Faker::Address.country, Faker::Address.state, Faker::Address.city].sample)
   end
 end
