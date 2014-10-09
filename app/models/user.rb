@@ -12,4 +12,8 @@ class User < ActiveRecord::Base
   validates :email, presence: true, uniqueness: true
 
   has_secure_password
+
+	def to_s
+		handle
+	end
 end
