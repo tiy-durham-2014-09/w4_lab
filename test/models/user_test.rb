@@ -30,7 +30,7 @@ class UserTest < ActiveSupport::TestCase
 
     new_user = User.new(name: "Alan",
                         email: existing_user.email,
-                        password: "mypassword")
+                        password_digest: "mypassword")
 
     refute new_user.valid?
     refute new_user.errors[:email].empty?, "email must be unique"

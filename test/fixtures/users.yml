@@ -3,9 +3,9 @@
 one:
   name: Jack
   email: jack@jack.com
-  password: jack
+  password_digest: jack
 
 two:
   name: MyString
   email: MyString
-  password: MyString
+  password_digest: MyString
