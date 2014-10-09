@@ -37,3 +37,10 @@ gem 'bcrypt', '~> 3.1.7'
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+group :development do
+  gem 'better_errors'
+end
+
+gem 'faker'
+gem 'pry-rails'
+gem 'binding_of_caller'
