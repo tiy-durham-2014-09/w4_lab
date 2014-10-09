@@ -10,19 +10,25 @@
   <section class="top-bar-section">
     <!-- Right Nav Section -->
     <ul class="right">
-      <li class="active"><a href="#">Right Button Active</a></li>
-      <li class="has-dropdown">
-        <a href="#"><%= current_user.name %></a>
-        <ul class="dropdown">
-          <li><a href="#">Logout</a></li>
-          <!-- <li class="active"><a href="#">Active link in dropdown</a></li> -->
-        </ul>
-      </li>
+      <% if logged_in? %>
+        <li><a href="/lists">Lists</a></li>
+        <li><a href="/todos">Todos</a></li>
+        <li class="has-dropdown">
+          <a href="#"><%= current_user.name %></a>
+          <ul class="dropdown">
+            <li><%= link_to "Logout", login_path, :method => :delete %></li>
+            <!-- <li class="active"><a href="#">Active link in dropdown</a></li> -->
+          </ul>
+        </li>
+      <% else %>
+        <li><%= link_to "Login", new_login_path %></li>
+      <% end %>
     </ul>
 
     <!-- Left Nav Section -->
-    <ul class="left">
-      <li><a href="#">Left Nav Button</a></li>
-    </ul>
+    <!-- <ul class="left">
+      <li><a href="#">Lists</a></li>
+      <li><a href="#">Todos</a></li>
+    </ul> -->
   </section>
 </nav>

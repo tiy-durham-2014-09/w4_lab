@@ -39,3 +39,9 @@ gem 'bcrypt', '~> 3.1.7'
 # gem 'debugger', group: [:development, :test]
 
 gem 'foundation-rails'
+
+group :development do
+  gem "better_errors"
+end
+
+gem "binding_of_caller"
