@@ -27,10 +27,6 @@
     <%= f.label :due_date %><br>
     <%= f.date_select :due_date, :start_year => Time.now.year, :end_year => Time.now.year + 5, :include_blank => true %>
   </div>
-  <div class="field">
-    <%= f.label :done %><br>
-    <%= f.check_box :done %>
-  </div>
   <div class="actions">
     <%= f.submit %>
   </div>
