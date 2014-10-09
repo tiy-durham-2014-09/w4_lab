@@ -15,8 +15,7 @@ Todo.delete_all
 10.times do
   user = User.create!(name: Faker::Name.name,
                email: Faker::Internet.email,
-               password_digest: Faker::Internet.password
-  )
+               password_digest: Faker::Internet.password)
   @users << user
 end
 
@@ -25,3 +24,4 @@ end
     List.create!(user_id: u.id, name: ["Stuff", "Work", "Project X", "Bucket List", "list 7", "Must be done today"].sample )
   end
 end
+
