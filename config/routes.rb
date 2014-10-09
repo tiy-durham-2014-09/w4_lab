@@ -3,11 +3,11 @@ Rails.application.routes.draw do
 
   resources :lists
 
-  resources :users
+  resource :user
 
   resource :login, :only => [:new, :create, :destroy]
 
-  root 'lists#index'
+  root 'users#show'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
