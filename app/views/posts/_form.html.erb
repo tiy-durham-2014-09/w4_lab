@@ -17,11 +17,11 @@
   </div>
   <div class="field">
     <%= f.label :published_date %><br>
-    <%= f.datetime_select :published_date %>
+    <%= f.time_select :published_date , :default => DateTime.now%>
   </div>
   <div class="field">
     <%= f.label :content %><br>
-    <%= f.text_field :content %>
+    <%= f.text_area :content %>
   </div>
   <div class="actions">
     <%= f.submit %>
