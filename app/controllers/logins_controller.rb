@@ -9,6 +9,7 @@ class LoginsController < ApplicationController
       redirect_to root_path, notice: "You have successfully logged in."
 
     else
+      flash.now[:error] = "Incorrect email or password."
       render :new
     end
 

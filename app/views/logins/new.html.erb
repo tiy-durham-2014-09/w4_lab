@@ -1,5 +1,6 @@
 <div class ="row">
   <h1 class="large-12 columns">Login</h1>
+  <p>Not a member?  Click <%= link_to 'here', new_user_path %> to sign up!</p>
   <%= form_tag login_path, :method => :post do %>
   <div class="large-6 columns">
     <%= label_tag :email %>
