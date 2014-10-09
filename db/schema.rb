@@ -11,7 +11,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141008211755) do
+ActiveRecord::Schema.define(version: 20141009001403) do
+
+  create_table "lists", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "todos", force: true do |t|
+    t.string   "name"
+    t.text     "note"
+    t.date     "due_date"
+    t.boolean  "done"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: true do |t|
     t.string   "name"
