@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get "log_out" => "logins#destroy", :as => "log_out"
+  get "log_in" => "logins#new", :as => "log_in"
+  get "sign_up" => "users#new", :as => "sign_up"
   get 'welcome/index'
 
   resources :posts
