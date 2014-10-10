@@ -23,11 +23,17 @@
     </thead>
     <tbody>
       <% list.todos.each do |todo| %>
-        <% unless todo.complete %>
+          <% if todo.date.past? %>
+            <% c = "overdue" %>
+          <% else %>
+            <% c = "ignore" %>
+          <% end %>
+          <% unless todo.complete %>
+
           <tr>
-              <td class="editable_textarea"><%=	todo.item  %></td>
-              <td class="editable_textarea"><%= todo.note  %></td>
-              <td class="editable_textarea"><%=	todo.date  %></td>
+              <td class="editable_textarea"  id="<%= c %>"><%=	todo.item  %></td>
+              <td class="editable_textarea"  id="<%= c %>"><%= todo.note  %></td>
+              <td class="editable_textarea" id="<%= c %>"><%=	todo.date  %></td>
               <td><%=	todo.complete  %></td>
               <td>
                 <form>
