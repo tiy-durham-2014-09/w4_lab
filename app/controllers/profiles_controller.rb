@@ -43,7 +43,6 @@ class ProfilesController < ApplicationController
   # PATCH/PUT /profiles/1
   # PATCH/PUT /profiles/1.json
   def update
-	  @profile = current_user.profile.update(profile_params)
 
 	  respond_to do |format|
       if @profile.update(profile_params)
@@ -59,7 +58,6 @@ class ProfilesController < ApplicationController
   # DELETE /profiles/1
   # DELETE /profiles/1.json
   def destroy
-	  @profile = current_user.profile.destroy(profile_params)
 
 	  @profile.destroy
     respond_to do |format|

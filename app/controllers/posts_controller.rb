@@ -5,7 +5,7 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
-    @posts = current_user.posts
+    @posts = Post.all
   end
 
   # GET /posts/1
@@ -58,7 +58,6 @@ class PostsController < ApplicationController
   # DELETE /posts/1
   # DELETE /posts/1.json
   def destroy
-	  @post = current_user.posts.destroy(post_params)
 
     @post.destroy
     respond_to do |format|
