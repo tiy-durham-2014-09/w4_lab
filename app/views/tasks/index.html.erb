@@ -1,10 +1,19 @@
-<h1><%= @list ? @list.title : "All Tasks" %></h1> <%#--How else can we use controller to access just tasks per list id? %>
+<p id="notice"><%= notice %></p>
+
+<h1><%= @list ? @list.title : "All Tasks" %></h1>
 
 <form>
-<% @tasks.each do |task| %> <%# look at DOM ID to ID each task, call params[:complete] %>
-  <div><input value="<%= task.title %>" type="checkbox"><%= task.title %></div>
+<% @tasks.each do |task| %>
+  <% unless task.complete? == true %>
+    <div><input value="<%= task.title %>" type="checkbox"><%= task.title %></div>
+
+  <% end %>
 <% end %>
 </form>
 
 
-<%= link_to 'Add New Task', new_list_task_path(:list_id) %>
+
+<%= if @list then link_to 'Add New Task', new_list_task_path(@list) end %>
+<br>
+<%= link_to 'Back To Lists', lists_path %>
+

@@ -5,7 +5,6 @@ class TasksController < ApplicationController
   end
 
   def show
-
   end
 
   def new
@@ -17,7 +16,7 @@ class TasksController < ApplicationController
   def create
     @list = List.find(params[:list_id])
     @task = @list.tasks.create(task_params)
-    redirect_to list_path(@list), notice: 'Task was successfully created.'
+    redirect_to list_tasks_url, notice: 'Task was successfully created.'
   end
 
 
@@ -30,10 +29,14 @@ class TasksController < ApplicationController
     end
   end
 
+  def complete
+    @task.update_attribute(:complete?, true)
+  end
+
   # DELETE /tasks/1
   def destroy
     @task.destroy
-    redirect_to tasks_url, notice: 'Task was successfully destroyed.'
+    redirect_to tasks_url, notice: 'Task was successfully deleted.'
   end
 
   private
@@ -44,6 +47,6 @@ class TasksController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def task_params
-    params.require(:task).permit(:title, :description, :due_date)
+    params.require(:task).permit(:title, :description, :due_date, :complete?, :overdue?)
   end
 end
