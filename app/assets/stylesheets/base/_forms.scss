@@ -1,3 +1,38 @@
+body {
+  font-family: 'Open Sans', sans-serif;
+  @include outer-container;
+
+  .field {
+    @include span-columns(8); @include shift(3);
+    font-size: 100%;
+    font-family: 'Open Sans', sans-serif;
+  }
+
+  .user_nav {
+    float: right;
+  }
+
+  .new_user_title {
+    @include span-columns(5); @include shift(3)
+  }
+
+  .row {
+    @include span-columns(8); @include shift(3)
+  }
+
+  .actions {
+    @include span-columns(8); @include shift(4.2)
+  }
+
+  .new_user {
+
+    .error_explanation {
+      @include span-columns(5); @include shift(3)
+    }
+  }
+}
+
+
 fieldset {
   background: lighten($base-border-color, 10);
   border: $base-border;
@@ -39,7 +74,7 @@ select[multiple=multiple] {
   font-size: $form-font-size;
   margin-bottom: $base-spacing / 2;
   padding: ($base-spacing / 3) ($base-spacing / 3);
-  width: 100%;
+  width: 50%;
 
   &:hover {
     border-color: $form-border-color-hover;
@@ -75,4 +110,8 @@ select {
   margin-bottom: $base-spacing;
   max-width: 100%;
   width: auto;
+}
+
+.field {
+  position: center;
 }
