@@ -46,3 +46,4 @@ end
 gem 'faker'
 gem 'pry-rails'
 gem 'binding_of_caller'
+gem 'simple_form'
