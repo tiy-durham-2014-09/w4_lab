@@ -2,17 +2,17 @@
 <br>
 <% @user.lists.each do |list| %>
   <div class="row">
-    <h1><%= list %></h1>
     <table class="large-12 columns">
       <thead>
         <tr>
           <th>Item</th>
           <th>Note</th>
-          <th>Date</th>r
+          <th>Date</th>
           <th>Complete?</th>
         </tr>
       </thead>
       <tbody>
+      <h1 class="large-12 columns"><%= list %></h1>
         <% list.todos.each do |todo| %>
             <% if todo.date.past? %>
               <% c = "overdue" %>
@@ -22,7 +22,7 @@
             <% unless todo.complete %>
 
             <tr>
-                <td id="<%= c %>"><a href="/"><%=	todo.item  %></a></td>
+                <td><a href="/" id="<%= c %>"><%=	todo.item  %></a></td>
                 <td id="<%= c %>"><%= todo.note  %></td>
                 <td id="<%= c %>"><%=	todo.date  %></td>
                 <td>
