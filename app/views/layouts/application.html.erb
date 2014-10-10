@@ -12,8 +12,32 @@
   </head>
 
   <body>
+  <nav class="top-bar" data-topbar role="navigation">
+    <ul class="title-area">
+      <li class="name">
+        <h1><%= link_to site_name, root_url %></h1>
+      </li>
+    </ul>
 
-    <%= yield %>
-    <%= javascript_include_tag "application" %>
+    <section class="top-bar-section">
+      <!-- Right Nav Section -->
+      <ul class="right">
+        <% if logged_in? %>
+            <li><%= link_to "Logged in as #{current_user}", "#" %></li>
+            <li><%= link_to "Logout", login_path, :method => :delete %></li>
+        <% else %>
+            <li><%= link_to "Login", new_login_path %></li>
+        <% end %>
+      </ul>
+
+      <!-- Left Nav Section -->
+      <ul class="left">
+      </ul>
+    </section>
+  </nav>
+  <%= display_alert(:notice) %>
+  <%= display_alert(:error) %>
+  <%= yield %>
+  <%= javascript_include_tag "application" %>
   </body>
 </html>

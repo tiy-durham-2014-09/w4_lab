@@ -5,5 +5,5 @@ module ApplicationHelper
 				flash[type]
 			end
 		end
-	end
+  end
 end
