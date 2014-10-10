@@ -34,7 +34,7 @@ class UsersController < ApplicationController
     respond_to do |format|
       if @user.save
         session[:current_user_id] = @user.id
-        format.html { redirect_to new_profile_path notice: 'User was successfully created. Fill in profile details to complete registration.' }
+        format.html { redirect_to new_profile_path, notice: 'User was successfully created. Fill in profile details to complete registration.' }
         format.json { render :show, status: :created, location: @user }
       else
         format.html { render :new }
