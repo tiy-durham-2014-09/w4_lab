@@ -21,13 +21,16 @@
   </div>
   <div class="field">
     <%= f.label :author %><br>
-    <%= f.text_field :author %>
+    <%= f.text_field :author, :value => @current_user %>
   </div>
+
   <div class="field">
     <%= f.label :published_date %><br>
-    <%= f.date_select :published_date %>
+    <%= f.date_field :published_date, :value => Time.now.to_date %>
   </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>
+
 <% end %>

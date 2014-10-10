@@ -10,7 +10,7 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
-    # @user = User.find(params[:id])
+    @user = User.find(params[:id])
   end
 
   # GET /users/new
@@ -27,12 +27,10 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
 
-  #   if @user.save
-  #     redirect_to @user, notice: 'user was created successfully.'
-  #   else
-  #     render :new
-  #   end
-  # end
+  def destroy
+    reset_session
+    redirect_to login_new_path, notice: 'Logged out'
+  end
 
     respond_to do |format|
       if @user.save
