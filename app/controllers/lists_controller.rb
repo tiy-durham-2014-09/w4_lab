@@ -1,6 +1,7 @@
 class ListsController < ApplicationController
   before_action :authenticate
   before_action :set_list, only: [:show, :edit, :update, :destroy]
+  before_action :ensure_user_owns_list, only: [:show, :edit, :update, :destroy]
 
   # GET /lists
   def index
@@ -49,7 +50,14 @@ class ListsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_list
-      @list = current_user.lists.find(params[:id])
+      @list = List.find(params[:id])
+    end
+
+    def ensure_user_owns_list
+      if @list.user != current_user
+        redirect_to root_path
+        # !!! insert notice
+      end
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
