@@ -12,7 +12,7 @@
   <% end %>
     <div class="field">
       <%= f.label :list_id %><br>
-      <%= f.collection_select :list_id, List.all, :id, :title, :include_blank => true %>
+      <%= f.number_field :list_id, :value => params[:list_id] %>
     </div>
     <div class="field">
       <%= f.label :item %><br>
