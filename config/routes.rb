@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  resources :controllers
+
+  resources :lists
+
+  resources :todos
+
   resources :users
   resource :login
 end
