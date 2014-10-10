@@ -3,11 +3,11 @@
 
   <%= form_tag logins_path, :method => :post do %>
     <div class="large-6 columns">
-      <%= label_tag :email %>
+      <%= label_tag :email, nil, class: 'small_label' %>
       <%= text_field_tag :email %>
     </div>
     <div class="large-6 columns">
-      <%= label_tag :password %>
+      <%= label_tag :password, nil, class: 'small_label' %>
       <%= password_field_tag :password %>
     </div>
     <div class="large-12 columns">
