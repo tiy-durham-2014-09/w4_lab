@@ -23,19 +23,20 @@
           <% unless todo.complete %>
 
           <tr>
-              <td class="editable_textarea"  id="<%= c %>"><%=	todo.item  %></td>
-              <td class="editable_textarea"  id="<%= c %>"><%= todo.note  %></td>
-              <td class="editable_textarea" id="<%= c %>"><%=	todo.date  %></td>
+              <td id="<%= c %>"><a href="/"><%=	todo.item  %></a></td>
+              <td id="<%= c %>"><%= todo.note  %></td>
+              <td id="<%= c %>"><%=	todo.date  %></td>
               <td>
                 <%= form_for todo do |f| %>
                   <%= f.check_box :complete %>
-                  <%= f.submit %>
+                  <%= button_tag "Mark Complete", :class => "button tiny" %>
                   <% end %>
                 </form>
               </td>
           </tr>
         <% end %>
       <%  end %>
+      <tr><td><a href="/lists/<%= list.id %>/todos/new" class="button expand">Add Todo</a></td></tr>
     </tbody>
   </table>
 
