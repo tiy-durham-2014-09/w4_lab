@@ -1,51 +1,47 @@
 <p id="notice"><%= notice %></p>
-
 <br>
-
 <% @user.lists.each do |list| %>
-  <%= list %>
-  <table class="large-12 columns">
-    <thead>
-      <tr>
-        <th>Item</th>
-        <th>Note</th>
-        <th>Date</th>r
-        <th>Complete?</th>
-      </tr>
-    </thead>
-    <tbody>
-      <% list.todos.each do |todo| %>
-          <% if todo.date.past? %>
-            <% c = "overdue" %>
-          <% else %>
-            <% c = "ignore" %>
+  <div class="row">
+    <h1><%= list %></h1>
+    <table class="large-12 columns">
+      <thead>
+        <tr>
+          <th>Item</th>
+          <th>Note</th>
+          <th>Date</th>r
+          <th>Complete?</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% list.todos.each do |todo| %>
+            <% if todo.date.past? %>
+              <% c = "overdue" %>
+            <% else %>
+              <% c = "ignore" %>
+            <% end %>
+            <% unless todo.complete %>
+
+            <tr>
+                <td id="<%= c %>"><a href="/"><%=	todo.item  %></a></td>
+                <td id="<%= c %>"><%= todo.note  %></td>
+                <td id="<%= c %>"><%=	todo.date  %></td>
+                <td>
+                  <%= form_for todo do |f| %>
+                    <%= f.check_box :complete %>
+                    <%= button_tag "Mark Complete", :class => "button tiny" %>
+                    <% end %>
+                  </form>
+                </td>
+            </tr>
           <% end %>
-          <% unless todo.complete %>
-
-          <tr>
-              <td id="<%= c %>"><a href="/"><%=	todo.item  %></a></td>
-              <td id="<%= c %>"><%= todo.note  %></td>
-              <td id="<%= c %>"><%=	todo.date  %></td>
-              <td>
-                <%= form_for todo do |f| %>
-                  <%= f.check_box :complete %>
-                  <%= button_tag "Mark Complete", :class => "button tiny" %>
-                  <% end %>
-                </form>
-              </td>
-          </tr>
-        <% end %>
-      <%  end %>
-    </tbody>
-    <tr><td><a href="/lists/<%= list.id %>/todos/new" class="button expand">Add Todo</a></td></tr>
-
-  </table>
-
-<br>
-
-<div class="row">
-  <div class="small-3 small-centered columns"><a href="/lists/new" class="button large radius round">Add List</a>
+        <%  end %>
+      </tbody>
+      <tr><td><a href="/lists/<%= list.id %>/todos/new" class="button expand">Add Todo</a></td></tr>
+    </table>
+    <br>
   </div>
-</div>
-
 <% end %>
+
+<div class="small-3 small-centered columns">
+  <a href="/lists/new" class="button large radius round">Add List</a>
+</div>

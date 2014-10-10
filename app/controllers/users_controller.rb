@@ -7,6 +7,9 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
+    unless logged_in?
+      redirect_to "/login/new"
+    end
   end
 
   # GET /users/new
