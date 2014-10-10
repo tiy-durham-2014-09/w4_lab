@@ -3,6 +3,7 @@
 <table>
   <thead>
     <tr>
+      <th>List</th>
       <th>Name</th>
       <th>Note</th>
       <th>Due date</th>
@@ -14,6 +15,7 @@
   <tbody>
     <% @todos.each do |todo| %>
       <tr>
+        <td><%= todo.list.name %></td>
         <td><%= todo.name %></td>
         <td><%= todo.note %></td>
         <td><%= todo.due_date %></td>
