@@ -2,7 +2,7 @@
 
 <form>
 <% @tasks.each do |task| %> <%# look at DOM ID to ID each task, call params[:complete] %>
-  <div><input value="<%= task.title %>"  name="complete[]" type="checkbox"><%= task.title %></div>
+  <div><input value="<%= task.title %>" type="checkbox"><%= task.title %></div>
 <% end %>
 </form>
 

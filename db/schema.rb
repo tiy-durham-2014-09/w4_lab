@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141010191242) do
+ActiveRecord::Schema.define(version: 20141010194456) do
 
   create_table "lists", force: true do |t|
     t.string   "title"
@@ -26,8 +26,8 @@ ActiveRecord::Schema.define(version: 20141010191242) do
     t.date     "due_date"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.boolean  "complete?"
-    t.boolean  "overdue?"
+    t.boolean  "complete?",   default: false, null: false
+    t.boolean  "overdue?",    default: false, null: false
   end
 
   add_index "tasks", ["list_id"], name: "index_tasks_on_list_id"
