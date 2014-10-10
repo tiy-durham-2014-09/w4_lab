@@ -8,16 +8,16 @@ class LoginsController < ApplicationController
     if @user && @user.authenticate(params[:password])
       session[:current_user_id] = @user.id
       redirect_to root_path
-      # insert notice
+      # !!! insert notice
     else
-      # insert alert
+      # !!! insert alert
       render :new
     end
   end
 
   def destroy
     session[:current_user_id] = nil
-    # insert notice
+    # !!! insert notice
     redirect_to new_login_path
   end
 end
