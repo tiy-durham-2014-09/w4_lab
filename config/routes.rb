@@ -1,9 +1,33 @@
 Rails.application.routes.draw do
+  # get 'logins/destroy'
+  #
+  # get 'logins/new'
+  #
+  # get 'logins/create'
+  #
+  # get 'logins/destryo'
+  #
+  # get 'users/name'
+  #
+  # get 'users/handle'
+  #
+  # get 'users/email'
+  #
+  # get 'users/password_digest'
+  #
+  # get 'welcome/index'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  # root 'welcome#index'
+	resources :profiles
+  resources :users
+  resources :posts
+
+  resource :login, :only => [:new, :create, :destroy]
+
+  root 'profiles#show'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
