@@ -1,14 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @user.name %>
-</p>
-
-<p>
-  <strong>Email:</strong>
-  <%= @user.email %>
-</p>
+<br>
 
 <% @user.lists.each do |list| %>
   <%= list %>
@@ -18,7 +10,7 @@
         <th>Item</th>
         <th>Note</th>
         <th>Date</th>r
-        <th>Complete</th>
+        <th>Complete?</th>
       </tr>
     </thead>
     <tbody>
@@ -34,10 +26,11 @@
               <td class="editable_textarea"  id="<%= c %>"><%=	todo.item  %></td>
               <td class="editable_textarea"  id="<%= c %>"><%= todo.note  %></td>
               <td class="editable_textarea" id="<%= c %>"><%=	todo.date  %></td>
-              <td><%=	todo.complete  %></td>
               <td>
-                <form>
-                  <input id="checkbox1" type="checkbox">
+                <%= form_for todo do |f| %>
+                  <%= f.check_box :complete %>
+                  <%= f.submit %>
+                  <% end %>
                 </form>
               </td>
           </tr>
@@ -49,5 +42,3 @@
   <br>
 
 <% end %>
-
-<%= link_to 'Edit', edit_user_path() %>
