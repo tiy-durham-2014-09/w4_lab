@@ -5,6 +5,8 @@
   <%=@profile.user.name%>
 </p>
 
+<%= link_to 'Edit Profile', edit_profile_path(@profile) %>
+
 <p>
   <strong>Bio:</strong>
   <%= @profile.bio %>
@@ -20,13 +22,13 @@
   <%= @profile.website %>
 </p>
 
-<%= link_to 'Edit Profile', edit_profile_path(@profile) %> |
-<%= link_to 'Back to List of Profiles', profiles_path %> |
+
+<%= link_to 'All Profiles', profiles_path %> |
 <%= link_to "New Post", new_post_path %>
 
 <% @profile.user.posts.each do |post| %>
   <li>
     <%= post.message %>: <%= post.location %> to <%= post.created_at %>
-    <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= link_to 'delete', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </li>
 <% end %>
