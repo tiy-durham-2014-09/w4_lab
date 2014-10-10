@@ -1,3 +1,48 @@
 // Place all the styles related to the Welcome controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.logo {
+	text-align:center;
+  font-size: 72px;
+  // background: -webkit-linear-gradient(blue, green, red);
+  // -webkit-background-clip: text;
+  // -webkit-text-fill-color: transparent;
+	font-family: 'Droid Serif', serif;
+	padding-bottom:10px;
+	letter-spacing: -5px;
+}
+.b {
+	color: #156aea;
+}
+
+.l1 {
+	color: #da4531
+}
+
+.o1 {
+	color: #009554;
+}
+
+.o2 {
+	color: #ffbb05;
+}
+
+.g {
+	color: #156aea;
+}
+
+.l2 {
+	color: #009554;
+}
+
+.e {
+	color: #da4531;
+}
+
+.plus{
+	font-size:80px;
+	background: -webkit-linear-gradient(blue, green, red);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}

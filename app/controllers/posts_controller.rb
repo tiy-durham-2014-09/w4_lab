@@ -1,6 +1,8 @@
 class PostsController < ApplicationController
   before_action :authenticate
   before_action :set_post, only: [:show, :edit, :update, :destroy]
+  # before_action :ensure_user_owns_post
+
 
   # GET /posts
   # GET /posts.json
@@ -67,11 +69,12 @@ class PostsController < ApplicationController
     def set_post
       @post = Post.find(params[:id])
     end
-    def ensure_user_owns_post
-      if @post.user != current_user
-        render nothing: true, status: :not_found
-      end
-    end
+
+    # def ensure_user_owns_post
+    #   if @post.author != current_user
+    #     render nothing: true, status: :not_found
+    #   end
+    # end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params

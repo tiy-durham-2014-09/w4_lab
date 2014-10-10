@@ -4,8 +4,14 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   before_action :current_user
-
+  helper_method :current_user, :logged_in?
   private
+
+  # def ensure_user_owns_post
+  #   if @posts.author != @current_user
+  #     redirect_to root_path, error: "No access"
+  #   end
+  # end
 
   def current_user
     @current_user ||= User.find_by(id: session[:current_user_id])

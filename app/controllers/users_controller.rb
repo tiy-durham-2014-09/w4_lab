@@ -3,9 +3,9 @@ class UsersController < ApplicationController
 
   # GET /users
   # GET /users.json
-  def index
-    @users = User.all
-  end
+  # def index
+  #   @users = User.all
+  # end
 
   # GET /users/1
   # GET /users/1.json
@@ -19,18 +19,18 @@ class UsersController < ApplicationController
   end
 
   # GET /users/1/edit
-  def edit
-  end
+  # def edit
+  # end
 
   # POST /users
   # POST /users.json
   def create
     @user = User.new(user_params)
 
-  def destroy
-    reset_session
-    redirect_to login_new_path, notice: 'Logged out'
-  end
+  # def destroy
+  #   reset_session
+  #   redirect_to login_new_path, notice: 'Logged out'
+  # end
 
     respond_to do |format|
       if @user.save
