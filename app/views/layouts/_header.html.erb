@@ -13,13 +13,8 @@
       <% if logged_in? %>
         <li><a href="/lists">Lists</a></li>
         <li><a href="/todos">Todos</a></li>
-        <li class="has-dropdown">
-          <a href="#"><%= current_user.name %></a>
-          <ul class="dropdown">
-            <li><%= link_to "Logout", login_path, :method => :delete %></li>
-            <!-- <li class="active"><a href="#">Active link in dropdown</a></li> -->
-          </ul>
-        </li>
+        <li><a href="/accounts"><%= current_user.name %>'s Account</a></li>
+        <li><%= link_to "Logout", "/login", :method => :delete %></li>
       <% else %>
         <li><%= link_to "Login", new_login_path %></li>
       <% end %>
