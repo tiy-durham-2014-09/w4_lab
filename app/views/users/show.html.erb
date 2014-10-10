@@ -26,7 +26,7 @@
                 <td id="<%= c %>"><%=	todo.date  %></td>
                 <td>
                   <%= form_for todo do |f| %>
-                    <%= f.hidden_field :complete, :checked => true %>
+                    <%= f.hidden_field :complete, :value => true %>
                     <%= button_tag "Mark Complete", :class => "button tiny" %>
                     <% end %>
                   </form>
