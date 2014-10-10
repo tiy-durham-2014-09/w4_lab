@@ -1,6 +1,8 @@
 class TodosController < ApplicationController
   before_action :authenticate
   before_action :set_todo, only: [:show, :edit, :update, :destroy]
+  before_action :ensure_users_todo, only: [:show, :edit, :update, :destroy]
+
 
   # GET /todos
   # GET /todos.json
@@ -65,7 +67,13 @@ class TodosController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_todo
-      @todo = current_user.todos.find(params[:id])
+      @todo = Todo.find(params[:id])
+    end
+
+    def ensure_users_todo
+      if @todo.list.user != current_user
+        render nothing: true, status: :not_found
+      end
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

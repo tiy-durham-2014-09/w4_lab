@@ -1,7 +1,11 @@
 <nav class="top-bar" data-topbar role="navigation">
   <ul class="title-area">
     <li class="name">
-      <h1><a href="/">Atrium</a></h1>
+      <% if logged_in? %>
+        <a href="/"><h1 class="top_h1">Atrium</h1></a>
+      <% else %>
+        <a href="/login/new"><h1 class="top_h1">Atrium</h1></a>
+      <% end %>
     </li>
      <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
     <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>

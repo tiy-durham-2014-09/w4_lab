@@ -1,6 +1,7 @@
 class ListsController < ApplicationController
   before_action :authenticate
   before_action :set_list, only: [:show, :edit, :update, :destroy]
+  before_action :ensure_users_list, only: [:show, :edit, :update, :destroy]
 
   # GET /lists
   # GET /lists.json
@@ -66,6 +67,12 @@ class ListsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_list
       @list = List.find(params[:id])
+    end
+
+    def ensure_users_list
+      if @list.user != current_user
+        render nothing: true, status: :not_found
+      end
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
