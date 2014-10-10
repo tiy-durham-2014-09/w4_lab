@@ -29,7 +29,7 @@ class UsersController < ApplicationController
 
     # respond_to do |format|
       if @user.save
-        redirect_to @user, notice: 'User was successfully created.'
+        redirect_to root_path, notice: 'User was successfully created.'
       else
         render :new
       end

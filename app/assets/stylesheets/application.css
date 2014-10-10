@@ -12,6 +12,8 @@
 *
 *= require_tree .
 *= require_self
+ *= require foundation_and_overrides
+
 */
 @font-face {
   font-family: 'coolveticaregular';
@@ -71,23 +73,25 @@
 }
 body {
   background : url("http://i.imgur.com/1lPoAD0.png");
-  padding: 0;
-  margin: 0;
   line-height: 1.5;
   text-align: center;
 }
-h1 {
+ h4 {
   color: #ad4a6f;
   font-family: Arial;
   font-size: 100px;
-  margin-top: 20px;
-  margin-bottom: 10px;
-  height: 100px;
-  text-shadow: 0px 2px 3px #555;
+  /*margin-top: 100px;*/
+  padding-top: 50px;
+  /*margin-left: 50px;*/
+  /*height: 100px;*/
+  text-shadow: 2px -2px 1px #d5d5d5;
   letter-spacing: -7px;
-
 }
-p {
+h4 .title {
+/*margin-left: 50px;*/
+}
+
+.first_sub {
   color: #6064b2;
   margin-top: 35px;
   font-size: 20px;
@@ -121,7 +125,7 @@ td {
 }
 .sub {
 font-family: 'cf_crayonsregular', sans-serif;
-  font-size: 17px;
+  font-size: 27px;
   color: white;
   opacity: .2;
   margin-top: 5px;
@@ -134,4 +138,7 @@ margin-top: 40px;
 }
 .headings h1 {
   margin-bottom: 40px;
+}
+.row h1{
+margin-bottom: 40px;
 }
