@@ -20,21 +20,20 @@
               <% c = "ignore" %>
             <% end %>
             <% unless todo.complete %>
-
-            <tr>
-                <td><a href="/" id="<%= c %>"><%=	todo.item  %></a></td>
+              <tr>
+                <td><a href="/todos/<%= todo.id %>/edit" id="<%= c %>"><%=	todo.item  %></a></td>
                 <td id="<%= c %>"><%= todo.note  %></td>
                 <td id="<%= c %>"><%=	todo.date  %></td>
                 <td>
                   <%= form_for todo do |f| %>
-                    <%= f.check_box :complete %>
+                    <%= f.hidden_field :complete, :checked => true %>
                     <%= button_tag "Mark Complete", :class => "button tiny" %>
                     <% end %>
                   </form>
                 </td>
-            </tr>
-          <% end %>
-        <%  end %>
+              </tr>
+            <% end %>
+        <% end %>
       </tbody>
       <tr><td><a href="/lists/<%= list.id %>/todos/new" class="button expand">Add Todo</a></td></tr>
     </table>
