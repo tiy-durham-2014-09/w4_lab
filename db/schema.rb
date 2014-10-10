@@ -24,16 +24,16 @@ ActiveRecord::Schema.define(version: 20141009185107) do
   create_table "posts", force: true do |t|
     t.string   "title"
     t.string   "body"
-    t.string   "author"
-    t.date     "published_date"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer "user_id"
   end
+
+  add_welcome "post", ["user_id"], name: "welcome_post_on_user_id"
 
   create_table "users", force: true do |t|
     t.string   "name"
     t.string   "email"
-    t.string   "password"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "password_digest"
