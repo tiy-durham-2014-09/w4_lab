@@ -4,14 +4,21 @@ class PostsController < ApplicationController
 
   # GET /posts
   # GET /posts.json
+  # def index
+  #   @posts = current_user.posts
+  # end
   def index
-    @posts = current_user.posts
+    @posts = Post.order("published_date DESC")
+  end
+
+  def show
+    @post = Post.find(params[:id])
   end
 
   # GET /posts/1
   # GET /posts/1.json
-  def show
-  end
+  # def show
+  # end
 
   # GET /posts/new
   def new
@@ -71,7 +78,7 @@ class PostsController < ApplicationController
   def ensure_user_owns_post
     if @post.user != current_user
       render nothing: true, status: :not_found
-      # redirect_to root_path, flash: {alert: "You tried to access an entry that doesn't belong to you."}
+      redirect_to root_path, flash: {alert: "You tried to access an entry that doesn't belong to you."}
     end
   end
 

@@ -2,20 +2,21 @@
   <h4 class="large-12 columns">Sign up</h4>
   <%= simple_form_for @user do |form| %>
     <div class="large-6 columns">
-      <%= form.input :name %>
+      <%= form.input :name, class: "post_label" %>
     </div>
     <div class="large-6 columns">
-      <%= form.input :email %>
+      <%= form.input :email,class: "post_label" %>
     </div>
     <div class="large-6 columns">
-      <%= form.input :password %>
+      <%= form.input :password,class: "post_label" %>
     </div>
     <div class="large-6 columns">
-      <%= form.input :password_confirmation %>
+      <%= form.input :password_confirmation,class: "post_label" %>
     </div>
     <div class="large-12 columns">
-      <%= form.button :submit, class: "radius small" %>
+      <%= form.button :submit, "CREATE", class: "radius small" %>
+      <!-- <%= form.button :submit, class: "radius small", input_html: { class: 'special' } %> -->
     </div>
   <% end %>
 </div>
-<%= link_to 'Home', root_path %>
+<%= link_to 'Home', root_path,:class => 'small_label' %>

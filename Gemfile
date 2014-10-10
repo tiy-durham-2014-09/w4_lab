@@ -38,6 +38,9 @@ gem 'bcrypt', '~> 3.1.7'
 
 gem 'foundation-rails'
 
+gem 'font-awesome-rails'
+
+gem 'redcarpet', '~> 3.0.0'
 
 # Use unicorn as the app server
 # gem 'unicorn'
