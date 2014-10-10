@@ -2,9 +2,11 @@ class LoginsController < ApplicationController
   def new
   end
   def create
-    @user = User.find_by(email: params[:email])
+    # @user = User.find_by(email: params[:email])
     # user = User.authenticate(params[:email], params[:password])
-    if @user && @user.authenticate(params[:password])
+    # if @user && @user.authenticate(params[:password])
+    user = User.find_by(email: params[:session][:email].downcase)
+    if user && user.authenticate(params[:session][:password])
       session[:current_user_id] = @user_id
       redirect_to root_path, notice: "You have successfully logged in."
 
