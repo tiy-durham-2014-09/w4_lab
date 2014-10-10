@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
-  resources :todos
+
 
   resources :lists
-
+  resources :todos
   resources :users
 
   resource :login, :only => [:new, :create, :destroy]
