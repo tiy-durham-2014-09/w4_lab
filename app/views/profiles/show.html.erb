@@ -21,8 +21,8 @@
 </p>
 
 <%= link_to 'Edit Profile', edit_profile_path(@profile) %> |
-<%= link_to 'Back', profiles_path %>
-<%= link_to "New Post", new_post_path(post) %>
+<%= link_to 'Back to List of Profiles', profiles_path %> |
+<%= link_to "New Post", new_post_path %>
 
 <% @profile.user.posts.each do |post| %>
   <li>
