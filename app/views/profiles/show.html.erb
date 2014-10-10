@@ -26,9 +26,12 @@
 <%= link_to 'All Profiles', profiles_path %> |
 <%= link_to "New Post", new_post_path %>
 
-<% @profile.user.posts.each do |post| %>
-  <li>
-    <%= post.message %>: <%= post.location %> to <%= post.created_at %>
-    <td><%= link_to 'delete', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </li>
+
+<% @profile.user.posts.reverse_order.each do |post| %>
+    <tr>
+      <div class="post">
+        <p><%= post.message %> | <%= time_ago_in_words(post.created_at) %></p>
+        <p><%= link_to 'delete', post, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+      </div>
+    </tr>
 <% end %>

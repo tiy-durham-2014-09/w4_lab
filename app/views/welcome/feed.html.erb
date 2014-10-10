@@ -2,7 +2,7 @@
 
 <%= link_to 'Sign Up', new_user_path %>
 
-  <% @posts.each do |post| %>
+<% @posts.reverse_order.each do |post| %>
 
     <div class="post">
       <%= link_to post.user.name, profile_path(post.user) %>
