@@ -15,5 +15,18 @@
 //= require foundation
 //= require turbolinks
 //= require_tree .
+//= require ./jeditable
 
 $(function(){ $(document).foundation(); });
+
+// $.ajax({
+//     url: "/todos/ID",
+//     type: "POST",
+//     data: {todo: {
+//              item: val,
+//              note: val,
+//              date: val,
+//              complete:
+//              }},
+//     success: function(resp){ }
+// });
