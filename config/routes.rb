@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
 
-  resources :lists
+  resources :lists, :only => [:new, :show, :edit, :create, :update, :destroy]
   resources :todos
   resources :users, :only => [:new, :show, :edit, :create, :update, :destroy]
 
@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   root 'users#show'
 
   get 'users/' => 'users#show'
+  get 'lists/' => 'users#show'
   get 'lists/:id/show_done' => 'lists#show_done', as: :show_done
 
 
