@@ -55,7 +55,7 @@ class ListsController < ApplicationController
 
     def ensure_user_owns_list
       if @list.user != current_user
-        redirect_to root_path
+        redirect_to root_path, notice: "That's not your List."
         # !!! insert notice
       end
     end

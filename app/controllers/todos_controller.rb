@@ -11,6 +11,7 @@ class TodosController < ApplicationController
 
   # GET /todos/1
   def show
+    @todos = Todo.find_by_id(params[:id])
   end
 
   # GET /todos/new
@@ -57,8 +58,8 @@ class TodosController < ApplicationController
     end
 
     def ensure_user_owns_todo
-      if @todo.user != current_user
-        redirect_to root_path
+      if @todo.list.user != current_user
+        redirect_to root_path, notice: "That's not your Todo."
         # !!! insert notice
       end
     end
