@@ -11,14 +11,13 @@
 </p>
 
 <p>
-  <strong>Todos:</strong>
+  <strong>Dones:</strong>
   <% @list.todos.each do |t| %>
-    <% unless t.done %>
-      <li><%= link_to(t.name, todo_path(t.id)) %></li>
-    <% end %>
+    <% if t.done %>
+    <li><%= link_to(t.name, todo_path(t.id)) %></li>
   <% end %>
+<% end %>
 </p>
 
-<%= link_to 'Show Dones', show_done_url(id: @list.id) %> |
-<%= link_to 'Edit', edit_list_path(@list) %> |
+
 <%= link_to 'Back', lists_path %>

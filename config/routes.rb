@@ -10,6 +10,8 @@ Rails.application.routes.draw do
   root 'users#show'
 
   get 'users/' => 'users#show'
+  get 'lists/:id/show_done' => 'lists#show_done', as: :show_done
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

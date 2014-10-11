@@ -1,4 +1,4 @@
-<h1>Listing todos</h1>
+<h1>Listing All Todos</h1>
 
 <table>
   <thead>
@@ -8,7 +8,7 @@
       <th>Note</th>
       <th>Due date</th>
       <th>Done</th>
-      <th colspan="3"></th>
+      <th colspan="2"></th>
     </tr>
   </thead>
 
@@ -24,7 +24,6 @@
           <td><%= todo.done %></td>
           <td><%= link_to 'Show', todo %></td>
           <td><%= link_to 'Edit', edit_todo_path(todo) %></td>
-          <td><%= link_to 'Destroy', todo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         <% end %>
         </tr>
     <% end %>

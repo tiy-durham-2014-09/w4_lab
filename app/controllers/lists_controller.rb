@@ -1,6 +1,6 @@
 class ListsController < ApplicationController
   before_action :authenticate
-  before_action :set_list, only: [:show, :edit, :update, :destroy]
+  before_action :set_list, only: [:show, :show_done, :edit, :update, :destroy]
   before_action :ensure_user_owns_list, only: [:show, :edit, :update, :destroy]
 
 
@@ -12,6 +12,11 @@ class ListsController < ApplicationController
   # GET /lists/1
   def show
     @list = List.find_by_id(params[:id])
+  end
+
+  # GET /lists/1/show_done   !!! except it's doing GET /list/show_done.1
+  def show_done
+    # @list = List.find_by_id(params[:id])
   end
 
   # GET /lists/new
