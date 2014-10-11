@@ -1,17 +1,48 @@
-<<div class="row">
-  <h1 class="large-12 columns">Sign up</h1>
+<h1>Sign up to get started</h1>
+
+<%= form_for @user do |f| %>
+  <% if @user.errors.any? %>
+    <div class="error messages">
+      <h2>Form is invalid</h2>
+      <ul>
+        <% for message in @user.errors.full_messages %>
+        <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+<% end %>
+<div class="field">
+  <%= f.lable :email %>
+  <%= f.text_field :email %>
+</div>
+<div class="field">
+  <%= f.lable :password %>
+  <%= f.text_field :password %>
+</div>
+<div class="field">
+  <%= f.lable :password_confirmation %>
+  <%= f.text_field :password_confirmation %>
+</div>
+<div class="actions"><%= f.submit %></div>
+
+</div>
+
+
+  #simple form version below, try after working form
+  <!-- <<div class="row"> -->
+  <!-- <h1 class="large-12 columns">Sign up to get started</h1>
   <%= simple_form_for @user do |form| %>
     <div class="large-12 columns">
-      <%= form.input :name %>
+      <%= f.input :name, label:'Your User Name' %>
     </div>
     <div class="large-6 columns">
-      <%= form.input :password %>
+      <%= form.input :email label:'Your Email' %>
     </div>
-    <div class="large-6 columns">
+    <!-- <div class="large-6 columns">
       <%= form.input :password_confirmation %>
-    </div>
-    <div class="large-12 columns">
+    </div> -->
+    <!-- <div class="large-12 columns">
       <%= form.button :submit, class: "radius small" %>
     </div>
   <% end %>
-</div>
+</div> --> -->
