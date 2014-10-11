@@ -7,7 +7,6 @@
       <th>Todo</th>
       <th>Note</th>
       <th>Due date</th>
-      <th colspan="1"></th>
     </tr>
   </thead>
 
@@ -20,7 +19,6 @@
           <td><%= link_to todo.name, todo_path(todo.id) %></td>
           <td><%= todo.note %></td>
           <td><%= todo.due_date %></td>
-          <td><%= link_to 'Edit', edit_todo_path(todo) %></td>
         <% end %>
         </tr>
     <% end %>

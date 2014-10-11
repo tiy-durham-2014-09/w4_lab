@@ -11,6 +11,8 @@
   <% @user.lists.all.each do |l| %>
     <li><%= link_to(l.name, list_path(l.id)) %></li>
   <% end %>
+  <li><%= link_to 'Add List', new_list_path(@user) %></li>
+
 </p>
 
 <p>

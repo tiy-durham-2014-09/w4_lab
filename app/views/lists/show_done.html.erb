@@ -11,13 +11,13 @@
 </p>
 
 <p>
-  <strong>Dones:</strong>
+  <strong>Did:</strong>
   <% @list.todos.each do |t| %>
     <% if t.done %>
-    <li><%= link_to(t.name, todo_path(t.id)) %></li>
+     <li><%= link_to(t.name, todo_path(t.id)) %></li>
+    <% end %>
   <% end %>
-<% end %>
 </p>
 
 
-<%= link_to 'Back', lists_path %>
+<%= link_to 'Back', list_path(@list) %>
