@@ -1,14 +1,10 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Name:</strong>
-  <%= @user.name %>
+  <strong>Welcome, <%= @user.name %>!</strong><br>
+  <strong>Let's get some stuff Did.  </strong>
 </p>
 
-<p>
-  <strong>Email:</strong>
-  <%= @user.email %>
-</p>
 
 <p>
   <strong>Lists:</strong>
@@ -17,5 +13,8 @@
   <% end %>
 </p>
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+<p>
+  <strong><%= link_to 'Show All Todos', todos_path %></strong>
+</p>
+<br>
+<%= link_to 'Edit User Info', edit_user_path(@user) %>

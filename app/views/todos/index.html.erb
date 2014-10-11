@@ -4,11 +4,10 @@
   <thead>
     <tr>
       <th>List</th>
-      <th>Name</th>
+      <th>Todo</th>
       <th>Note</th>
       <th>Due date</th>
-      <th>Done</th>
-      <th colspan="2"></th>
+      <th colspan="1"></th>
     </tr>
   </thead>
 
@@ -17,12 +16,10 @@
       <tr>
         <% unless todo.done %>
 
-          <td><%= todo.list.name %></td>
-          <td><%= todo.name %></td>
+          <td><%= link_to todo.list.name, list_path(todo.list.id) %></td>
+          <td><%= link_to todo.name, todo_path(todo.id) %></td>
           <td><%= todo.note %></td>
           <td><%= todo.due_date %></td>
-          <td><%= todo.done %></td>
-          <td><%= link_to 'Show', todo %></td>
           <td><%= link_to 'Edit', edit_todo_path(todo) %></td>
         <% end %>
         </tr>
