@@ -8,20 +8,19 @@
 Post.delete_all
 
 Post.create(
-  id: 1,
   title: "My Very First Post",
-  published_date: Date.current - 1.day,
-  author: 'A Person',
   body:
   %Q{### There Is Something You Should Know!
 
   This is my very first post using markdown!
 
-  How do you like it?  I learned this from [RichOnRails.com](http://richonrails.com/articles/rendering-markdown-with-redcarpet)!}
+  How do you like it?  I learned this from [RichOnRails.com](http://richonrails.com/articles/rendering-markdown-with-redcarpet)!},
+  author: 'me',
+  published_date: Date.current - 1.day,
+
 )
 
 Post.create(
-  id: 2,
   title: "My Second Post",
   published_date: Date.current - 1.day,
   author: 'Another Person',
