@@ -1,6 +1,17 @@
 <h1>Editing todo</h1>
 
 <%= form_for(@todo) do |f| %>
+  <div class="field">
+    <%= f.label :done %><br>
+    <%= f.check_box :done %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+
+
+<%= form_for(@todo) do |f| %>
   <% if @todo.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@todo.errors.count, "error") %> prohibited this todo from being saved:</h2>
@@ -13,10 +24,6 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :done %><br>
-    <!--What goes here?-->
-  </div>
   <div class="field">
     <%= f.label :name %><br>
     <%= f.text_field :name %>
