@@ -3,22 +3,23 @@
 
 <h1><%= @list ? @list.title : "All Tasks" %></h1>
 
-<% @tasks.each do |task| %>
-
-  <% unless task.complete? %>
-    <%= link_to("#{task.title}", complete_list_task_path(task, :complete? => true), :method => :patch ) %>
-     <br>
+<table>
+  <% @tasks.each do |task| %>
+    <% unless task.complete? %>
+    <tr>
+    <% if @list %>
+      <td> <%= link_to 'Complete', complete_list_task_path(task.list_id, task.id), method: :patch %> </td>
+    <% else %>
+      <td> <%= link_to 'Complete', complete_list_task_path(List.all, task.id), method: :patch %></td>
+    <% end %>
+    <td> <%= link_to "#{task.title}", list_task_path(task.list_id, task.id) %> </td>
+    <td> <%= task.due_date %> </td>
+    <td></td>
+    </tr>
+    <% end %>
   <% end %>
-
-
-<% end %>
-
+</table>
 <br>
-<br>
-
-
-
-
 <%= if @list then link_to 'Add New Task', new_list_task_path(@list) end %>
 <br>
 <%= link_to 'Back To Lists', lists_path %>

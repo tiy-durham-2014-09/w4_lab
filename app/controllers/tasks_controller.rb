@@ -16,8 +16,9 @@ class TasksController < ApplicationController
   end
 
   def complete
-    @list = List.find(params[:list_id])
-    @task = @list.task.update_attribute(:complete?, true)
+    index
+    @update_task = Task.where(id: @task.id).first
+    @update_task.update_attribute(:complete?, "true")
     redirect_to list_tasks_url, notice: 'Task has been completed.'
   end
 
@@ -41,7 +42,10 @@ class TasksController < ApplicationController
   # DELETE /tasks/1
   def destroy
     @task.destroy
-    redirect_to tasks_url, notice: 'Task was successfully deleted.'
+    respond_to do |format|
+      format.html { redirect_to list_tasks_url, notice: 'Task was successfully completed.' }
+      format.json { head :no_content }
+    end
   end
 
   private

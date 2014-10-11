@@ -1,5 +1,5 @@
 class Task < ActiveRecord::Base
-  belongs_to :lists
+  belongs_to :list
 
 
 
