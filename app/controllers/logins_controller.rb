@@ -11,7 +11,7 @@ class LoginsController < ApplicationController
       # !!! insert notice
     else
       # !!! insert alert
-      render :new, notice: "Incorrect username or password."
+      redirect_to new_login_path, notice: "Incorrect username or password."
     end
   end
 
