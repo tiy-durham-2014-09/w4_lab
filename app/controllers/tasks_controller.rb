@@ -1,4 +1,6 @@
 class TasksController < ApplicationController
+  before_action :set_task, only: [:show, :complete, :update, :destroy]
+
   def index
     @list = List.find_by_id(params[:list_id])
     @tasks = (@list ? @list.tasks : Task.all)
@@ -6,6 +8,7 @@ class TasksController < ApplicationController
 
   def show
   end
+
 
   def new
     @list = List.find(params[:list_id])

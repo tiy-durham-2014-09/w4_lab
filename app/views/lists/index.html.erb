@@ -15,6 +15,7 @@
         <td><%= link_to 'Show Tasks', list_tasks_path(list) %></td>
         <td><%= link_to 'Edit Title', edit_list_path(list) %></td>
         <td><%= link_to 'Delete List', list, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+
       </tr>
     <% end %>
   </tbody>
@@ -24,7 +25,5 @@
 <br>
 
 <%= link_to 'Show All Tasks', tasks_index_path %>
-<p>
-  <%= link_to 'Show All Tasks <--needs a good path', tasks_index_path %>
-</p>
+
 

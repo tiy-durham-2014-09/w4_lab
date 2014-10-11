@@ -6,13 +6,15 @@
 <% @tasks.each do |task| %>
 
   <% unless task.complete? %>
-    <%=link_to "#{task.title}" %>
+    <%= link_to("#{task.title}", complete_list_task_path(task, :complete? => true), :method => :patch ) %>
+     <br>
   <% end %>
 
 
+<% end %>
 
-
-
+<br>
+<br>
 
 
 
