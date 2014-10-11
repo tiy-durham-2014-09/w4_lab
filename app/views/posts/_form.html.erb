@@ -20,13 +20,13 @@
     <%= f.text_field :body %>
   </div>
   <div class="field">
-    <%= f.label :author %><br>
-    <%= f.text_field :author, :value => @current_user %>
+    <!-- <%= f.label :author %><br> -->
+    <%= f.hidden_field :author, :value => @current_user %>
   </div>
 
   <div class="field">
-    <%= f.label :published_date %><br>
-    <%= f.date_field :published_date, :value => Time.now.to_date %>
+    <!-- <%= f.label :published_date %><br> -->
+    <%= f.hidden_field :published_date, :value => Time.now.to_date %>
   </div>
 
   <div class="actions">
