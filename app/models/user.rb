@@ -17,8 +17,8 @@ class User < ActiveRecord::Base
   has_secure_password
 
 	def to_s
-		handle
-	end
+		"@" + handle
+  end
 
   def following?(other_user)
 	  relationships.find_by(followed_id: other_user.id)

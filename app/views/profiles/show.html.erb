@@ -3,9 +3,13 @@
   <div class="small-3 columns">
 
     <p>
-      <strong>Name:</strong>
       <%=@profile.user.name %>
     </p>
+
+    <p>
+      <%= @profile.user.to_s %>
+    </p>
+
 
     <p>
         <% if current_user? @profile.user %>
@@ -49,7 +53,7 @@
           <tr>
             <div class="post">
                 <p>
-                    <%= post.message %> | <%= time_ago_in_words(post.created_at) %>
+                    <%= post %> | <%= time_ago_in_words(post.created_at) %>
 
                     <% if current_user? post.user %>
                       | <%= link_to 'delete', post, method: :delete, data: { confirm: 'Are you sure?' } %>

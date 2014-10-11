@@ -2,7 +2,6 @@ class UsersController < ApplicationController
   before_action :authenticate
   before_action :set_user, only: [:show, :edit, :update, :destroy, :following, :followers]
 
-
   # GET /users
   # GET /users.json
   def index
