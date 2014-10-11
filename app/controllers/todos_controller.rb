@@ -47,8 +47,9 @@ class TodosController < ApplicationController
 
   # DELETE /todos/1
   def destroy
+    todo = @todo
     @todo.destroy
-    redirect_to todos_url, notice: 'Todo was successfully destroyed.'
+    redirect_to list_path(todo.list), notice: 'Todo was successfully deleted.'
   end
 
   private
