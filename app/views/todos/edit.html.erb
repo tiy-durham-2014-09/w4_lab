@@ -2,7 +2,7 @@
 
 <%= form_for(@todo) do |f| %>
   <div class="field">
-    <%= f.label "Did it!" %><br>
+    <%= f.label "Did it!" %>
     <%= f.check_box :done %>
   </div>
   <div class="actions">
@@ -29,7 +29,7 @@
     <%= f.text_field :name %>
   </div>
   <div class="field">
-    <%= f.label :note %><br>
+    <%= f.label "Notes" %><br>
     <%= f.text_area :note %>
   </div>
   <div class="field">

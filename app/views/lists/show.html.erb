@@ -2,13 +2,12 @@
 
 <p>
   <strong><%= link_to @list.name, edit_list_path(@list) %></strong>
-</p>
-
-<p>
-  <strong>Todos:</strong>
   <% @list.todos.each do |t| %>
     <% unless t.done %>
-      <li><%= link_to(t.name, todo_path(t.id)) %></li>
+      <li>
+        <%= link_to(t.name, todo_path(t.id)) %> | Did it? <%= form_for(t) do |f| %><%= f.check_box :done %><%= f.submit %>
+          <% end %>
+      </li>
     <% end %>
   <% end %>
 <li><%= link_to 'Add Todo', new_todo_path(@list) %></li>
