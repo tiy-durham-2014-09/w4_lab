@@ -1,4 +1,5 @@
 table {
+  @include span-columns(12);
   border-collapse: collapse;
   margin: ($base-spacing / 2) 0;
   table-layout: fixed;

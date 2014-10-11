@@ -11,7 +11,7 @@
   </thead>
 
   <tbody>
-    <% @posts.order(published_date: :desc).each do |post| %>
+    <% @posts1.order(published_date: :desc).each do |post| %>
       <tr>
         <td><%= post.title %></td>
         <td><%= post.published_date %></td>
@@ -26,6 +26,4 @@
 
 <br>
 
-<%= link_to 'New Post', new_post_path %> |
-<%= link_to 'Users', users_path %> |
-<%= link_to 'Home', root_path %>
+<%= link_to 'New Post', new_post_path %>
