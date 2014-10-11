@@ -12,6 +12,12 @@ class TasksController < ApplicationController
     @task = @list.tasks
   end
 
+  def complete
+    @list = List.find(params[:list_id])
+    @task = @list.task.update_attribute(:complete?, true)
+    redirect_to list_tasks_url, notice: 'Task has been completed.'
+  end
+
   # POST /tasks
   def create
     @list = List.find(params[:list_id])
@@ -27,10 +33,6 @@ class TasksController < ApplicationController
     else
       render :edit
     end
-  end
-
-  def complete
-    @task.update_attribute(:complete?, true)
   end
 
   # DELETE /tasks/1

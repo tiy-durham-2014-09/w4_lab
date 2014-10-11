@@ -11,10 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141010194456) do
+ActiveRecord::Schema.define(version: 20141011050136) do
 
   create_table "lists", force: true do |t|
     t.string   "title"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "my_form_builders", force: true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
   end

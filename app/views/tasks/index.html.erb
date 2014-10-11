@@ -2,14 +2,21 @@
 
 <h1><%= @list ? @list.title : "All Tasks" %></h1>
 
-<form>
-<% @tasks.each do |task| %>
-  <% unless task.complete? == true %>
-    <div><input value="<%= task.title %>" type="checkbox"><%= task.title %></div>
 
+
+<% @tasks.each do |task| %>
+
+  <% unless task.complete? %>
+    <%=link_to "#{task.title}" %> <%# complete_list_task_path(task.id), method: :patch %>
+        <br>
   <% end %>
 <% end %>
-</form>
+
+
+
+
+
+
 
 
 
