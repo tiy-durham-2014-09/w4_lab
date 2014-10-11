@@ -1,9 +1,16 @@
 Rails.application.routes.draw do
-  resources :posts
-
+  resources :comments
+  get 'welcome/index'
   resources :users
-  resource :login, :only => [:new, :create, :destroy]
 
+  resources :posts do
+    resources :comments
+  end
+
+
+
+  resource :login, :only => [:new, :create]
+  get 'logout' => 'login#destroy'
   root 'welcome#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
