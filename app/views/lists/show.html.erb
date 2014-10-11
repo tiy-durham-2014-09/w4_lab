@@ -14,7 +14,7 @@
   <strong>Todos:</strong>
   <% @list.todos.each do |t| %>
     <% unless t.done %>
-      <li><%= t.name %></li>
+      <li><%= link_to(t.name, todo_path(t.id)) %></li>
     <% end %>
   <% end %>
 </p>
