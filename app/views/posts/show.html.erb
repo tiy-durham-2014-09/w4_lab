@@ -20,6 +20,26 @@
   <strong>Published date:</strong>
   <%= @post.published_date %>
 </p>
+<p class="post_display">
+  <strong>Comments</strong><br>
+  <% @post.comments.each do |comment| %>
+    <strong>Commenter:</strong>
+    <%= comment.user %><br>
+    <strong>Comment:</strong>
+    <%= comment.body %>
+  <% end %>
+  <p class="post_display">
+    <strong>Add a comment:</strong>
+      <%= form_for ([@post, @post.comments.build]) do |f| %>
+        <%= f.label :user %><br>
+        <%= f.text_field :user %>
+        <%= f.label :body %><br>
+        <%= f.text_area :body %>
+        <%= f.submit %>
+      <% end %>
+  </p>
 </div>
 <%= link_to 'Back', posts_path,:class => 'small_label' %>&nbsp &nbsp
-<%= link_to 'Edit', edit_post_path(@post),:class => 'small_label' %>
+<% if current_user.posts.include?(@post) %>
+<%= link_to 'Edit', edit_post_path(@post), :class => 'small_label' %>
+<% end %>

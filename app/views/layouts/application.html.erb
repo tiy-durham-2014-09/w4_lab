@@ -10,14 +10,15 @@
 <body>
   <ul class="breadcrumbs">
   <li><%= link_to "Home", root_path, :class => "topbar_links"  %></li>
+  <% if logged_in? == nil %>
   <li><%= link_to "Login", new_logins_path, :class => "topbar_links" %></li>
   <li><%= link_to "Sign Up", new_user_path, :class => "topbar_links" %></li>
-  <li><%= link_to "Posts", posts_path, :class => "topbar_links" %></li>
+  <% end %>
+  <li><%= link_to "Your Posts", posts_path, :class => "topbar_links" %></li>
+  <li><%= link_to "Create Post", new_post_path, :class => "topbar_links" %></li>
   <% if logged_in? %>
   <li><%= link_to "Logged in as #{current_user}", "#", {:class => "topbar_links"} %></li>
   <li><%= link_to "Peace out", logins_path, :method => :delete, :class => "topbar_links" %></li>
-  <% else %>
-  <li><%= link_to "Login", new_logins_path, :class => "topbar_links"  %></li>
   <% end %>
 </ul>
 <!-- <section class="top-bar-section">
@@ -35,8 +36,7 @@
         <!-- <ul class="left">
         </ul>
       </section> -->
-    </nav>
-
+<!-- <li><%= link_to "Login", new_logins_path, :class => "topbar_links"  %></li> --> 
 
     <%= display_alert(:notice) %>
     <%= display_alert(:alert) %>

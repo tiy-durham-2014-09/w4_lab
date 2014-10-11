@@ -3,7 +3,9 @@ Rails.application.routes.draw do
 
   resources :comments, :only => [:create, :destroy]
 
-  resources :posts
+  resources :posts do
+    resources :comments
+  end
 
   resource :logins, :only => [:new,:create,:destroy]
 
@@ -12,6 +14,7 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
   root 'welcome#index'
+
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

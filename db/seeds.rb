@@ -15,7 +15,6 @@ Post.create(
   This is my very first post using markdown!
 
   How do you like it?  I learned this from [RichOnRails.com](http://richonrails.com/articles/rendering-markdown-with-redcarpet)!},
-  author: 'me',
   published_date: Date.current - 1.day,
 
 )
@@ -23,7 +22,6 @@ Post.create(
 Post.create(
   title: "My Second Post",
   published_date: Date.current - 1.day,
-  author: 'Another Person',
   body:
   %Q{### My List of Things To Do!
 

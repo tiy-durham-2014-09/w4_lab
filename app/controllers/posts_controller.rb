@@ -2,7 +2,7 @@ class PostsController < ApplicationController
   before_action :authenticate
   before_action :set_post, only: [:show, :edit, :update, :destroy]
   before_action :ensure_logged_in, only: [:new]
-
+  # after_action :ensure_user_owns_post, only: [:new]
   # GET /posts
   # GET /posts.json
   # def index
@@ -28,12 +28,13 @@ class PostsController < ApplicationController
 
   # GET /posts/1/edit
   def edit
+      # @post = current_user.posts.find{|p| p.id == params[:id] }
+  end
     # if current_user
     #   @post.update(post_params)
     # else
     #   redirect_to post_path, flash: {alert: "Sorry, you can't edit other users' posts."}
     # end
-  end
 
   # POST /posts
   # POST /posts.json
