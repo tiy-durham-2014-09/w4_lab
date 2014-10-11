@@ -1,19 +1,39 @@
 <%= form_for([@list, @task.build]) do |f| %> <%#--Look closer at controller. Specify list by id?%>
 
 
+  <div class="row">
+    <div class="large-6 columns">
+      <label>Title<br>
+        <%= f.text_field :title %>
+      </label>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="large-8 columns">
+      <label>Description<br>
+        <%= f.text_area :description, :placeholder => "Write something here about what you have to do." %>
+      </label>
+    </div>
+  </div>
+
+  <div class="row"
     <div class="field">
-      <%= f.label :title %><br>
-      <%= f.text_field :title %>
+      <label>Due Date<br>
+        <%= f.date_field :due_date %>
+      </label>
     </div>
-    <div class="field">
-      <%= f.label :description %><br>
-      <%= f.text_field :description %>
-    </div>
-    <div class="field">
-      <%= f.label :due_date %><br>
-      <%= f.date_field :due_date %>
-    </div>
-    <div class="actions">
-      <%= f.submit %>
-    </div>
+  </div>
+
+  <div class="large-8 columns">
+    <%= button_tag "Submit", :class => "small radius" %>
+  </div>
 <% end %>
+
+<!--old submit button
+  <div class="row">
+    <div class="actions">
+      %<= f.submit %>
+    </div>
+  </div>
+-->
