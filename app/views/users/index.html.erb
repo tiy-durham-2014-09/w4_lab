@@ -1,25 +1,23 @@
 <h1>Listing Users</h1>
 
-<table>
+<table class="usertable">
   <thead>
     <tr>
-      <th>Name</th>
-      <th>Email</th>
-      <th>Created</th>
+      <th class="tusername">Name</th>
+      <th class="tuseremail">Email</th>
+      <th class="tuserjoin">Joined</th>
       <th colspan="3"></th>
     </tr>
   </thead>
 
   <tbody>
-    <% @users.order(created_at: :desc).each do |user| %>
-      <tr>
-        <td><%= user.name %></td>
-        <td><%= user.email %></td>
-        <td><%= user.created_at %></td>
-        <td><%= link_to 'Show', user %></td>
-        <td><%= link_to 'Edit', edit_user_path(user) %></td>
-        <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+    <% @users.order(name: :asc).each do |user| %>
+    <tr>
+      <td class="tusername"><%= user.name %></td>
+      <td class="tuseremail"><%= user.email %></td>
+      <td class="tuserjoin"><%= user.created_at %></td>
+      <td><%= link_to 'Show', user %></td>
+    </tr>
     <% end %>
   </tbody>
 </table>

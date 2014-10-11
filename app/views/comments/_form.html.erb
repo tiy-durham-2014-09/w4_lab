@@ -1,0 +1,12 @@
+<%= form_for([@post, @post.comments.build]) do |f| %>
+
+  <p>
+    <%= f.hidden_field :commenter, value: @current_user %>
+  </p>
+  <p>
+    <%= f.text_area :body %>
+  </p>
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>

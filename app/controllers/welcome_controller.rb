@@ -3,5 +3,6 @@ class WelcomeController < ApplicationController
   def index
     @users = User.all
     @posts = Post.all.order(created_at: :desc)
+    @comments = Comment.all
   end
 end

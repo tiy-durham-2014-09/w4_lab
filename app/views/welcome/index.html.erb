@@ -10,12 +10,13 @@
   </fhead>
   <fcontent>
     <% @posts.order(published_date: :asc).each do |post| %>
-    <div class="ftitle"><%= post.title %></div>
+    <div class="ftitle"><%= link_to post.title, post_path(post)%></div>
     <div class="fpub"><%= post.published_date %></div>
     <div class="fauthor"><%= link_to post.user, post.user %></div>
     <div class="fbody"><%= post.content %></div>
     <% end %>
   </fcontent>
+
   <!-- <dhead>
     <div class="userpost">Post</div>
   </dhead>

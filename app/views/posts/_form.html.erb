@@ -21,8 +21,7 @@
     <%= f.text_field :title %>
   </div>
   <div class="field">
-    <%= f.label :published_date %><br>
-    <%= f.time_select :published_date , :default => DateTime.now%>
+    <%= f.hidden_field :published_date, :value => DateTime.now %>
   </div>
   <div class="field">
     <%= f.label :content %><br>
