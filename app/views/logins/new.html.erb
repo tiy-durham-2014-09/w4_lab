@@ -4,16 +4,15 @@
   <%= form_tag logins_path, :method => :post do %>
     <div class="large-6 columns">
       <%= label_tag :email, nil, class: 'small_label' %>
-      <%= text_field_tag :email %>
+      <%= text_field_tag :email, nil, class: 'text_field' %>
     </div>
     <div class="large-6 columns">
       <%= label_tag :password, nil, class: 'small_label' %>
-      <%= password_field_tag :password %>
+      <%= password_field_tag :password, nil, class: 'text_field'%>
     </div>
     <div class="large-12 columns">
       <%= button_tag "Login", :class => "small radius" %>
     </div>
   <% end %>
-<%= link_to 'Home', root_path,:class => "small_label" %>&nbsp|&nbsp
-<%= link_to 'Sign Up', new_user_path,:class => "small_label" %>
+
 </div>

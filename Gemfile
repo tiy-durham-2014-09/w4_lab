@@ -42,6 +42,8 @@ gem 'font-awesome-rails'
 
 gem 'redcarpet', '~> 3.0.0'
 
+gem 'pry-byebug'
+
 # Use unicorn as the app server
 # gem 'unicorn'
 

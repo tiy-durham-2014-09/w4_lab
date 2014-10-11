@@ -18,6 +18,6 @@ def authenticate
   current_user_id = session[:current_user_id]
   unless current_user_id
     redirect_to new_logins_path, notice: "YA GOTTA BE LOGGED IN, EH?"
-end
+  end
 end
 end

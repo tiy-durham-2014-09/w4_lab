@@ -1,8 +1,14 @@
-
-
 <h4><div class="title">BLOGTOBER</div></h4>
-<p class="first_sub">Check out these blogs:</p>
-<p class="sub">they're super cool</p>
-  <%= link_to "Posts", posts_path, :class => "small_label" %>&nbsp|&nbsp
-  <%= link_to "Comments", comments_path, :class => "small_label"  %>&nbsp|&nbsp
-  <%=link_to "Sign Up", new_user_path, :class => "small_label" 	%>
+<h5 class="first_sub">Check out these blogs:</h5>
+<h6 class="sub">they're spooooky<h6>
+<tbody>
+  <% @posts.each do |post| %>
+    <tr>
+      <h5><%= link_to post.title, post, :class => "small_label" %></h5>
+      <p><td><%= post.body %></td><br></p>
+      <td><%= post.user %></td>
+      <td><%= post.published_date %></td><br>
+      <td><%= link_to 'Read More', post, :class => 'read_more' %></td>
+    </tr>
+  <% end %>
+</tbody>

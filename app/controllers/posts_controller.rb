@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
   before_action :authenticate
   before_action :set_post, only: [:show, :edit, :update, :destroy]
+  before_action :ensure_logged_in, only: [:new]
 
   # GET /posts
   # GET /posts.json
@@ -27,20 +28,24 @@ class PostsController < ApplicationController
 
   # GET /posts/1/edit
   def edit
+    # if current_user
+    #   @post.update(post_params)
+    # else
+    #   redirect_to post_path, flash: {alert: "Sorry, you can't edit other users' posts."}
+    # end
   end
 
   # POST /posts
   # POST /posts.json
   def create
-    @post = current_user.posts.build(post_params)
-
+    if current_user
+      @post = current_user.posts.build(post_params)
+    end
     respond_to do |format|
       if @post.save
         format.html { redirect_to @post, notice: 'Post was successfully created.' }
-        format.json { render :show, status: :created, location: @post }
       else
         format.html { render :new }
-        format.json { render json: @post.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -82,8 +87,14 @@ class PostsController < ApplicationController
     end
   end
 
+  def ensure_logged_in
+    if current_user == nil
+      redirect_to root_path, flash: {alert: "You must log in to make a post."}
+    end
+  end
+
   # Never trust parameters from the scary internet, only allow the white list through.
   def post_params
-    params.require(:post).permit(:title, :body, :author, :published_date)
+    params.require(:post).permit(:title, :body,:published_date)
   end
 end

@@ -10,7 +10,7 @@
       </ul>
     </div>
   <% end %>
-    <div class="large-4 columns">
+    <div class="large-6 columns">
     <div class="field">
     <%= f.label :user_id,nil, class: 'comment_label' %><br>
     <%= f.collection_select :user_id, User.all, :id, :name, :include_blank => true %>
@@ -22,18 +22,18 @@
     <%= f.text_field :user %>
   </div>
 </div> -->
-  <div class="large-4 columns">
+  <div class="large-6 columns">
 
   <div class="field">
-    <%= f.label :post,nil, class: 'comment_label' %><br>
+    <%= f.label :post ,nil, class: 'comment_label' %><br>
     <%= f.text_field :post %>
   </div>
 </div>
 <div class="row">
-  <div class="large-9 columns">
+  <div class="large-12 columns">
   <div class="field">
     <%= f.label :body,nil, class: 'comment_label' %><br>
-    <%= f.text_field :body %>
+    <%= f.text_area :body, class: 'text_field' %>
   </div>
 </div>
 </div>

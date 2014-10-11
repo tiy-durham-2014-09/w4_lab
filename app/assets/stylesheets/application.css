@@ -12,8 +12,9 @@
 *
 *= require_tree .
 *= require_self
-*= require foundation_and_overrides
+require foundation_and_overrides
 */
+/*= require foundation */
 
 @font-face {
   font-family: 'coolveticaregular';
@@ -82,87 +83,99 @@
   font-style: normal;
 }
 body {
-  background : url("http://i.imgur.com/1lPoAD0.png");
-  line-height: 1.5;
-  text-align: center;
-  font-family: 'bebas_neueregular';
+  background : url("http://i.imgur.com/1lPoAD0.png") !important;
+  line-height: 1.5 !important;
+  text-align: center !important;
+  /*font-family: 'bebas_neueregular' !important;*/
   /*font-size: 50px;*/
+  margin: 0 auto !important;
 }
 h4 {
-  color: #b34d03;
-  font-family: 'tesbold';
-  font-size: 100px;
-  padding-top: 50px;
-  text-shadow: 2px -2px 1px #d5d5d5;
-  letter-spacing: -1px;
+  color: #b34d03 !important;
+  font-family: 'tesbold' !important;
+  font-size: 100px !important;
+  padding-top: 50px !important;
+  text-shadow: 2px -2px 1px #d5d5d5 !important;
+  letter-spacing: -1px !important;
 }
 h4 .title {
-  height: 120px;
-  font-size: 140px;
-
+  height: 120px !important;
+  font-size: 140px !important;
 }
-
+h5 {
+color: #43702d !important ;
+margin-top: 20px !important;
+font-size: 20px !important;
+font-family: 'bebas_neueregular' !important;
+}
 .first_sub {
-  color: #43702d;
-  margin-top: 20px;
-  font-size: 20px;
-  letter-spacing: 5px;
-  font-family: 'bebas_neueregular';
-  margin-bottom: 10px;
+  color: #43702d !important ;
+  margin-top: 20px !important;
+  font-size: 35px !important;
+  font-family: 'bebas_neueregular' !important;
+  font-weight: bold !important;
+  margin-bottom: 0px;
+  margin: 0 auto;
+  background-color: transparent !important;
 }
 .link {
-  text-decoration: none;
-  color: white;
+  text-decoration: none !important;
+  color: white !important;
 }
 table {
-  margin: 0 auto;
+  margin: 0 auto !important;
 }
 th {
-  font-family: Arial;
+  font-family: Arial !important;
   font-size: 14px !important;
   color: white !important;
   text-align: center !important;
 }
 td {
-  background-color: #e9e7e2;
+  background-color: #e9e7e2 !important;
   color: #6064b2 !important;
-  font-family: Arial;
-  letter-spacing: 2px;
-  text-align: center;
+  font-family: Arial !important;
+  letter-spacing: 2px !important;
+  text-align: center !important;
 }
 ::selection {
-  background:#46a119;
-  color:#555;
+  background:#46a119 !important;
+  color:#555 !important;
 }
 .sub {
-  font-family: 'cf_crayonsregular', sans-serif;
-  font-size: 27px;
-  color: white;
-  opacity: .2;
-  margin-top: 5px;
-  -webkit-transform: rotate(-2deg);
-  position: relative;
-  margin-bottom: 40px;
+  font-family: 'cf_crayonsregular', sans-serif !important;
+  font-size: 27px !important;
+  color: white !important;
+  opacity: .2 !important;
+  /*margin-top: 5px !important;*/
+  -webkit-transform: rotate(-2deg) !important;
+  position: relative !important;
+  margin-bottom: 40px !important;
+  margin: 0 auto;
+  background-color: transparent !important;
 }
 table {
-  margin-top: 40px;
+  margin-top: 40px !important;
 }
 .headings h1 {
-  margin-bottom: 40px;
+  margin-bottom: 40px !important;
 }
 .row h1{
-  margin-bottom: 40px;
+  margin-bottom: 40px !important;
+}
+.row {
+margin: 0 auto !important;
 }
 .small_label {
   color: white !important;
-  letter-spacing: 3px;
-  font-family: 'bebas_neueregular';
-  font-size: 25px;
-  text-shadow: 2px 1px 3px #b34d03;
+  letter-spacing: 3px !important;
+  font-family: 'bebas_neueregular'!important;
+  font-size: 25px !important;
+  text-shadow: 2px 1px 3px #b34d03 !important;
 
 }
 .post_display {
-  padding-top: 50px;
+  padding-top: 50px !important;
 }
 .login_style {
   background-color: #b34d03 !important;
@@ -170,29 +183,77 @@ table {
 .comment_label {
   color: white !important;
   letter-spacing: 3px;
-  font-family: 'bebas_neueregular';
-  font-size: 18px;
+  font-family: 'bebas_neueregular' !important;
+  font-size: 18px !important;
 }
 .post_label {
   color: white !important;
-  letter-spacing: 3px;
-  font-family: 'bebas_neueregular';
-  font-size: 18px;
+  letter-spacing: 3px !important;
+  font-family: 'bebas_neueregular' !important;
+  font-size: 18px !important;
 }
 .notice {
   color: white !important;
-  letter-spacing: 3px;
+  letter-spacing: 3px !important;
   font-family: 'bebas_neueregular';
-  font-size: 18px;
-  background-color: #b34d03;
-  height: 40px;
+  font-size: 18px !important;
+  background-color: #b34d03 !important;
+  height: 40px !important;
 }
 .simple_form label {
   color: white !important;
-  font-size: 18px;
+  font-size: 18px !important;
   letter-spacing: 3px;
   text-shadow: 2px 1px 3px #b34d03;
+}
+.field {
+margin: 0 auto;
+}
+table {
+background: transparent !important;
+border: none !important;
+}
+table thead {
+background: transparent !important;
+}
+/*td  {
+background: transparent !important;
+}*/
 
-thead {
-background-color: #b34d03;
+.post_display {
+color: white;
+}
+.topbar_links {
+text-align: center;
+margin: 0 auto;
+font-size: 30px;
+font-family: 'bebas_neueregular' !important;
+color: #43702d !important ;
+}
+.breadcrumbs {
+background-color: #e3e3e3 !important;
+border: none !important;
+padding-left: 380px !important;
+padding-top: 25px !important;
+}
+.text_field {
+background-color: #43702d !important;
+}
+p {
+color: #b34d03 !important;
+font-family: sans-serif !important;
+width: 50%;
+margin-left: 350px !important;
+}
+
+.read_more {
+font-family: 'tesbold' !important;
+font-size: 20px;
+letter-spacing: 2px;
+color: #43702d !important;
+text-transform: uppercase;
+text-shadow: .5px 1px  #000 !important;
+}
+.post_display {
+color: white !important;
 }

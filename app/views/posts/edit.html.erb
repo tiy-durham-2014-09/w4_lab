@@ -1,6 +1,8 @@
-<h4>Editing post</h4>
+<div class="row">
+
+<h4 class="large-12 columns">Editing post</h4>
 
 <%= render 'form' %>
 
-<%= link_to 'Show', @post %> |
-<%= link_to 'Back', posts_path %>
+<%= link_to 'Back', posts_path, :class => 'small_label' %>&nbsp &nbsp
+<%= link_to 'Show', @post, :class => 'small_label' %>
