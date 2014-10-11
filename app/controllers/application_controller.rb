@@ -5,8 +5,10 @@ class ApplicationController < ActionController::Base
 
   helper_method :current_user, :logged_in?
 
+  private
+
   def current_user
-    @current_user ||= User.find(session[:current_user_id])
+    @current_user ||= User.find_by(id: session[:current_user_id])
   end
 
   def logged_in?
@@ -16,7 +18,7 @@ class ApplicationController < ActionController::Base
   def authenticate
     current_user_id = session[:current_user_id]
     unless current_user_id
-      redirect_to new_login_path
+      redirect_to new_login_path, notice: "Log in or sign up to view that page."
       # !!! add notice here
     end
   end

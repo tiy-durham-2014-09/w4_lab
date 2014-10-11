@@ -3,6 +3,7 @@ class ListsController < ApplicationController
   before_action :set_list, only: [:show, :edit, :update, :destroy]
   before_action :ensure_user_owns_list, only: [:show, :edit, :update, :destroy]
 
+
   # GET /lists
   def index
     @lists = current_user.lists
@@ -54,7 +55,7 @@ class ListsController < ApplicationController
     end
 
     def ensure_user_owns_list
-      if @list.user != current_user
+      if current_user != @list.user
         redirect_to root_path, notice: "That's not your List."
         # !!! insert notice
       end
