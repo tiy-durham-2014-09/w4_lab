@@ -20,5 +20,33 @@
   <%= @post.published_date %>
 </p>
 
+<h2>Comments</h2>
+<% @post.comments.each do |comment| %>
+<p>
+  <strong>User:</strong>
+  <%= comment.user %>
+</p>
+
+<p>
+  <strong>Comment:</strong>
+  <%= comment.body %>
+</p>
+<% end %>
+
+<h3> Add A Comment: </h4>
+  <%= form_for([@post, @post.comments.build]) do |f| %>
+  <p>
+    <%= f.label :user %>
+    <%= f.text_field :user, value: @current_user %>
+  </p>
+  <p>
+    <%= f.label :body %><br>
+    <%= f.text_area :body %>
+  </p>
+  <div>
+    <%= f.submit %>
+  </div>
+<% end %>
+
 <%= link_to 'Edit', edit_post_path(@post) %> |
 <%= link_to 'Back', posts_path %>

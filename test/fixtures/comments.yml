@@ -2,8 +2,10 @@
 
 one:
   user: MyString
-  body: MyString
+  body: MyText
+  article_id: 
 
 two:
   user: MyString
-  body: MyString
+  body: MyText
+  article_id: 

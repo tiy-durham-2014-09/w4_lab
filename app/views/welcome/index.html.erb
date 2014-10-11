@@ -6,6 +6,19 @@
 <span class="l2">L</span>
 <span class="e">E</span>
 <span class="plus"> + </span></h1>
-<!-- <div class="about">
-	Bloogle+ is a place to blog about connections with family, friends and all of your explored interests.
-</div> -->
+
+
+<table class="fronttable">
+	<tbody>
+		<% @posts.each do |post| %>
+		<tr>
+			<td>
+				<h3> <%= link_to post.title, post %></h3>
+				<p> <%= post.author %> <%= post.published_date %></p>
+				<p> <%= post.body %> </p>
+				<p> <%= link_to 'Read', post %></p>
+			</td>
+		</tr>
+		<% end %>
+	</tbody>
+</table>
