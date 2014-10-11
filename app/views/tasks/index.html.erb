@@ -1,16 +1,13 @@
+
 <p id="notice"><%= notice %></p>
 
 <h1><%= @list ? @list.title : "All Tasks" %></h1>
 
-
-
 <% @tasks.each do |task| %>
 
   <% unless task.complete? %>
-    <%=link_to "#{task.title}" %> <%# complete_list_task_path(task.id), method: :patch %>
-        <br>
+    <%=link_to "#{task.title}" %>
   <% end %>
-<% end %>
 
 
 
