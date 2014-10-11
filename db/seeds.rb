@@ -32,11 +32,14 @@ Profile.delete_all
                  location: [Faker::Address.country, Faker::Address.state, Faker::Address.city].sample)
   end
 end
+
 def make_relationships
 	users = User.all
-	user  = users.first
+	user  = users.sample(30)
 	followed_users = users[2..50]
-	followers      = users[3..40]
+	followers      = users[2..40]
 	followed_users.each { |followed| user.follow!(followed) }
 	followers.each      { |follower| follower.follow!(user) }
 end
+
+make_relationships
