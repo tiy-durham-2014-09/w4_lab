@@ -14,10 +14,12 @@ Profile.delete_all
 
 
 50.times do
-  user = User.create!(name: Faker::Name.name,
-                      handle: Faker::Internet.user_name,
-                      email: Faker::Internet.email,
-                      password: Faker::Internet.password)
+
+  fake_name = Faker::Name.name
+  user = User.create!(name: fake_name,
+                      handle: Faker::Internet.user_name(fake_name),
+                      email: Faker::Internet.free_email(fake_name),
+                      password: "password")
 
   Profile.create!(user: user,
                   bio: Faker::Lorem.paragraph(2),
