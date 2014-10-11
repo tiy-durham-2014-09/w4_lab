@@ -21,11 +21,18 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
+	resources :users do
+		member do
+			get :following, :followers
+		end
+	end
+
 	resources :profiles
-  resources :users
   resources :posts
 
-  resource :login, :only => [:new, :create, :destroy]
+  resource :login, only: [:new, :create, :destroy]
+
+	resources :relationships, only: [:create, :destroy]
 
   root 'profiles#show'
 

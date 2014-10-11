@@ -42,6 +42,8 @@ gem 'foundation-rails', '~> 5.4.5'
 
 gem 'simple_form'
 
+gem 'will_paginate'
+
 group :development, :test do
   gem "better_errors"
   gem "binding_of_caller"

@@ -13,7 +13,7 @@ Post.delete_all
 Profile.delete_all
 
 
-20.times do
+50.times do
   user = User.create!(name: Faker::Name.name,
                       handle: Faker::Internet.user_name,
                       email: Faker::Internet.email,
@@ -29,4 +29,12 @@ Profile.delete_all
                  message: Faker::Lorem.sentence(1,false,20).to_s.truncate(141),
                  location: [Faker::Address.country, Faker::Address.state, Faker::Address.city].sample)
   end
+end
+def make_relationships
+	users = User.all
+	user  = users.first
+	followed_users = users[2..50]
+	followers      = users[3..40]
+	followed_users.each { |followed| user.follow!(followed) }
+	followers.each      { |follower| follower.follow!(user) }
 end

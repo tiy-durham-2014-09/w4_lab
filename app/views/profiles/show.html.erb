@@ -22,6 +22,14 @@
 </p>
 
 
+<section>
+  <%= render 'shared/stats' %>
+</section>
+<section>
+    <%= render 'shared/follow_form' if logged_in? %>
+</section>
+
+
 <%= link_to 'All Profiles', profiles_path %> |
 <%= link_to "New Post", new_post_path %>
 

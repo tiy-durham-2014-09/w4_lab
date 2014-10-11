@@ -1,7 +1,10 @@
 require 'test_helper'
 
 class UserTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+	require 'spec_helper'
+
+	describe User do
+		it { should respond_to(:posts) }
+		it { should respond_to(:relationships) }
+	end
 end
