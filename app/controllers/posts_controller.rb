@@ -1,11 +1,11 @@
 class PostsController < ApplicationController
-  before_action :authenticate
+  before_filter :authenticate, :except => [ :index, :show ]
   before_action :set_post, only: [:show, :edit, :update, :destroy]
 
   # GET /posts
   # GET /posts.json
   def index
-    @posts = Post.all #current_user.posts 
+    @posts = Post.all #current_user.posts
   end
 
   # GET /posts/1
@@ -78,4 +78,10 @@ class PostsController < ApplicationController
     def post_params
       params.require(:post).permit(:title, :body)
     end
+  private
+  def authenticate
+    authenticate_or_request_with_http_basic do |name, password|
+      name == "admin" && password == "secret"
+    end
+  end
 end
