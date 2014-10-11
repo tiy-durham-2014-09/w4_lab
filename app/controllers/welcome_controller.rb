@@ -1,6 +1,6 @@
 class WelcomeController < ApplicationController
   def index
-    @comments = Comment.all
+    # @comments = Comment.all
     @users = User.all
     @posts = Post.all
   end
