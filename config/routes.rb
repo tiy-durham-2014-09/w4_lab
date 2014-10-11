@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
   resources :users
-  resource :login, :only => [:create, :destroy]
-
+  resource :login, :only => [:new, :create, :destroy]
   resources :todos
   resources :lists
 
