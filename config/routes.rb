@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   resources :lists do
     resources :todos
+    get :bucket
   end
 
 

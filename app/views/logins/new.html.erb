@@ -1,11 +1,30 @@
-<div class="row">
-    <%= form_tag login_path, :method => :post do %>
-        <%= label_tag :email %>
-        <%= text_field_tag :email %>
-        <%= label_tag :password %>
-        <%= password_field_tag :password %>
-        <%= button_tag "Login", :class => "small radius" %>
-    <% end %>
-</div>
+<div class="row" id="background">
 
-<%= render "users/form" %>
+
+  <div class="row">
+   x
+  </div>
+
+  <div class="row">
+    <div class="small-7 large-7 columns">x</div>
+    <div class="small-3 large-4 columns">
+      <div id="login">
+        <h3>Login</h3>
+        <%= form_tag login_path, :method => :post do %>
+            <%= label_tag :email %>
+            <%= text_field_tag :email %>
+            <%= label_tag :password %>
+            <%= password_field_tag :password %>
+            <%= button_tag "Login", :class => "small radius" %>
+        <% end %>
+      </div>
+      <div>x</div>
+      <div id="register">
+        <h3>Register</h3>
+        <%= render "users/form" %>
+      </div>
+      <div>x</div>
+    </div>
+    <div class="small-2 large-1 columns">x</div>
+  </div>
+</div>
