@@ -42,3 +42,7 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'better_errors'
 gem 'pry-byebug'
 gem 'binding_of_caller'
+
+#gems for making it look good
+
+gem 'foundation-rails'
