@@ -11,7 +11,7 @@
   </thead>
 
   <tbody>
-    <% @posts.each do |post| %>
+    <% @posts1.order(published_date: :desc).each do |post| %>
       <tr>
         <td><%= post.title %></td>
         <td><%= post.body %></td>
