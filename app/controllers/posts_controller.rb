@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
 	before_action :authenticate
 	before_action :set_post, only: [:show, :edit, :update, :destroy]
+  after_filter :set_previous_url, only: [:new]
 
   # GET /posts
   # GET /posts.json
@@ -29,7 +30,7 @@ class PostsController < ApplicationController
 
     respond_to do |format|
       if @post.save
-        format.html { redirect_to @post.user.profile, notice: 'Post was successfully created.' }
+        format.html { redirect_to session[:previous_url], notice: 'Post was successfully created.' }
         format.json { render :show, status: :created, location: @post }
       else
         format.html { render :new }
@@ -61,16 +62,16 @@ class PostsController < ApplicationController
 
     @post.destroy
     respond_to do |format|
-      format.html { redirect_to posts_url, notice: 'Post was successfully destroyed.' }
-      format.json { head :no_content }
+      format.html { redirect_to :back, notice: 'Post was successfully destroyed.' }
+      # format.json { head :no_content }
     end
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_post
-      @post = current_user.posts.find(params[:id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_post
+    @post = current_user.posts.find(params[:id])
+  end
 
 	def ensure_user_owns_post
 		if @post.user != current_user
@@ -78,8 +79,12 @@ class PostsController < ApplicationController
 		end
 	end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def post_params
-      params.require(:post).permit(:message, :location, :user_id)
-    end
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def post_params
+    params.require(:post).permit(:message, :location, :user_id)
+  end
+
+  def set_previous_url
+    session[:previous_url] = URI(request.referer).path
+  end
 end

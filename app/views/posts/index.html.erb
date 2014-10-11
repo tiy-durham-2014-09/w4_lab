@@ -1,28 +1,41 @@
-<h1>Listing posts</h1>
+<div class="row">
+  <div class="small-3 columns">
+    <p><%= link_to current_user.name, profile_path(current_user) %></p>
+    <p><%= link_to "@" + current_user.handle, profile_path(current_user) %></p>
 
-<table>
-  <thead>
+    <p><%= link_to 'New Post', new_post_path %></p>
+  </div>
+  <div class="small-6 columns">
 
-  </thead>
+      <% @posts.reverse_order.each do |post| %>
+          <tr>
+          <div class="post">
+            <%= link_to post.user.name, profile_path(post.user) %>
+            <%= link_to '@' + post.user.handle, profile_path(post.user) %>
+            <%= time_ago_in_words(post.created_at) %>
+            <p>
+              <%= post.message %>
+              <% if current_user? post.user %>
+                <%= link_to 'delete', post, method: :delete, data: { confirm: 'Are you sure?' } %>
+              <% end %>
+            </p>
+          </div>
+          </tr>
+      <% end %>
+  </div>
+  <div class="small-3 columns">
+    <div class="row">
+        <div class="small-12 columns">
+            <p>Random follow suggestions</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="small-12 columns">
+            <p>3 random followed_users</p>
+        </div>
+    </div>
+  </div>
 
-  <tbody>
-
-  <% @posts.reverse_order.each do |post| %>
-      <tr>
-      <div class="post">
-        <%= link_to post.user.name, profile_path(post.user) %>
-        <%= link_to '@' + post.user.handle, profile_path(post.user) %>
-        <%= time_ago_in_words(post.created_at) %>
-        <p>
-          <%= post.message %>
-          <%= link_to 'delete', post, method: :delete, data: { confirm: 'Are you sure?' } %>
-        </p>
-      </div>
-      </tr>
-  <% end %>
-  </tbody>
-</table>
+</div>
 
 <br>
-
-<%= link_to 'New Post', new_post_path %>

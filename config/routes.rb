@@ -34,7 +34,7 @@ Rails.application.routes.draw do
 
 	resources :relationships, only: [:create, :destroy]
 
-  root 'profiles#show'
+  root 'posts#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

@@ -23,7 +23,7 @@
       <!-- Right Nav Section -->
       <ul class="right">
         <% if logged_in? %>
-            <li><%= link_to "Logged in as @#{current_user}", profile_path(current_user.id) %></li>
+            <li><%= link_to "Logged in as @#{current_user} | See Profile", profile_path(current_user.id) %></li>
             <li><%= link_to "Logout", login_path, :method => :delete %></li>
         <% else %>
             <li><%= link_to "Login", new_login_path %></li>

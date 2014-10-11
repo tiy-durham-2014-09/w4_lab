@@ -1,44 +1,78 @@
 
-<p>
-  <strong>Name:</strong>
-  <%=@profile.user.name%>
-</p>
+<div class="row">
+  <div class="small-3 columns">
 
-<%= link_to 'Edit Profile', edit_profile_path(@profile) %>
+    <p>
+      <strong>Name:</strong>
+      <%=@profile.user.name %>
+    </p>
 
-<p>
-  <strong>Bio:</strong>
-  <%= @profile.bio %>
-</p>
+    <p>
+        <% if current_user? @profile.user %>
+            <%= link_to 'Edit Profile', edit_profile_path(@profile) %>
+        <% else %>
+            <%= "[Follow/Unfollow]" %>
+        <% end %>
+    </p>
 
-<p>
-  <strong>Location:</strong>
-  <%= @profile.location %>
-</p>
+    <p>
+      <strong>Bio:</strong>
+      <%= @profile.bio %>
+    </p>
 
-<p>
-  <strong>Website:</strong>
-  <%= @profile.website %>
-</p>
+    <p>
+      <strong>Location:</strong>
+      <%= @profile.location %>
+    </p>
 
-
-<section>
-  <%= render 'shared/stats' %>
-</section>
-<section>
-    <%= render 'shared/follow_form' if logged_in? %>
-</section>
-
-
-<%= link_to 'All Profiles', profiles_path %> |
-<%= link_to "New Post", new_post_path %>
+    <p>
+      <strong>Website:</strong>
+      <%= @profile.website %>
+    </p>
 
 
-<% @profile.user.posts.reverse_order.each do |post| %>
-    <tr>
-      <div class="post">
-        <p><%= post.message %> | <%= time_ago_in_words(post.created_at) %></p>
-        <p><%= link_to 'delete', post, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+    <section>
+      <%= render 'shared/stats' %>
+    </section>
+    <section>
+      <%= render 'shared/follow_form' if logged_in? %>
+    </section>
+
+
+    <%= link_to 'All Profiles', profiles_path %> |
+    <%= link_to "New Post", new_post_path %>
+
+  </div>
+  <div class="small-6 columns" %>
+
+      <% @profile.user.posts.reverse_order.each do |post| %>
+          <tr>
+            <div class="post">
+                <p>
+                    <%= post.message %> | <%= time_ago_in_words(post.created_at) %>
+
+                    <% if current_user? post.user %>
+                      | <%= link_to 'delete', post, method: :delete, data: { confirm: 'Are you sure?' } %>
+                    <% end %>
+                </p>
+            </div>
+          </tr>
+      <% end %>
+
+  </div>
+  <div class="small-3 columns">
+    <div class="row">
+      <div class="small-12 columns">
+        <p>Random people they follow</p>
       </div>
-    </tr>
-<% end %>
+    </div>
+    <div class="row">
+      <div class="small-12 columns">
+        <p>Random people that follow them</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
