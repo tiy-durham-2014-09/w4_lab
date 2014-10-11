@@ -20,7 +20,7 @@ class ApplicationController < ActionController::Base
   end
 
   def site_name
-    "Micro Blog"
+    "burblr"
   end
 
   def authenticate

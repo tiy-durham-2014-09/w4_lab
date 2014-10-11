@@ -30,7 +30,7 @@ class PostsController < ApplicationController
 
     respond_to do |format|
       if @post.save
-        format.html { redirect_to session[:previous_url], notice: 'Post was successfully created.' }
+        format.html { redirect_to session[:previous_url], notice: 'Post was created.' }
         format.json { render :show, status: :created, location: @post }
       else
         format.html { render :new }
@@ -62,7 +62,7 @@ class PostsController < ApplicationController
 
     @post.destroy
     respond_to do |format|
-      format.html { redirect_to :back, notice: 'Post was successfully destroyed.' }
+      format.html { redirect_to :back }
       # format.json { head :no_content }
     end
   end

@@ -1,0 +1,28 @@
+<div class="panel">
+	<div class="profile-info">
+	  <h1><%= link_to displayed_user.name, profile_path(displayed_user) %></h2>
+	  <h2><%= link_to displayed_user, profile_path(displayed_user) %></h2>
+
+		<span class="profile-button">
+		  <% if current_user? displayed_user %>
+		    <%= link_to 'Edit Profile', edit_profile_path(current_user) %>
+		  <% else %>
+		    <%= "[Follow/Unfollow]" %>
+		  <% end %>
+		</span>
+
+	  <p><%= displayed_user.profile.bio %></p>
+
+	  <h3><%= displayed_user.profile.location %></h3>
+
+		<%= link_to displayed_user.profile.website, correct_link(displayed_user.profile.website) %>
+
+		<section>
+		  <%= render 'shared/stats' %>
+		</section>
+		<section>
+		  <%= render 'shared/follow_form' if logged_in? %>
+		</section>
+	</div>
+
+</div>

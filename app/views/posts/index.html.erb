@@ -1,41 +1,39 @@
+<title><%= site_name %> - Feed</title>
 <div class="row">
   <div class="small-3 columns">
-    <p><%= link_to current_user.name, profile_path(current_user) %></p>
-    <p><%= link_to current_user, profile_path(current_user) %></p>
 
-    <%= link_to 'All Profiles', profiles_path %> |
-    <%= link_to "New Post", new_post_path %>
+    <%= render 'profiles/profile_box' %>
+
+    <div class="posts-small-form">
+        <%= new %>
+				<%= render 'form' %>
+    </div>
   </div>
   <div class="small-6 columns">
 
-      <% @posts.reverse_order.each do |post| %>
-          <% user = post.user %>
+		<%= render 'print_post', :posts => @posts %>
 
-          <div class="post">
-            <p>
-              <%= link_to user.name, profile_path(user) %>
-              <%= link_to user, profile_path(user) %>
-              <%= time_ago_in_words(post.created_at) %>
-            </p>
-            <p>
-              <%= post %>
-              <% if current_user? user %>
-                <%= link_to 'delete', post, method: :delete, data: { confirm: 'Are you sure?' } %>
-              <% end %>
-            </p>
-          </div>
-
-      <% end %>
   </div>
   <div class="small-3 columns">
     <div class="row">
+      <div class="small-12 columns">
+        <div class="panel">
+          <%= link_to 'Browse All User Profiles', profiles_path %>
+        </div>
+      </div>
+    </div>
+    <div class="row">
         <div class="small-12 columns">
-            <p>Random follow suggestions</p>
+            <div class="panel">
+                <p>Random follow suggestions</p>
+            </div>
         </div>
     </div>
     <div class="row">
         <div class="small-12 columns">
-            <p>3 random followed_users</p>
+            <div class="panel">
+                <p>3 random followed_users</p>
+            </div>
         </div>
     </div>
   </div>

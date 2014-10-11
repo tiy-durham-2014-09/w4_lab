@@ -4,39 +4,45 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title><%= content_for?(:title) ? yield(:title) : "foundation-rails" %></title>
+    <!--<title><%= content_for?(:title) ? yield(:title) : "foundation-rails" %></title>-->
 
     <%= stylesheet_link_tag    "application" %>
     <%= javascript_include_tag "vendor/modernizr" %>
+    <%= stylesheet_link_tag    "foundation_icons_all/foundation_icons_general/sass/general_foundicons" %>
     <%= csrf_meta_tags %>
   </head>
 
   <body>
-  <nav class="top-bar" data-topbar role="navigation">
-    <ul class="title-area">
-      <li class="name">
-        <h1><%= link_to site_name, root_url %></h1>
-      </li>
-    </ul>
+  <div class="sticky">
+      <nav class="top-bar" data-topbar role="navigation">
+        <ul class="title-area">
+          <li class="name">
+            <h1><%= link_to site_name, root_url %></h1>
+          </li>
+        </ul>
 
-    <section class="top-bar-section">
-      <!-- Right Nav Section -->
-      <ul class="right">
-        <% if logged_in? %>
-            <li><%= link_to "Logged in as #{current_user} | See Profile", profile_path(current_user.id) %></li>
-            <li><%= link_to "Logout", login_path, :method => :delete %></li>
-        <% else %>
-            <li><%= link_to "Login", new_login_path %></li>
-        <% end %>
-      </ul>
+        <section class="top-bar-section">
+          <!-- Right Nav Section -->
+          <ul class="right">
+            <% if logged_in? %>
+                <li><%= link_to "Logged in as #{current_user} | See Profile", profile_path(current_user.id) %></li>
+                <li><%= link_to "Logout", login_path, :method => :delete %></li>
+            <% else %>
+                <li><%= link_to "Login", new_login_path %></li>
+            <% end %>
+          </ul>
 
-      <!-- Left Nav Section -->
-      <ul class="left">
-      </ul>
-    </section>
-  </nav>
-  <%= display_alert(:notice) %>
-  <%= display_alert(:error) %>
+          <!-- Left Nav Section -->
+          <ul class="left">
+          </ul>
+        </section>
+
+      </nav>
+    <%= display_alert(:notice) %>
+    <%= display_alert(:error) %>
+
+  </div>
+  <div style="height: 10px"></div>
   <%= yield %>
   <%= javascript_include_tag "application" %>
   </body>

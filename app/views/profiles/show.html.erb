@@ -1,78 +1,41 @@
-
 <div class="row">
   <div class="small-3 columns">
 
-    <p>
-      <%=@profile.user.name %>
-    </p>
+		<%= render 'profile_box' %>
 
-    <p>
-      <%= @profile.user.to_s %>
-    </p>
-
-
-    <p>
-        <% if current_user? @profile.user %>
-            <%= link_to 'Edit Profile', edit_profile_path(@profile) %>
-        <% else %>
-            <%= "[Follow/Unfollow]" %>
-        <% end %>
-    </p>
-
-    <p>
-      <strong>Bio:</strong>
-      <%= @profile.bio %>
-    </p>
-
-    <p>
-      <strong>Location:</strong>
-      <%= @profile.location %>
-    </p>
-
-    <p>
-      <strong>Website:</strong>
-      <%= @profile.website %>
-    </p>
-
-
-    <section>
-      <%= render 'shared/stats' %>
-    </section>
-    <section>
-      <%= render 'shared/follow_form' if logged_in? %>
-    </section>
-
-
-    <%= link_to 'All Profiles', profiles_path %> |
-    <%= link_to "New Post", new_post_path %>
+	  <% if current_user? displayed_user %>
+	    <div class="posts-small-form">
+	      <%= new %>
+	      <%= render 'posts/form' %>
+	    </div>
+		<% end %>
 
   </div>
   <div class="small-6 columns" %>
 
-      <% @profile.user.posts.reverse_order.each do |post| %>
-          <tr>
-            <div class="post">
-                <p>
-                    <%= post %> | <%= time_ago_in_words(post.created_at) %>
-
-                    <% if current_user? post.user %>
-                      | <%= link_to 'delete', post, method: :delete, data: { confirm: 'Are you sure?' } %>
-                    <% end %>
-                </p>
-            </div>
-          </tr>
-      <% end %>
+			<%= render 'posts/print_post', :posts => @profile.user.posts %>
 
   </div>
   <div class="small-3 columns">
     <div class="row">
       <div class="small-12 columns">
-        <p>Random people they follow</p>
+	      <div class="panel">
+          <%= link_to 'All Profiles', profiles_path %>
+		    </div>
       </div>
     </div>
     <div class="row">
       <div class="small-12 columns">
-        <p>Random people that follow them</p>
+        <div class="panel">
+          <p>Random people they follow</p>
+	      </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="small-12 columns">
+        <div class="panel">
+          <p>Random people that follow them</p>
+        </div>
       </div>
     </div>
   </div>

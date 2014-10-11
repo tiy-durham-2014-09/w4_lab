@@ -81,7 +81,7 @@ $include-html-global-classes: $include-html-classes;
 
 // $row-width: rem-calc(1000);
 // $total-columns: 12;
-// $column-gutter: rem-calc(30);
+$column-gutter: rem-calc(30);
 
 // c. Global
 // - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -96,35 +96,35 @@ $include-html-global-classes: $include-html-classes;
 // $font-weight-bold: bold !default;
 
 // We use these as default colors throughout
-// $primary-color: #008CBA;
+$primary-color: #008CBA;
 // $secondary-color: #e7e7e7;
-// $alert-color: #f04124;
+$alert-color: #92D5DE;
 // $success-color: #43AC6A;
 // $warning-color: #f08a24;
 // $info-color: #a0d3e8;
 
-// $white       : #FFFFFF;
-// $ghost       : #FAFAFA;
-// $snow        : #F9F9F9;
-// $vapor       : #F6F6F6;
-// $white-smoke : #F5F5F5;
-// $silver      : #EFEFEF;
-// $smoke       : #EEEEEE;
-// $gainsboro   : #DDDDDD;
-// $iron        : #CCCCCC;
-// $base        : #AAAAAA;
-// $aluminum    : #999999;
-// $jumbo       : #888888;
-// $monsoon     : #777777;
-// $steel       : #666666;
-// $charcoal    : #555555;
-// $tuatara     : #444444;
-// $oil         : #333333;
-// $jet         : #222222;
-// $black       : #000000;
+$white       : #FFFFFF;
+$ghost       : #FAFAFA;
+$snow        : #F9F9F9;
+$vapor       : #F6F6F6;
+$white-smoke : #F5F5F5;
+$silver      : #EFEFEF;
+$smoke       : #EEEEEE;
+$gainsboro   : #DDDDDD;
+$iron        : #CCCCCC;
+$base        : #AAAAAA;
+$aluminum    : #999999;
+$jumbo       : #888888;
+$monsoon     : #777777;
+$steel       : #666666;
+$charcoal    : #555555;
+$tuatara     : #444444;
+$oil         : #333333;
+$jet         : #222222;
+$black       : #000000;
 
 // We use these to control various global styles
-// $body-bg: $white;
+$body-bg: $silver;
 // $body-font-color: $jet;
 // $body-font-family: $font-family-sans-serif;
 // $body-font-weight: $font-weight-normal;
@@ -346,7 +346,7 @@ $h3-font-size: rem-calc(27);
 // $alert-font-color-alt: scale-color($secondary-color, $lightness: -66%);
 
 // We use this for close hover effect.
-// $alert-function-factor: -14%;
+//$alert-function-factor: -14%;
 
 // We use these to control border styles.
 // $alert-border-style: solid;
@@ -367,8 +367,8 @@ $h3-font-size: rem-calc(27);
 // $alert-radius: $global-radius;
 
 // We use this to control transition effects
-// $alert-transition-speed: 300ms;
-// $alert-transition-ease: ease-out;
+//$alert-transition-speed: 300ms;
+//$alert-transition-ease: ease-out;
 
 // 03. Block Grid
 // - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -951,7 +951,7 @@ $button-sml: rem-calc(11);
 // $include-html-panel-classes: $include-html-classes;
 
 // We use these to control the background and border styles
-// $panel-bg: scale-color($white, $lightness: -5%);
+$panel-bg: rgba(255,255,255,.9);
 // $panel-border-style: solid;
 // $panel-border-size: 1px;
 
@@ -960,8 +960,8 @@ $button-sml: rem-calc(11);
 // $panel-border-color: scale-color($panel-bg, $lightness: $panel-function-factor);
 
 // We use these to set default inner padding and bottom margin
-// $panel-margin-bottom: rem-calc(20);
-// $panel-padding: rem-calc(20);
+$panel-margin-bottom: 0;
+$panel-padding: rem-calc(5);
 
 // We use these to set default font colors
 // $panel-font-color: $oil;
@@ -1361,12 +1361,12 @@ $button-sml: rem-calc(11);
 // $include-html-top-bar-classes: $include-html-classes;
 
 // Background color for the top bar
-$topbar-bg-color: #CC6666;
-// $topbar-bg: $topbar-bg-color;
+$topbar-bg-color: #A3CFC7;
+$topbar-bg: $topbar-bg-color;
 
 // Height and margin
-// $topbar-height: 45px;
-// $topbar-margin-bottom: 0;
+$topbar-height: 35px;
+//$topbar-margin-bottom: 15px;
 
 // Controlling the styles for the title in the top bar
 // $topbar-title-weight: $font-weight-normal;
@@ -1425,11 +1425,11 @@ $topbar-bg-color: #CC6666;
 // $topbar-media-query: $medium-up;
 
 // Divider Styles
-// $topbar-divider-border-bottom: solid 1px  scale-color($topbar-bg-color, $lightness: 13%);
+// $topbar-divider-border-bottom: solid 1px scale-color($topbar-bg-color, $lightness: -50%);
 // $topbar-divider-border-top: solid 1px scale-color($topbar-bg-color, $lightness: -50%);
 
 // Sticky Class
-// $topbar-sticky-class: ".sticky";
+//$topbar-sticky-class: ".sticky";
 // $topbar-arrows: true; //Set false to remove the triangle icon from the menu item
 
 // 36. Visibility Classes
@@ -1443,3 +1443,6 @@ $topbar-bg-color: #CC6666;
 
 
 @import 'foundation';
+
+// Import custom styles
+@import "custom";

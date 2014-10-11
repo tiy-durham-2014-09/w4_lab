@@ -1,5 +1,9 @@
 module ProfilesHelper
   def displayed_user
-    @profile.user
+    if @profile
+      @profile.user
+    else
+      current_user
+    end
   end
 end

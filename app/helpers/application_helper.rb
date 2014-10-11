@@ -6,4 +6,9 @@ module ApplicationHelper
 			end
 		end
   end
+
+  def correct_link(url)
+    @url = url
+    @url = "http://" + url if !/^http/.match(url)
+  end
 end

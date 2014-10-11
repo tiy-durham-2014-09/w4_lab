@@ -1,0 +1,78 @@
+$trade_color: #A3CFC7;
+$trade_color_light: #E6F2F0;
+
+
+.profile-info {
+  h1 {
+    font-size: 18px;
+  }
+
+  h2 {
+    font-size: 16px;
+  }
+
+  h3 {
+    font-size: 14px;
+    margin-bottom: 3px;
+  }
+
+  p {
+    margin: 15px 0 15px 0;
+    font-size: 14px;
+  }
+
+  a {
+    font-size: 14px;
+  }
+}
+
+.custom-button {
+  background-color: #EEEEEE;
+  border: 1px solid #DDDDDD;
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 1px;
+  margin: 2px;
+  padding: 2px;
+  text-transform: uppercase;
+
+  a {
+    color: #999999;
+  }
+}
+
+.custom-button:hover {
+  background-color: $trade_color;
+
+  a {
+    color: white;
+  }
+}
+
+.profile-button {
+  @extend .custom-button;
+
+  position: relative; left: -2px;
+}
+
+.posts {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.posts-button {
+  @extend .custom-button;
+
+  float: right;
+}
+
+.posts-small-form {
+  background-color: $trade_color_light;
+  border: 1px solid $trade_color;
+  padding: 5px;
+
+  field {
+    margin: 0;
+    padding: 0;
+  }
+}
