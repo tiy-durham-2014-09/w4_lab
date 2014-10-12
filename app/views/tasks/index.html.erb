@@ -1,7 +1,7 @@
 
 <p id="notice"><%= notice %></p>
 
-<h1><%= @list ? @list.title : "All Tasks" %></h1>
+<h1 class="page_title"><%= @list ? @list.title : "All Tasks" %></h1>
 
 <table>
   <% @tasks.each do |task| %>
@@ -23,8 +23,15 @@
   <% end %>
 </table>
 <br>
+
 <% if @list %>
-  <%= link_to 'Add New Task', new_list_task_path(@list.id)%>
+  <%= link_to new_list_task_path(@list.id) do %>
+        <div class="element_center">
+          <div class="large-6">
+            <%= button_tag "Add New Task", :class => "small radius" %>
+          </div>
+        </div>
+  <% end %>
 <% else %>
   <h1>Completed Tasks</h1>
   <table>
@@ -38,5 +45,5 @@
   </table>
 <% end %>
 <br>
-<%= link_to 'Back To Lists', lists_path %>
+<%#<%= link_to 'Back To Lists', lists_path %>
 

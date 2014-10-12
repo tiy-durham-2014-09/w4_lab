@@ -5,5 +5,7 @@
   <%= @list.title %>
 </p>
 
-<%= link_to 'Edit', edit_list_path(@list) %> |
-<%= link_to 'Back', lists_path %>
+<div class="footer">
+    <%= link_to 'Edit List Title', edit_list_path(@list) %> |
+    <%= link_to 'Back to Lists', lists_path %>
+</div>
