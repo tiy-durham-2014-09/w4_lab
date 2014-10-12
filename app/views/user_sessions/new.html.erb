@@ -1,12 +1,19 @@
-<h1>Log In</h1>
+<h1 class="page_title">Log In</h1>
 <%= form_tag user_sessions_path do %>
-  <%= label_tag :email, "Email Address" %>
-  <%= text_field_tag :email, params[:email] %>
-
-  <br>
-  <%= label_tag :password, "Password" %>
-  <%= password_field_tag :password %>
-  <br>
-
-  <%= submit_tag "Log In" %>
+  <div class="element_center">
+    <div class="large-12 columns">
+      <%= label_tag :email, "Email Address" %>
+      <%= text_field_tag :email, params[:email] %>
+    </div>
+    <br>
+    <div class="large-12 columns">
+      <%= label_tag :password, "Password" %>
+      <%= password_field_tag :password %>
+    </div>
+    <br>
+    <div class="large-8 columns">
+      <%= button_tag "Log In", :class => "small radius" %>
+    </div>
+  <!--<#= submit_tag "Log In" %>-->
+  </div>
 <% end %>

@@ -1,7 +1,7 @@
 
 <p id="notice"><%= notice %></p>
 
-<h1><%= @list ? @list.title : "All Tasks" %></h1>
+<h1 class="page_title"><%= @list ? @list.title : "All Tasks" %></h1>
 
 <table>
   <% @tasks.each do |task| %>
@@ -20,7 +20,3 @@
   <% end %>
 </table>
 <br>
-<%= if @list then link_to 'Add New Task', new_list_task_path(@list) end %>
-<br>
-<%= link_to 'Back To Lists', lists_path %>
-
