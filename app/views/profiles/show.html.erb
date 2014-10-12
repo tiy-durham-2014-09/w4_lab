@@ -10,7 +10,6 @@
       <%= @profile.user.to_s %>
     </p>
 
-
     <p>
         <% if current_user? @profile.user %>
             <%= link_to 'Edit Profile', edit_profile_path(@profile) %>
@@ -40,7 +39,6 @@
     </section>
     <section>
       <%= render 'shared/follow_form'%>
-      <p>hello</p>
     </section>
 
 

@@ -1,4 +1,9 @@
 class User < ActiveRecord::Base
+	include Gravtastic
+		is_gravtastic :default => "identicons",
+		              :size => 120
+
+
   has_many :posts, dependent: :destroy
   has_one :profile, dependent: :destroy
 
@@ -16,6 +21,8 @@ class User < ActiveRecord::Base
 
   has_secure_password
 
+
+
 	def to_s
 		"@" + handle
   end
@@ -31,6 +38,8 @@ class User < ActiveRecord::Base
   def unfollow!(other_user)
 	  relationships.find_by(followed_id: other_user.id).destroy
   end
+
+
 
   def paginate(options)
 	  # code here
