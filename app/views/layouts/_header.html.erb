@@ -15,10 +15,12 @@
     <!-- Right Nav Section -->
     <ul class="right">
       <% if logged_in? %>
-        <li><a href="/accounts"><%= current_user.name %>'s Account</a></li>
-        <li><%= link_to "Logout", "/login", :method => :delete %></li>
-      <% else %>
-        <li><%= link_to "Login", new_login_path %></li>
+      <li class="has-dropdown">
+        <a href="/"><%= current_user.name %>'s Account</a>
+        <ul class="dropdown">
+            <li><%= link_to "Logout", "/login", :method => :delete %></li>
+        </ul>
+      </li>
       <% end %>
     </ul>
 

@@ -29,10 +29,15 @@
   background-color: white;
   padding: 10px;
   border-radius: 7px;
+  text-size
 }
 
 #register {
   background-color: white;
   padding: 10px;
   border-radius: 7px;
+}
+
+#bottom-show {
+  margin-bottom: 50px;
 }

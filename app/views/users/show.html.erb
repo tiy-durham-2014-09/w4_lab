@@ -21,7 +21,7 @@
             <% end %>
             <% unless todo.complete %>
               <tr>
-                <td><a href="/todos/<%= todo.id %>/edit" id="<%= c %>"><%=	todo.item  %></a></td>
+                <td><%= link_to todo.item, edit_list_todo_path(list, todo) %></td>
                 <td id="<%= c %>"><%= todo.note  %></td>
                 <td id="<%= c %>"><%=	todo.date  %></td>
                 <td>
@@ -44,6 +44,6 @@
   </div>
 <% end %>
 
-<div class="small-3 small-centered columns">
+<div class="small-3 small-centered columns" id="bottom-show">
   <a href="/lists/new" class="button large radius round">Add List</a>
 </div>
