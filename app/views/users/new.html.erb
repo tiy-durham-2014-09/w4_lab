@@ -1,5 +1,4 @@
-<h1>New user</h1>
-
+<p id="notice"><%= notice %></p>
 
 <%= form_for(@user) do |f| %>
   <% if @user.errors.any? %>
@@ -14,23 +13,41 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
+<div class="row">
+  <div class="medium-6 small-centered columns">
+    <div class="signup-panel">
+      <p class="welcome"> Welcome to Did!</p>
+      <form>
+        <div class="row collapse">
+          <div class="small-2  columns">
+            <span class="prefix"><i class="fi-torso-female"></i></span>
+          </div>
+          <div class="small-10  columns">
+            <%= f.text_field :name, placeholder: "username" %>
+          </div>
+        </div>
+        <div class="row collapse">
+          <div class="small-2 columns">
+            <span class="prefix"><i class="fi-mail"></i></span>
+          </div>
+          <div class="small-10  columns">
+            <%= f.text_field :email, placeholder: "email"%>
+          </div>
+        </div>
+        <div class="row collapse">
+          <div class="small-2 columns ">
+            <span class="prefix"><i class="fi-lock"></i></span>
+          </div>
+          <div class="small-10 columns ">
+            <%= f.password_field :password, placeholder: "password"%>
+          </div>
+        </div>
+      </form>
+      <div class="medium-4 small-centered columns">
+        <%= f.submit "Sign up!", class: "button" %>
+      </div>
+      <p><%= link_to 'Already have an account?', new_login_path %></p>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :email %><br>
-    <%= f.text_field :email %>
-  </div>
-  <div class="field">
-    <%= f.label :password %><br>
-    <%= f.password_field :password %>
-  </div>
-
-
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+</div>
 <% end %>
-
-<p><%= link_to 'Already have an account?', new_login_path %></p>

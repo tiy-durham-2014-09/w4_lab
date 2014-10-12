@@ -1,11 +1,33 @@
 <p id="notice"><%= notice %></p>
 
 <%= form_tag login_path, :method => :post do %>
-  <%= label_tag :email %>
-  <%= text_field_tag :email %>
-  <%= label_tag :password %>
-  <%= password_field_tag :password %>
-  <%= button_tag "Login" %>
+  <div class="row">
+    <div class="medium-6 small-centered columns">
+      <div class="signup-panel">
+        <p class="welcome"> Log in to Did</p>
+        <form>
+          <div class="row collapse">
+            <div class="small-3 columns">
+              <span class="prefix">email</i></span>
+            </div>
+            <div class="small-9  columns">
+              <%= text_field_tag :email %>
+            </div>
+          </div>
+          <div class="row collapse">
+            <div class="small-3 columns ">
+              <span class="prefix">password</span>
+            </div>
+            <div class="small-9 columns ">
+              <%= password_field_tag :password%>
+            </div>
+          </div>
+        </form>
+        <div class="medium-4 small-centered columns">
+          <%= button_tag "Log in", class: "button" %>
+        </div>
+        <p><%= link_to 'Sign up!', new_user_path %></p>
+      </div>
+    </div>
+  </div>
 <% end %>
-
-<%= link_to 'Sign up!', new_user_path %>
