@@ -1,0 +1,22 @@
+<h1 class="page_title">Log In</h1>
+<%= form_tag user_sessions_path do %>
+  <div class="element_center">
+    <div class="large-12 columns">
+      <%= label_tag :email, "Email Address" %>
+      <%= text_field_tag :email, params[:email] %>
+    </div>
+    <br>
+    <div class="large-12 columns">
+      <%= label_tag :password, "Password" %>
+      <%= password_field_tag :password %>
+    </div>
+    <br>
+  </div>
+  <div class="element_center">
+    <div class="large-8 columns">
+      <%= button_tag "Log In", :class => "small radius" %>
+    </div>
+  </div>
+  <!--<#= submit_tag "Log In" %>-->
+
+<% end %>

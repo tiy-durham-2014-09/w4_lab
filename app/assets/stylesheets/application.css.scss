@@ -16,66 +16,65 @@
 
  */
 
-/*color ideers:
-
-#4b4c46 (black - text on white bottom nav?)
-#F56906 (orange background)
-#fefff8 (off-white text for orange background part; and background color for footer)
-
-fonts:
-"PTSansRegular-custom","Helvetica Neue",Helvetica,Arial,sans-serif;
-
-
-text-shadow: 1px 1px 1px #c06960,
-1px 1px 1px #000;
-*/
-
 body {
   background-color: #d55f05;
   font-family: Helvetica Neue;
+  font-size: 15px;
 }
 
-.page_title {
+.app_title {
   font-size: 55px;
   font-color: #fefff8;
   text-align: center;
   color: #fefff8;
-  text-shadow: 1px 1px 1px #c06960,
+  text-shadow: 1px 1px 1px #000000,
   1px 1px 1px #000;
 
 }
 
+.page_title {
+  font-size: 34px;
+  font-color: #fefff8;
+  text-align: center;
+  color: #fefff8;
+  text-shadow: 1px 1px 1px #000000,
+  1px 1px 1px #000;
+}
+
 h1 {
   font-family: Helvetica Neue;
-  text-align: center;
   font-color: #fefff8;
 }
 
-table, td, th {
+table, td {
   border: 0px;
   background-color: #fbd2af;
   font-family: Helvetica Neue;
-  text-align: center;
   color: #93b1c6;
-  margin-left:auto;
-  margin-right:auto;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+th {
+  background-color: #f9a160;
+  font-size: 17px;
+  border: 0px;
+}
+
+.element_center {
+  width: 500px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .text_center {
   text-align: center;
 }
 
-th {
-  background-color: #f9a160;
-  text-align: right;
-  font-size: 17px;
-  border: 0px;
-}
-
-td {
-  text-align: right;
-}
-
-.footer {
+.nav {
+  height: 18px;
+  background-color: #fbd2af;
   text-align: center;
+  margin-bottom: 20px;
 }
+
