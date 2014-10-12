@@ -1361,7 +1361,7 @@ $panel-padding: rem-calc(5);
 // $include-html-top-bar-classes: $include-html-classes;
 
 // Background color for the top bar
-$topbar-bg-color: #A3CFC7;
+$topbar-bg-color: #88B5AD;
 $topbar-bg: $topbar-bg-color;
 
 // Height and margin
@@ -1373,13 +1373,13 @@ $topbar-height: 35px;
 // $topbar-title-font-size: rem-calc(17);
 
 // Style the top bar dropdown elements
-// $topbar-dropdown-bg: $oil;
-// $topbar-dropdown-link-color: $white;
-// $topbar-dropdown-link-bg: $oil;
-// $topbar-dropdown-link-weight: $font-weight-normal;
-// $topbar-dropdown-toggle-size: 5px;
-// $topbar-dropdown-toggle-color: $white;
-// $topbar-dropdown-toggle-alpha: 0.4;
+//$topbar-dropdown-bg: #cccccc;
+//$topbar-dropdown-link-color: $white;
+//$topbar-dropdown-link-bg: $oil;
+////$topbar-dropdown-link-weight: $font-weight-normal;
+//$topbar-dropdown-toggle-size: 5px;
+//$topbar-dropdown-toggle-color: $white;
+//$topbar-dropdown-toggle-alpha: 0.4;
 
 // Set the link colors and styles for top-level nav
 // $topbar-link-color: $white;
@@ -1403,11 +1403,11 @@ $topbar-height: 35px;
 // $topbar-button-font-size: 0.75rem;
 // $topbar-button-top: 7px;
 
-// $topbar-dropdown-label-color: $monsoon;
-// $topbar-dropdown-label-text-transform: uppercase;
-// $topbar-dropdown-label-font-weight: $font-weight-bold;
-// $topbar-dropdown-label-font-size: rem-calc(10);
-// $topbar-dropdown-label-bg: $oil;
+$topbar-dropdown-label-color: $monsoon;
+$topbar-dropdown-label-text-transform: uppercase;
+//$topbar-dropdown-label-font-weight: $font-weight-bold;
+$topbar-dropdown-label-font-size: rem-calc(10);
+$topbar-dropdown-label-bg: white;
 
 // Top menu icon styles
 // $topbar-menu-link-transform: uppercase;

@@ -3,12 +3,26 @@
 
 		<%= render 'profile_box' %>
 
+
 	  <% if current_user? displayed_user %>
 	    <div class="posts-small-form">
 	      <%= new %>
 	      <%= render 'posts/form' %>
 	    </div>
 		<% end %>
+
+    <section>
+      <%= render 'shared/stats' %>
+    </section>
+    <section>
+      <%= render 'shared/follow_form'%>
+
+    </section>
+
+
+    <%= link_to 'All Profiles', profiles_path %> |
+    <%= link_to "New Post", new_post_path %>
+
 
   </div>
   <div class="small-6 columns" %>
@@ -40,6 +54,3 @@
     </div>
   </div>
 </div>
-
-
-
