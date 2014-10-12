@@ -4,7 +4,7 @@ class TasksController < ApplicationController
 
 
   def index
-    @list = List.find_by_id(params[:list_id])
+    @list = current_user.lists.find_by_id(params[:list_id])
     @tasks = (@list ? @list.tasks : Task.all)
   end
 
@@ -13,7 +13,7 @@ class TasksController < ApplicationController
 
 
   def new
-    @list = List.find(params[:list_id])
+    @list = current_user.lists.find(params[:list_id])
     @task = @list.tasks
   end
 
@@ -26,7 +26,7 @@ class TasksController < ApplicationController
 
   # POST /tasks
   def create
-    @list = List.find(params[:list_id])
+    @list = current_user.lists.find(params[:list_id])
     @task = @list.tasks.create(task_params)
     redirect_to list_tasks_url, notice: 'Task was successfully created.'
   end
@@ -53,11 +53,15 @@ class TasksController < ApplicationController
   private
   # Use callbacks to share common setup or constraints between actions.
   def set_task
-    @task = Task.find(params[:id])
+    @task = current_user.lists.find(params[:id])
+  end
+
+  def find_list
+    @list = current_user.lists.find(params[:list_id])
   end
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def task_params
-    params.require(:task).permit(:title, :list_id, :description, :due_date, :complete?, :overdue?)
+    params.require(:task).permit(:title, :description, :due_date, :complete?)
   end
 end
