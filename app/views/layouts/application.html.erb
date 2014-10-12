@@ -13,7 +13,7 @@
         <ul class="right">
           <% if logged_in? %>
             <li><%= link_to "Logged in as #{current_user}", "#" %></li>
-            <li><%= link_to "Logout", login_path, :method => :delete %></li>
+            <li><%= link_to "Logout", logins_path, :method => :delete %></li>
           <% else %>
             <li> <%= link_to "Login", new_logins_path %></li>
             <li> <%= link_to "Sign Up", new_user_path %></li>
