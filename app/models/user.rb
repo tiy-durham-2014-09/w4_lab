@@ -40,4 +40,8 @@ class User < ActiveRecord::Base
 	  # code here
   end
 
+	def feed
+		Post.from_users_followed_by(self)
+	end
+
 end
