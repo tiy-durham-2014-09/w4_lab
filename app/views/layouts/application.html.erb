@@ -12,9 +12,8 @@
   </head>
 
   <body>
-<ul>
-  <li> <%= link_to "Sign Up", new_user_path %> </li>
-</ul>
+<%= link_to "Sign Up", new_user_path %>
+<h1 class="app_title">Do All The Things!</h1>
     <%= yield %>
     <%= javascript_include_tag "application" %>
   </body>

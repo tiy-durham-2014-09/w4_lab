@@ -1,13 +1,14 @@
 <p id="notice"><%= notice %></p>
 
-<h1 class="page_title">Do All The Things</h1>
+<!--PLEASE NOTE QUIRK: when you click on delete list you are prompted with 'Are you sure?' message as many times as there are lists listed. So, if you go to delete a list and there are three lists total in the table, you'll be asked 3 times if you want to delete the intended list.-->
 
-<br>
+<h1 class="page_title">Lists</h1>
+
 <table>
   <thead>
     <tr>
       <th>List Title</th>
-      <th colspan="3"></th>
+      <th colspan="3">List Options</th>
     </tr>
   </thead>
 
@@ -23,13 +24,9 @@
   </tbody>
 </table>
 
-
-<br>
-
-<div class="text_center">
-<%= link_to 'Create New List', new_list_path %>
-<br>
-<%= link_to 'Show All Tasks', tasks_index_path %>
+<div class="footer">
+   <%= link_to 'Create New List', new_list_path %> |
+   <%= link_to 'Show All Tasks', tasks_index_path %>
 </div>
 
 

@@ -10,19 +10,22 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="row">
-    <div class="large-8 columns">
-      <label>Title<br>
-        <%= f.text_field :title %>
-      </label>
+  <div class="element_center">
+    <div class="row">
+      <div class="large-8 columns">
+        <label>Title<br>
+          <%= f.text_field :title %>
+        </label>
+      </div>
     </div>
   </div>
 
-
-  <div class="large-8 columns">
-    <%= button_tag "Submit", :class => "small radius" %>
+  <div class="element_center">
+    <div class="large-4 columns">
+      <%= button_tag "Submit", :class => "small radius" %>
+    </div>
   </div>
+
 <% end %>
 
 
