@@ -3,6 +3,7 @@
 	  <h1><%= link_to displayed_user.name, profile_path(displayed_user) %></h2>
 	  <h2><%= link_to displayed_user, profile_path(displayed_user) %></h2>
 
+      <%= image_tag displayed_user.gravatar_url %>
 
 	  <p><%= displayed_user.profile.bio %></p>
 

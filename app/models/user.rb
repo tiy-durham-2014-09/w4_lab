@@ -1,4 +1,8 @@
 class User < ActiveRecord::Base
+	include Gravtastic
+		gravtastic :default => 'identicon',
+		           :size => 120
+
   has_many :posts, dependent: :destroy
   has_one :profile, dependent: :destroy
 
