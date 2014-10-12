@@ -16,15 +16,9 @@
             <% if todo.complete %>
               <tr>
                 <td><a href="/todos/<%= todo.id %>/edit"><%= todo.item %></a></td>
-                <td><%= todo.note  %></td>
-                <td><%=	todo.date  %></td>
-                <td>
-                  <%= form_for todo do |f| %>
-                    <%= f.hidden_field :complete, :value => true %>
-                    <%= button_tag "Delete", :class => "button tiny", :method => :delete%>
-                    <% end %>
-                  </form>
-                </td>
+                <td><%= todo.note %></td>
+                <td><%=	todo.date %></td>
+                <td><%= link_to "Delete", todo_path(todo), method: :delete, class: "button tiny" %></td>
               </tr>
             <% end %>
         <% end %>
