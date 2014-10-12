@@ -1,9 +1,9 @@
-
-
-      <% user = displayed_user %>
-      <% if current_user.following?(user) %>
-          <%= render 'shared/unfollow', :user => user %>
-      <% else %>
-          <%= render 'shared/follow', :user => user %>
-      <% end %>
+<% user = displayed_user %>
+<div id="follow_form">
+  <% if current_user.following?(user) %>
+      <%= render 'shared/unfollow', :user => user %>
+  <% else %>
+      <%= render 'shared/follow', :user => user %>
+  <% end %>
+</div>
 
