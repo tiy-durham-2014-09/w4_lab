@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141011142414) do
+ActiveRecord::Schema.define(version: 20141011231636) do
 
   create_table "comments", force: true do |t|
     t.string   "commenter"
@@ -41,8 +41,10 @@ ActiveRecord::Schema.define(version: 20141011142414) do
     t.datetime "updated_at"
     t.string   "password_digest"
     t.string   "remember_token"
+    t.integer  "post_id"
   end
 
+  add_index "users", ["post_id"], name: "index_users_on_post_id"
   add_index "users", ["remember_token"], name: "index_users_on_remember_token"
 
 end

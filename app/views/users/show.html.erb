@@ -11,9 +11,7 @@
 </p>
 
 <h3>Posts by <%= @user.name %></h3>
+<%=render @user.posts %>
 
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Users', users_path %> |
-<%= link_to 'Posts', posts_path %>
 <!-- <%= link_to 'Back', users_path %> -->
