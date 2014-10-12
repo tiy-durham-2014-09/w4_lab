@@ -3,13 +3,6 @@
 	  <h1><%= link_to displayed_user.name, profile_path(displayed_user) %></h2>
 	  <h2><%= link_to displayed_user, profile_path(displayed_user) %></h2>
 
-		<span class="profile-button">
-		  <% if current_user? displayed_user %>
-		    <%= link_to 'Edit Profile', edit_profile_path(current_user) %>
-		  <% else %>
-		    <%= "[Follow/Unfollow]" %>
-		  <% end %>
-		</span>
 
 	  <p><%= displayed_user.profile.bio %></p>
 
@@ -20,9 +13,19 @@
 		<section>
 		  <%= render 'shared/stats' %>
 		</section>
-		<section>
-		  <%= render 'shared/follow_form' if logged_in? %>
-		</section>
+
 	</div>
+
+</div>
+
+<div class="profile-option">
+
+	<% if current_user? displayed_user %>
+		<div class="profile-button">
+	    <%= link_to 'Edit Profile', edit_profile_path(displayed_user) %>
+		</div>
+	<% else %>
+	  <%= render 'shared/follow_form'%>
+	<% end %>
 
 </div>

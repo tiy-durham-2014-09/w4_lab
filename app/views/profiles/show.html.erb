@@ -11,23 +11,15 @@
 	    </div>
 		<% end %>
 
-    <section>
-      <%= render 'shared/stats' %>
-    </section>
-    <section>
-      <%= render 'shared/follow_form'%>
-
-    </section>
-
-
-    <%= link_to 'All Profiles', profiles_path %> |
-    <%= link_to "New Post", new_post_path %>
-
-
   </div>
   <div class="small-6 columns" %>
 
-			<%= render 'posts/print_post', :posts => @profile.user.posts %>
+	  <% if displayed_user.posts.count == 0 %>
+	    <div class="panel">
+	      <%= displayed_user %> has not posted yet!
+	    </div>
+	  <% end %>
+		<%= render 'posts/print_post', :posts => @profile.user.posts %>
 
   </div>
   <div class="small-3 columns">

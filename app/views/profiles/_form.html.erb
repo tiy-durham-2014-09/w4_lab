@@ -1,30 +1,33 @@
-<%= form_for(@profile) do |f| %>
-  <% if @profile.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@profile.errors.count, "error") %> prohibited this profile from being saved:</h2>
+<div class="small-8 small-centered columns">
 
-      <ul>
-      <% @profile.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+	<%= form_for(@profile) do |f| %>
+	  <% if @profile.errors.any? %>
+	    <div id="error_explanation">
+	      <h2><%= pluralize(@profile.errors.count, "error") %> prohibited this profile from being saved:</h2>
 
+	      <ul>
+	      <% @profile.errors.full_messages.each do |message| %>
+	        <li><%= message %></li>
+	      <% end %>
+	      </ul>
+	    </div>
+	  <% end %>
 
-  <div class="field">
-    <%= f.label :bio %><br>
-    <%= f.text_area :bio %>
-  </div>
-  <div class="field">
-    <%= f.label :location %><br>
-    <%= f.text_field :location %>
-  </div>
-  <div class="field">
-    <%= f.label :website %><br>
-    <%= f.text_field :website %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+	  <div class="field">
+	    <%= f.label :bio %>
+	    <%= f.text_area :bio %>
+	  </div>
+	  <div class="field">
+	    <%= f.label :location %>
+	    <%= f.text_field :location %>
+	  </div>
+	  <div class="field">
+	    <%= f.label :website %>
+	    <%= f.text_field :website %>
+	  </div>
+	  <div class="actions">
+	    <%= f.submit %>
+	  </div>
+	<% end %>
+
+</div>

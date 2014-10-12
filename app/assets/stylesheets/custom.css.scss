@@ -1,5 +1,6 @@
 $trade_color: #88B5AD;
 $trade_color_light: #E6F2F0;
+$trade_color_dark: #479E8E;
 
 
 .profile-info {
@@ -26,6 +27,46 @@ $trade_color_light: #E6F2F0;
   }
 }
 
+.profile-option {
+  background-color: $trade_color_light;
+  border: 1px solid #DDDDDD;
+  margin-top: 5px;
+  padding: 5px;
+  text-align: center;
+}
+
+.profile-button {
+  @extend .form-button;
+  width: 100%;
+
+  a {
+    color: #FFFFFF;
+  }
+
+  color: white;
+}
+
+.profile-button:hover {
+  background: $trade_color_dark;
+}
+
+.form-button {
+  background-color: $trade_color;
+  border: 1px solid #5EA699;
+  font-size: 13px;
+  letter-spacing: 1px;
+  padding: 4px;
+  margin-bottom: 0;
+}
+
+.form-button:hover {
+  background: $trade_color_dark;
+}
+
+h1.login {
+  font-size: 25px;
+}
+
 .custom-button {
   background-color: #EEEEEE;
   border: 1px solid #DDDDDD;
@@ -34,7 +75,6 @@ $trade_color_light: #E6F2F0;
   letter-spacing: 1px;
   margin: 2px;
   padding: 2px;
-  text-transform: uppercase;
 
   a {
     color: #999999;
@@ -49,11 +89,6 @@ $trade_color_light: #E6F2F0;
   }
 }
 
-.profile-button {
-  @extend .custom-button;
-
-  position: relative; left: -2px;
-}
 
 .posts {
   font-size: 16px;
@@ -67,12 +102,17 @@ $trade_color_light: #E6F2F0;
 }
 
 .posts-small-form {
-  background-color: $trade_color_light;
-  border: 1px solid $trade_color;
-  padding: 5px;
+  background-color: #FFFFFF;
+  border: 1px solid #CCCCCC;
+  margin-top: 5px;
+  padding: 10px;
+  text-align: right;
 
-  field {
-    margin: 0;
-    padding: 0;
+  label {
+    text-align: left;
   }
+}
+
+div.divider {
+  height: 15px;
 }

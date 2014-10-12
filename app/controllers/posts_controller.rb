@@ -30,8 +30,13 @@ class PostsController < ApplicationController
 
     respond_to do |format|
       if @post.save
-        format.html { redirect_to session[:previous_url], notice: 'Post was created.' }
-        format.json { render :show, status: :created, location: @post }
+        if request.original_url == new_post_url
+          format.html { redirect_to session[:previous_url], notice: 'Post was created.' }
+          format.json { render :show, status: :created, location: @post }
+        else
+          format.html { redirect_to :back }
+          format.json { render :show, status: :created, location: @post }
+        end
       else
         format.html { render :new }
         format.json { render json: @post.errors, status: :unprocessable_entity }
