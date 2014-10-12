@@ -1,4 +1,4 @@
-<h1>Listing todos</h1>
+<h1>My Todo List</h1>
 
 <table>
   <thead>
@@ -8,7 +8,7 @@
   </thead>
 
   <tbody>
-    <% @todos.each do |todo| %>
+    <% @todo.each do |todo| %>
       <tr>
         <td><%= link_to 'Show', todo %></td>
         <td><%= link_to 'Edit', edit_todo_path(todo) %></td>

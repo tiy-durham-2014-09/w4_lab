@@ -1,4 +1,16 @@
-<p id="notice"><%= notice %></p>
+<!-- <p id="notice"><%= notice %></p>
+<p>
+  <strong>My Todos </strong>
+</p>
 
+    <ul>
+    <% @todo.each do |todo| %>
+      <li>
+        <%= todo.title %>: <%= todo.due_date %>
+        <%= link_to "Edit", todo_path(todo)%>
+      </li>
+    <% end %>
+  </ul>
+</p>
 <%= link_to 'Edit', edit_todo_path(@todo) %> |
-<%= link_to 'Back', todos_path %>
+<%= link_to 'Back', todos_path %> -->
