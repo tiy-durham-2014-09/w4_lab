@@ -5,8 +5,6 @@
 <div class="row">
   <div class="small-2 columns"><h4>User</h4></div>
   <div class="small-2 columns"><h4>Bio</h4></div>
-  <div class="small-2 columns"><h4>Location</h4></div>
-  <div class="small-2 columns"><h4>Website</h4></div>
   <div class="small-4 columns"><h4>Last Post</h4></div>
 </div>
 
@@ -14,13 +12,17 @@
 	<div class="row">
       <div class="small-2 columns">
         <%= link_to profile.user, profile %>
-          <%= render 'shared/follow_form', :user => profile.user %>
-          <% @user = nil %>
+        <p><%= profile.location %></p>
+        <%= profile.website %>
+        <%= render 'shared/follow_form', :user => profile.user %>
+        <% @user = nil %>
       </div>
-      <div class="small-2 columns"><%= profile.bio %></div>
-      <div class="small-2 columns"><%= profile.location %></div>
-      <div class="small-2 columns"><%= profile.website %></div>
+      <div class="small-4 columns"><%= profile.bio %></div>
       <div class="small-4 columns"><%= profile.user.posts.last %></div>
     </div>
+    <p>
+    </p>
+    <p>
+    </p>
   </div>
 <% end %>
