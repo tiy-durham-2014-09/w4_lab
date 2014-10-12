@@ -1,4 +1,5 @@
 module ProfilesHelper
+
   def displayed_user
     if @profile
       @profile.user
@@ -6,4 +7,5 @@ module ProfilesHelper
       current_user
     end
   end
+
 end
