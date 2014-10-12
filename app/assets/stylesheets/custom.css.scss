@@ -50,6 +50,18 @@ $trade_color_dark: #479E8E;
   background: $trade_color_dark;
 }
 
+.profile-panel-left {
+  @extend .profile-info;
+  border: 1px solid black;
+  float: left;
+}
+
+.profile-panel-right {
+  @extend .profile-info;
+  border: 1px solid black;
+  float: right;
+}
+
 .form-button {
   background-color: $trade_color;
   border: 1px solid #5EA699;
