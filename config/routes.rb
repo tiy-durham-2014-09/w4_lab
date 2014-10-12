@@ -3,7 +3,9 @@ Rails.application.routes.draw do
 
   resources :lists do
     resources :todos
-    get :bucket
+    member do
+      get 'bucket'
+    end
   end
 
 

@@ -1,5 +1,4 @@
 <br>
-<% @user.lists.each do |list| %>
   <div class="row">
     <table class="large-12 columns">
       <thead>
@@ -7,26 +6,22 @@
           <th>Item</th>
           <th>Note</th>
           <th>Date</th>
-          <th>Complete?</th>
+          <th>Delete?</th>
         </tr>
       </thead>
       <tbody>
-      <h1 class="large-12 columns"><%= list %></h1>
-        <% list.todos.each do |todo| %>
-            <% if todo.date.past? %>
-              <% c = "overdue" %>
-            <% else %>
-              <% c = "ignore" %>
-            <% end %>
-            <% unless todo.complete %>
+      <h1 class="large-12 columns"><%= @list %></h1>
+        <% @list.todos.each do |todo| %>
+
+            <% if todo.complete %>
               <tr>
-                <td><a href="/todos/<%= todo.id %>/edit" id="<%= c %>"><%=	todo.item  %></a></td>
-                <td id="<%= c %>"><%= todo.note  %></td>
-                <td id="<%= c %>"><%=	todo.date  %></td>
+                <td><a href="/todos/<%= todo.id %>/edit"><%= todo.item %></a></td>
+                <td><%= todo.note  %></td>
+                <td><%=	todo.date  %></td>
                 <td>
                   <%= form_for todo do |f| %>
                     <%= f.hidden_field :complete, :value => true %>
-                    <%= button_tag "Mark Complete", :class => "button tiny" %>
+                    <%= button_tag "Delete", :class => "button tiny", :method => :delete%>
                     <% end %>
                   </form>
                 </td>
@@ -37,4 +32,3 @@
     </table>
     <br>
   </div>
-<% end %>

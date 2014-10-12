@@ -1,7 +1,7 @@
 class ListsController < ApplicationController
   before_action :authenticate
-  before_action :set_list, only: [:show, :edit, :update, :destroy]
-  before_action :ensure_users_list, only: [:show, :edit, :update, :destroy]
+  before_action :set_list, only: [:show, :edit, :update, :destroy, :bucket]
+  before_action :ensure_users_list, only: [:show, :edit, :update, :destroy, :bucket]
 
   # GET /lists
   # GET /lists.json
@@ -12,6 +12,8 @@ class ListsController < ApplicationController
   # GET /lists/1
   # GET /lists/1.json
   def show
+
+    @list = List.find(params[:list_id])
   end
 
   # GET /lists/new
@@ -66,7 +68,7 @@ class ListsController < ApplicationController
   def bucket
 
   end
-  
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_list
