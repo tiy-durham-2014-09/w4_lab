@@ -2,6 +2,15 @@ body {
   font-family: 'Open Sans', sans-serif;
   @include outer-container;
 
+  .showusertitle {
+    color: orange;
+    text-decoration: underline;
+  }
+
+  .showusercontent {
+    border-bottom: ridge;
+  }
+
   .commentborder {
     border-bottom: ridge;
   }
