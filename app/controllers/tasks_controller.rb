@@ -1,6 +1,8 @@
 class TasksController < ApplicationController
   before_action :set_task, only: [:show, :complete, :update, :destroy]
 
+
+
   def index
     @list = List.find_by_id(params[:list_id])
     @tasks = (@list ? @list.tasks : Task.all)
@@ -56,6 +58,6 @@ class TasksController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def task_params
-    params.require(:task).permit(:title, :description, :due_date, :complete?, :overdue?)
+    params.require(:task).permit(:title, :list_id, :description, :due_date, :complete?, :overdue?)
   end
 end
