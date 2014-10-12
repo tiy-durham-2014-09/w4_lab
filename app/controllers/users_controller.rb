@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :authenticate
+  before_action :authenticate, except: [:new, :create]
   before_action :set_user, only: [:show, :edit, :update, :destroy]
 
   # GET /users
@@ -23,6 +23,7 @@ class UsersController < ApplicationController
   # POST /users
   # POST /users.json
   def create
+    session[:current_user_id] = nil
     @user = User.new(user_params)
     if @user.save
       redirect_to @user, notice: 'User was successfully created.'

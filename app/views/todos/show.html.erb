@@ -2,7 +2,7 @@
 
 <p>
   <strong>List:</strong>
-  <%= @todo.list.name %>
+  <%= link_to @todo.list.name, list_path(@todo.list) %>
 </p>
 
 <p>
