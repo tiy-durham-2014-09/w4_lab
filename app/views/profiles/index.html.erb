@@ -11,14 +11,16 @@
 </div>
 
 <% @profiles.each do |profile| %>
-    <div class="row">
-        <div class="small-2 columns"><%= link_to profile.user, profile %></div>
-      <section>
-        <%= render 'shared/follow_form', :user => profile.user %>
-      </section>
-        <div class="small-2 columns"><%= profile.bio %></div>
-        <div class="small-2 columns"><%= profile.location %></div>
-        <div class="small-2 columns"><%= profile.website %></div>
-        <div class="small-4 columns"><%= profile.user.posts.last %></div>
+	<div class="row">
+      <div class="small-2 columns">
+        <%= link_to profile.user, profile %>
+          <%= render 'shared/follow_form', :user => profile.user %>
+          <% @user = nil %>
+      </div>
+      <div class="small-2 columns"><%= profile.bio %></div>
+      <div class="small-2 columns"><%= profile.location %></div>
+      <div class="small-2 columns"><%= profile.website %></div>
+      <div class="small-4 columns"><%= profile.user.posts.last %></div>
     </div>
+  </div>
 <% end %>
