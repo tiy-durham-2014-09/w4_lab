@@ -7,4 +7,6 @@ class Post < ActiveRecord::Base
     message
   end
 
+	
+
 end
