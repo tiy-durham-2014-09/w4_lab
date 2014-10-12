@@ -27,21 +27,17 @@
 
 </div> -->
 
-
-  #simple form version below, try after working form
-  <<div class="row"> -->
+  <!-- #simple form version below, try after working form -->
+<div class="row">
   <h1 class="large-12 columns">Sign up to get started</h1>
   <%= simple_form_for @user do |form| %>
     <div class="large-12 columns">
       <%= f.input :email, label:'Your EMail' %>
     </div>
-    <!-- <div class="large-6 columns">
-      <%= form.input :email label:'Your Email' %>
-    </div> -->
     <div class="large-6 columns">
-      <%= form.input :password_confirmation %> -->
+      <%= form.input :password_confirmation %> 
     </div>
   <div class="large-12 columns">
     <% form.button :submit, class: "radius small" %>
-  <% end %>  
+  <% end %>
 </div>

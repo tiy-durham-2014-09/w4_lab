@@ -3,6 +3,10 @@ class UsersController < ApplicationController
     @user = User.new
   end
 
+  def show
+    @user = User.find(params[:id])
+  end
+
   def create
     @user = User.new(params[:user])
     if @user.save
@@ -10,5 +14,12 @@ class UsersController < ApplicationController
     else
       render "new"
     end
-  end    
+  end
+
+private
+
+# Never trust parameters from the scary internet, only allow the white list through.
+  def user_params
+    params.require(:user).permit(:name, :email, :password,:password_confirmation)
+  end
 end

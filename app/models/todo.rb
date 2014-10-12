@@ -1,3 +1,3 @@
 class Todo < ActiveRecord::Base
-  has :user
+  belongs_to :user
 end
