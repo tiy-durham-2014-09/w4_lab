@@ -44,6 +44,12 @@ gem 'simple_form'
 
 gem 'will_paginate'
 
+gem 'gravtastic'
+
+gem 'identicon'
+
+
+
 group :development, :test do
   gem "better_errors"
   gem "binding_of_caller"
