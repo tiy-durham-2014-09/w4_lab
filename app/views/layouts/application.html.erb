@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <!-- <%= favicon_link_tag 'favicon.ico' %> -->
+  <%= favicon_link_tag 'favicon.ico' %>
 
   <title>Blogtober</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
@@ -9,39 +9,22 @@
 </head>
 <body>
   <ul class="breadcrumbs">
-  <li><%= link_to "Home", root_path, :class => "topbar_links"  %></li>
-  <% if logged_in? == nil %>
-  <li><%= link_to "Login", new_logins_path, :class => "topbar_links" %></li>
-  <li><%= link_to "Sign Up", new_user_path, :class => "topbar_links" %></li>
-  <% end %>
-  <li><%= link_to "Your Posts", posts_path, :class => "topbar_links" %></li>
-  <li><%= link_to "Create Post", new_post_path, :class => "topbar_links" %></li>
-  <% if logged_in? %>
-  <li><%= link_to "Logged in as #{current_user}", "#", {:class => "topbar_links"} %></li>
-  <li><%= link_to "Peace out", logins_path, :method => :delete, :class => "topbar_links" %></li>
-  <% end %>
-</ul>
-<!-- <section class="top-bar-section">
-        <!-- Right Nav Section -->
-        <!-- <ul class="right">
-          <% if logged_in? %>
-            <li><%= link_to "Logged in as #{current_user}", "#", {:class => "login_style"} %></li>
-            <li><%= link_to "Peace out", logins_path, :method => :delete %></li>
-          <% else %>
-            <li><%= link_to "Login", new_logins_path %></li>
-          <% end %>
-        </ul> -->
-
-        <!-- Left Nav Section -->
-        <!-- <ul class="left">
-        </ul>
-      </section> -->
-<!-- <li><%= link_to "Login", new_logins_path, :class => "topbar_links"  %></li> --> 
-
-    <%= display_alert(:notice) %>
-    <%= display_alert(:alert) %>
-    <%= yield %>
-    <%= javascript_include_tag "application" %>
+    <li><%= link_to "Home", root_path, :class => "topbar_links"  %></li>
+    <% if logged_in? == nil %>
+    <li><%= link_to "Login", new_logins_path, :class => "topbar_links" %></li>
+    <li><%= link_to "Sign Up", new_user_path, :class => "topbar_links" %></li>
+    <% end %>
+    <li><%= link_to "Create Post", new_post_path, :class => "topbar_links" %></li>
+    <% if logged_in? %>
+    <li><%= link_to "Logged in as #{current_user}", "#", {:class => "topbar_links"} %></li>
+    <li><%= link_to "Peace out", logins_path, :method => :delete, :class => "topbar_links" %></li>
+    <% end %>
+  </ul>
+  
+  <%= display_alert(:notice) %>
+  <%= display_alert(:alert) %>
+  <%= yield %>
+  <%= javascript_include_tag "application" %>
 
 </body>
 </html>
