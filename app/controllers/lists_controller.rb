@@ -26,7 +26,7 @@ class ListsController < ApplicationController
   def create
     @list = current_user.lists.new(list_params)
     if @list.save
-      redirect_to lists_path, notice: 'List was successfully created.'
+      redirect_to lists_path, notice: 'List was successfully created! We live in the future!'
     else
       render :new
     end
@@ -37,7 +37,7 @@ class ListsController < ApplicationController
   def update
     respond_to do |format|
       if @list.update(list_params)
-        format.html { redirect_to @list, notice: 'List was successfully updated.' }
+        format.html { redirect_to @list, notice: 'List was successfully updated! Is that not exciting?' }
         format.json { render :show, status: :ok, location: @list }
       else
         format.html { render :edit }
@@ -49,7 +49,7 @@ class ListsController < ApplicationController
   # DELETE /lists/1
   def destroy
     @list.destroy
-    redirect_to lists_url, notice: 'List was successfully deleted.'
+    redirect_to lists_url, notice: 'List was successfully deleted. Goodnight, sweet prince :('
   end
 
   private

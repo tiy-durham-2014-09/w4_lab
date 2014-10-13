@@ -22,11 +22,6 @@ ActiveRecord::Schema.define(version: 20141012212639) do
 
   add_index "lists", ["user_id"], name: "index_lists_on_user_id"
 
-  create_table "my_form_builders", force: true do |t|
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "tasks", force: true do |t|
     t.integer  "list_id"
     t.string   "title"
