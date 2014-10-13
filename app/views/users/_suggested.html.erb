@@ -1,4 +1,4 @@
-
+<% current_user %>
 <% followed_users = Relationship.where(follower_id:current_user.id).pluck(:followed_id) %>
 <% suggested_follows = User.where("id NOT IN (?)", followed_users).sample(5) %>
 <% suggested_follows.delete(current_user.id) %>
@@ -9,7 +9,7 @@
 
   <% if !suggested_follows.empty? %>
     <% suggested_follows.each do |user| %>
-      <%= link_to user, profile_path(user) %><br>
+      <%= image_tag user.gravatar_url(:size => 15) %> <%= link_to user, profile_path(user) %><br>
     <% end %>
   <% else %>
     No unfollowed users!
