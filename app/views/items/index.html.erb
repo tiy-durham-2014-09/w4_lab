@@ -1,0 +1,45 @@
+<h1><%= @list.title %></h1>
+
+<div class="row">
+  <div class="large-6 columns">
+    <h3>Edit/Add new tasks</h3>
+<table class="items">
+  <% @list.items.each do |item|%>
+      <tr id="<%= dom_id (item) %>">
+        <td><%= item.content %></td>
+        <td>
+          <% if item.completed? %>
+              <%= item.completed_by %>
+          <% else %>
+
+              <%= link_to "mark complete", complete_list_item_path(item), method: :patch %>
+
+          <% end %>
+        </td>
+
+        <td>
+          <%= link_to "edit", edit_list_item_path(item) %>
+          <%= link_to "delete", list_item_path(item), method: :delete %>
+        </td>
+      </tr>
+
+  <% end %>
+</table>
+
+
+
+<p>
+  <%= link_to "New Task", new_list_item_path %>
+</p>
+ </div>
+<div class="large-6 columns">
+  <h3>Unfinished tasks:</h3>
+  <% if @list.has_incomplete_items?%>
+      <ul>
+        <% @list.items.incomplete.each do |item|%>
+            <li><%= item.content %></li>
+        <% end %>
+      </ul>
+  <% end %>
+</div>
+</div>

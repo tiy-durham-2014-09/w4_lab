@@ -12,4 +12,16 @@
  *
  *= require_tree .
  *= require_self
+ *= require foundation_and_overrides
+
  */
+
+div.alert {
+    border: 2px solid black;
+    padding: 10px;
+}
+
+
+div.flash.success {border:2px solid green; color: green;}
+div.flash.failure {border:2px solid green; color: red;}
+div.flash.notice {border:2px solid green; color: blue;}
