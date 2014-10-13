@@ -35,11 +35,14 @@ end
 
 def make_relationships
 	users = User.all
-	user  = users.sample(30)
-	followed_users = users[2..50]
-	followers      = users[2..40]
-	followed_users.each { |followed| user.follow!(followed) }
-	followers.each      { |follower| follower.follow!(user) }
+
+  users.each do |user|
+    followed_users = users.sample(rand(15))
+    followed_users.each do |followed_user|
+      user.follow!(followed_user)
+    end
+  end
+
 end
 
 make_relationships

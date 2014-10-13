@@ -9,15 +9,15 @@
 
   <div class="row">
 
-			<div class="small-3 small-offset-2 columns">
+			<div class="small-2 small-offset-2 columns">
 				<div class="profile-info">
 			      <h2><%= link_to profile.user.name, profile %></h2>
-			      <h2><%= link_to profile.user, profile %></h2>
+			      <h3><%= link_to profile.user, profile %></h3>
 			      <%= image_tag profile.user.gravatar_url(:size => 70) %>
 
 				</div>
 			</div>
-			<div class="small-7 columns end">
+			<div class="small-8 columns end">
 				<div class="profile-info">
 				  <h3><strong>Location:</strong> <%= profile.location %></h3>
 		      <p class="profile"><strong>Bio:</strong> <%= profile.bio %><p>
