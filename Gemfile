@@ -34,7 +34,7 @@ gem 'faker'
 gem 'pry-rails'
 gem 'simple_form'
 gem 'foundation-rails', '~> 5.4.5'
-
+gem 'redcarpet', '~> 3.0.0'
 # Use unicorn as the app server
 # gem 'unicorn'
 

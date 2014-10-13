@@ -51,5 +51,6 @@
 <% end %>
 
 
-<%= link_to 'Edit', edit_post_path(@post) if @current_user.posts.include?(@post)%>
+
 <%= link_to 'Back', root_path %>
+<%= link_to 'Edit', edit_post_path(@post) if @current_user.posts.include?(@post)%>

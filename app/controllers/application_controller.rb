@@ -13,6 +13,12 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  # def ensure_user_cant_visit_users
+  #   if current_user == current_user || current_user != current_user
+  #     redirect_to root_path, error: "No access"
+  #   end
+  # end
+
   def current_user
     @current_user ||= User.find_by(id: session[:current_user_id])
   end

@@ -10,12 +10,12 @@
 <div class="posts"
 <table class="fronttable">
 	<tbody>
-		<% @posts.each do |post| %>
+		<% @posts.order(published_date: :desc).each do |post| %>
 		<tr>
 			<td>
 				<h3> <%= link_to post.title, post %></h3>
-				<p> <%= post.author %> <%= post.published_date %></p>
-				<p> <%= post.body %> </p>
+				<p> <strong><%= post.author %></strong> <%= post.published_date %></p>
+				<p> <%= markdown(post.body) %> </p>
 				<p> <%= link_to 'Read', post %></p>
 			</td>
 		</tr>
