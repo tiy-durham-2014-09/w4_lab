@@ -1,0 +1,19 @@
+
+<% followed_users = Relationship.where(follower_id:current_user.id).pluck(:followed_id) %>
+<% suggested_follows = User.where("id NOT IN (?)", followed_users).sample(5) %>
+<% suggested_follows.delete(current_user.id) %>
+
+<h4>Who to follow</h4>
+
+<div class="profile-info">
+
+  <% if !suggested_follows.empty? %>
+    <% suggested_follows.each do |user| %>
+      <%= link_to user, profile_path(user) %><br>
+    <% end %>
+  <% else %>
+    No unfollowed users!
+  <% end %>
+
+</div>
+

@@ -21,25 +21,15 @@
 
   </div>
   <div class="small-3 columns">
-    <div class="row">
-      <div class="small-12 columns">
+
         <div class="panel">
           <%= link_to 'Browse All Profiles', profiles_path %>
         </div>
-      </div>
-    </div>
-    <div class="row">
-        <div class="small-12 columns">
-            <div class="panel">
-                <p>Random follow suggestions</p>
-            </div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="small-12 columns">
-            <div class="panel">
-                <p>3 random followed_users</p>
-            </div>
+
+        <div class="panel">
+
+				<%= render 'users/suggested' %>
+
         </div>
     </div>
   </div>
