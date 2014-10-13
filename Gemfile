@@ -29,7 +29,7 @@ gem 'spring',        group: :development
 gem 'foundation-rails'
 gem "better_errors"
 gem "binding_of_caller"
-
+gem 'bcrypt-ruby', '~> 3.1.5'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
