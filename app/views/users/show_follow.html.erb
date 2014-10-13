@@ -32,15 +32,18 @@
 
 </div>
 <div class="small-3 columns">
-  <div class="row">
-    <div class="small-12 columns">
-      <div class="panel">
-        <%= link_to 'All Profiles', profiles_path %>
-      </div>
-    </div>
+
+  <div class="panel">
+    <%= link_to 'Browse All Profiles', profiles_path %>
+  </div>
+
+  <div class="panel">
+
+    <%= render 'users/suggested' %>
+
   </div>
 </div>
-</div>
+
 
 
 
