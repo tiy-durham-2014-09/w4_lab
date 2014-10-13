@@ -1,14 +1,36 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>W4Lab</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+  <head>
+    <title>Blog-o-rama</title>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+    <nav class="top-bar" data-topbar role="navigation">
+      <section class="top-bar-section">
+        <!-- Right Nav Section -->
+        <ul class="right">
+          <% if logged_in? %>
+            <li><%= link_to "Logged in as #{current_user}", "#" %></li>
+            <li><%= link_to "Logout", logins_path, :method => :delete %></li>
+          <% else %>
+            <li> <%= link_to "Login", new_logins_path %></li>
+            <li> <%= link_to "Sign Up", new_user_path %></li>
+          <% end %>
+        </ul>
 
-<%= yield %>
+        <!-- Left Nav Section -->
+        <ul class="left">
+          <li><%= link_to "Home", root_path %></li>
+          <li><%= link_to "Posts", posts_path %></li>
+        </ul>
+      </section>
+      <br>
+      <h4><div class="title">BLOG-POCALYPSE</div></h4>
+    </nav>
 
-</body>
+    <%= yield %>
+
+  </body>
 </html>

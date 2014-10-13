@@ -1,5 +1,9 @@
 source 'https://rubygems.org'
 
+gem 'bcrypt', '~> 3.1.7'
+gem 'foundation-rails', '~> 5.4.5'
+gem 'simple_form'
+
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.6'
@@ -38,3 +42,10 @@ gem 'spring',        group: :development
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
+group :development, :test do
+  gem "better_errors"
+  gem "binding_of_caller"
+  gem "faker"
+  gem "pry-rails"
+  gem "pry-byebug"
+end
