@@ -59,7 +59,7 @@ class TasksController < ApplicationController
   end
 
   def set_task
-    @task = current_user.lists.find_by(:id)
+    @task = Task.find(params[:id])
   end
 
   # Never trust parameters from the scary internet, only allow the white list through.
