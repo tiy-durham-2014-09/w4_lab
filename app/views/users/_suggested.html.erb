@@ -1,12 +1,11 @@
 <% current_user %>
 <% followed_users = Relationship.where(follower_id:current_user.id).pluck(:followed_id) %>
 <% if followed_users.empty? %>
-	<% suggested_follows = User.all.sample(5) %>
+	<% suggested_follows = User.where.not(id:current_user.id).sample(5) %>
 <% else %>
+	<% followed_users << current_user.id %>
 	<% suggested_follows = User.where("id NOT IN (?)", followed_users).sample(5) %>
 <% end %>
-
-<% suggested_follows.delete(current_user.id) %>
 
 <h5>Follow these <%= site_name %> users</h5>
 
