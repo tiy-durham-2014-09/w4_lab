@@ -9,7 +9,7 @@
             <i class="icon-check-mark-2"></i><% end %>
             </td>
     <% else %>
-      <td> <%= link_to complete_list_task_path(List.all, task.id), method: :patch do %>
+      <td> <%= link_to complete_list_task_path(@current_user.lists.all, task.id), method: :patch do %>
             <i class="icon-check-mark-2"></i><% end %>
             </td>
     <% end %>
