@@ -21,7 +21,11 @@
       <%= link_to ' Logout ', logout_path, method: :delete %>
     </div>
   <% end %>
-    <p id="notice"><%= notice %></p>
+      <p id="notice">
+        <div class="msg_center">
+          <%= notice %>
+        </div>
+      </p>
     <h1 class="app_title">Do All The Things!</h1>
       <%= yield %>
       <%= javascript_include_tag "application" %>
