@@ -9,7 +9,7 @@
 
 	  <h3><%= displayed_user.profile.location %></h3>
 
-		<%= link_to displayed_user.profile.website, correct_link(displayed_user.profile.website) %>
+		<h4><%= link_to displayed_user.profile.website, correct_link(displayed_user.profile.website), :class => "profile-info" %></h4>
 
 		<section>
 		  <%= render 'shared/stats' %>

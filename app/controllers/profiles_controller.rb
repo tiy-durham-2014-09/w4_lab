@@ -31,7 +31,7 @@ class ProfilesController < ApplicationController
 
     respond_to do |format|
       if @profile.save
-        format.html { redirect_to root_path, notice: 'Profile was successfully created.' }
+        format.html { redirect_to root_path, notice: 'Welcome to ' + site_name }
         format.json { render :show, status: :created, location: @profile }
       else
         format.html { render :new }
@@ -46,7 +46,7 @@ class ProfilesController < ApplicationController
 
 	  respond_to do |format|
       if @profile.update(profile_params)
-        format.html { redirect_to @profile, notice: 'Welcome to' + site_name }
+        format.html { redirect_to @profile, notice: 'Profile was successfully updated.' }
         format.json { render :show, status: :ok, location: @profile }
       else
         format.html { render :edit }

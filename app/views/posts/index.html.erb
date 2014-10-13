@@ -11,6 +11,12 @@
   </div>
   <div class="small-6 columns">
 
+  <% if displayed_user.posts.count == 0 %>
+    <div class="panel">
+      <%= displayed_user %> has not posted yet!
+    </div>
+  <% end %>
+
 	<%= render 'print_post', :posts => @posts %>
 
   </div>

@@ -18,6 +18,7 @@
         <ul class="title-area">
           <li class="name">
             <h1><%= link_to site_name, root_url %></h1>
+
           </li>
         </ul>
 
@@ -25,7 +26,8 @@
           <!-- Right Nav Section -->
           <ul class="right">
             <% if logged_in? %>
-                <li><%= link_to "Logged in as #{current_user} | See Profile", profile_path(current_user.id) %></li>
+                <li><%= link_to "Logged in as #{current_user} - View Profile", profile_path(current_user.id) %></li>
+                <li><%= link_to "View Feed", root_url %></li>
                 <li><%= link_to "Logout", login_path, :method => :delete %></li>
             <% else %>
                 <li><%= link_to "Login", new_login_path %></li>

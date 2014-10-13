@@ -1,3 +1,4 @@
+
 <div class="row">
 	<div class="small-8 small-offset-2 columns">
 	  <h1>Browse Users</h1>
@@ -8,24 +9,29 @@
 
   <div class="row">
 
-			<div class="small-2 small-offset-2 columns">
+			<div class="small-3 small-offset-2 columns">
 				<div class="profile-info">
-			      <h1><%= link_to profile.user.name, profile %></h1>
+			      <h2><%= link_to profile.user.name, profile %></h2>
 			      <h2><%= link_to profile.user, profile %></h2>
-			      <%= image_tag profile.user.gravatar_url %>
-			      <h3><%= profile.location %></h3>
-			      <%= link_to profile.website, correct_link(profile.website) %>
+			      <%= image_tag profile.user.gravatar_url(:size => 70) %>
+
 				</div>
 			</div>
-			<div class="small-8 columns end">
+			<div class="small-7 columns end">
 				<div class="profile-info">
-			      <p class="profile">Bio: <%= profile.bio %><p>
-			      <p class="profile">Last Post: <%= profile.user.posts.last %></p>
+				  <h3><strong>Location:</strong> <%= profile.location %></h3>
+		      <p class="profile"><strong>Bio:</strong> <%= profile.bio %><p>
+				  <strong>Website:</strong> <%= link_to profile.website, correct_link(profile.website) %>
+		      <p class="profile"><strong>Last Post:</strong> <%= profile.user.posts.last %></p>
 				</div>
 			</div>
 
 	</div>
-	<div class="divider"></div>
-  <div class="divider"></div>
+	<div class="row">
+		<div class="small-10 small-offset-2 columns">
+		  <div class="divider"></div>
+		  <div class="line-divider"></div>
+		</div>
+	</div>
+
 	<% end %>
-</table>

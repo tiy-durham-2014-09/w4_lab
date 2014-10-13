@@ -1,11 +1,13 @@
-$trade_color: #88B5AD;
+$trade_color: #77BAAE;
 $trade_color_light: #E6F2F0;
-$trade_color_dark: #479E8E;
+$trade_color_dark: #328576;
 
 
 .profile-info {
   h1 {
-    font-size: 18px;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 2px;
   }
 
   h2 {
@@ -14,16 +16,17 @@ $trade_color_dark: #479E8E;
 
   h3 {
     font-size: 14px;
-    margin-bottom: 3px;
   }
 
   p {
-    margin: 15px 0 15px 0;
+    margin: 10px 0 10px 0;
     font-size: 14px;
   }
 
-  a {
+  h4 {
     font-size: 14px;
+    margin-top: 0;
+    margin-bottom: 20px;
   }
 }
 
@@ -75,8 +78,19 @@ $trade_color_dark: #479E8E;
   background: $trade_color_dark;
 }
 
+.form-button-lg {
+  @extend .form-button;
+  font-size: 14px;
+  padding: 10px;
+  float: right;
+}
+
 h1.login {
   font-size: 25px;
+}
+
+h2.login {
+  font-size: 20px;
 }
 
 .custom-button {
@@ -127,4 +141,9 @@ h1.login {
 
 div.divider {
   height: 15px;
+}
+
+div.line-divider {
+  @extend .divider;
+  border-top: 2px solid $trade_color;
 }
