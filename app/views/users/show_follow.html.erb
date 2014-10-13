@@ -1,23 +1,47 @@
-<% provide(:title, @title) %>
+
+
+
+
 <div class="row">
-  <aside class="span4">
-    <section>
-      <h1><%= @user.name %></h1>
-      <span><%= link_to "View my Profile", @user.profile %></span>
-    </section>
-  </aside>
-    <section>
-      <%= render 'shared/stats' %>
-      <% if @users.any? %>
-            <div class="span8">
-            <h3><%= @title %></h3>
-            </div>
-              <div class="user">
-            <% @users.each do |user| %>
-                <%= link_to user, profile_path(user) %>
-            <% end %>
-            </div>
-      <% end %>
-    </section>
+  <div class="small-3 columns">
+
+    <%= render 'profiles/profile_box', :displayed_user => User.find(params[:id]) %>
+
+
+  </div>
+  <div class="small-6 columns" %>
+
+  <% provide(:title, @title) %>
+
+  <div class="panel">
+    <div class="span8">
+      <h3><%= @title %></h3>
+    </div>
+
+    <% if @users.any? %>
+      <div class="user">
+        <% @users.each do |user| %>
+          <p><%= link_to user, profile_path(user) %></p>
+        <% end %>
+      </div>
+		<% else %>
+	    None yet!
+    <% end %>
+  </div>
+
 
 </div>
+<div class="small-3 columns">
+  <div class="row">
+    <div class="small-12 columns">
+      <div class="panel">
+        <%= link_to 'All Profiles', profiles_path %>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+
+
+
