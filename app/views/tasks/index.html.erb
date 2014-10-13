@@ -1,0 +1,37 @@
+
+    <h1 class="page_title"><%= @list ? @list.title : "All Tasks" %></h1>
+    <table>
+    <% @tasks.each do |task| %>
+      <% unless task.complete? %>
+        <tr>
+        <% if @list %>
+          <td> <%= link_to complete_list_task_path(task.list_id, task.id), method: :patch do %>
+               <i class="icon-check-mark-2"></i><% end %>
+          </td>
+        <% else %>
+          <td> <%= link_to complete_list_task_path(task.list_id, task.id), method: :patch do %>
+               <i class="icon-check-mark-2"></i><% end %>
+          </td>
+        <% end %>
+          <td> <%= link_to "#{task.title}", list_task_path(task.list_id, task.id) %> </td>
+          <td> <%= task.due_date %></td>
+        </tr>
+      <% end %>
+    <% end %>
+    </table>
+
+
+<br>
+
+<% if @list %>
+  <%= link_to new_list_task_path(@list.id) do %>
+        <div class="element_center_2">
+          <div class="large-4 columns">
+            <%= button_tag "Add New Task", :class => "small radius" %>
+          </div>
+        </div>
+  <% end %>
+<% end %>
+<br>
+
+

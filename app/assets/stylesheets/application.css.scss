@@ -1,0 +1,88 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ *= require foundation_and_overrides
+
+ */
+
+body {
+  background-color: #d55f05;
+  font-family: Helvetica Neue;
+  font-size: 15px;
+}
+
+.nav {
+  height: 18px;
+  background-color: #fbd2af;
+  text-align: center;
+  margin-bottom: 3px;
+}
+
+.app_title {
+  font-size: 55px;
+  font-color: #fefff8;
+  text-align: center;
+  color: #fefff8;
+  text-shadow: 1px 1px 1px #000000,
+  1px 1px 1px #000;
+}
+
+.page_title {
+  font-size: 34px;
+  font-color: #fefff8;
+  text-align: center;
+  color: #fefff8;
+  text-shadow: 1px 1px 1px #000000,
+  1px 1px 1px #000;
+}
+
+h1 {
+  font-family: Helvetica Neue;
+  font-color: #fefff8;
+}
+
+table, td {
+  border: 0px;
+  background-color: #fbd2af;
+  font-family: Helvetica Neue;
+  color: #93b1c6;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+th {
+  background-color: #f9a160;
+  font-size: 17px;
+  border: 0px;
+}
+
+.element_center {
+  width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.element_center_2 {
+  width: 500px;
+  margin-left: auto;
+}
+
+.text_center {
+  text-align: center;
+}
+
+.msg_center {
+  text-align: center;
+  color: #ffffff;
+}

@@ -1,0 +1,28 @@
+
+<!--PLEASE NOTE QUIRK: when you click on delete list you are prompted with 'Are you sure?' message as many times as there are lists listed. So, if you go to delete a list and there are three lists total in the table, you'll be asked 3 times if you want to delete the intended list.-->
+
+<h1 class="page_title">Lists</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>List Title</th>
+      <th colspan="3">List Options</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @lists.each do |list| %>
+      <tr>
+        <td><%= list.title %></td>
+        <td><%= link_to 'Show Tasks', list_tasks_path(list) %></td>
+        <td><%= link_to 'Edit Title', edit_list_path(list) %></td>
+        <td><%= link_to list, method: :delete, data: { confirm: 'Are you sure?' } do %>
+              <i class="icon-remove"></i>
+            <% end %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
