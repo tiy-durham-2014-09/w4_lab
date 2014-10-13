@@ -110,8 +110,8 @@ h4 {
   letter-spacing: -1px !important;
 }
 h4 .title {
-  height: 120px !important;
   font-size: 140px !important;
+  line-height: 150px;
 }
 h5 {
 color: #6d6d6d !important ;
@@ -123,11 +123,10 @@ margin-top: 0px;
 }
 .first_sub {
   color: #43702d !important ;
-  margin-top: 20px !important;
   font-size: 35px !important;
   font-family: 'bebas_neueregular' !important;
   font-weight: bold !important;
-  margin-bottom: 0px;
+  margin-top: -40px !important;
   margin: 0 auto;
   background-color: transparent !important;
 }
@@ -186,9 +185,7 @@ width: 500px !important;
   font-family: 'bebas_neueregular'!important;
   font-size: 40px !important;
   text-shadow: 2px 1px 3px #b34d03 !important;
-
 }
-
 .login_style {
   background-color: #b34d03 !important;
 }
@@ -237,9 +234,8 @@ color: #43702d !important ;
 }
 .breadcrumbs {
 background-color: #e3e3e3 !important;
-border: none !important;
 padding-left: 460px !important;
-padding-top: 25px !important;
+padding-top: 15px !important;
 }
 .text_field {
 background-color: #43702d !important;
@@ -250,7 +246,6 @@ font-family: sans-serif !important;
 width: 50%;
 margin-left: 350px !important;
 }
-
 .read_more {
 font-family: 'tesbold' !important;
 font-size: 20px;

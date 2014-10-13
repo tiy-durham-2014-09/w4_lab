@@ -1,6 +1,6 @@
 <h4><%= @post.title %></h4>
 <h5><strong>Author:</strong></h5>
-<%= @post.user %>
+<p class="author"><%= @post.user %></p>
 <%= markdown(@post.body) %>
 </p>
 <h5>Published <%= time_ago_in_words @post.published_date %> ago</h5>
@@ -8,32 +8,28 @@
   <h6>Comments</h6>
   <% @post.comments.each do |comment| %>
   <strong><h3>Commenter:</h3></strong>
-  <%= comment.user %><br>
+  <%= comment.post_id %><br>
   <strong><h3>Comment:</h3></strong>
   <%= comment.body %>
   <% end %><br><br>
-  <strong><h3><a class="comment">Add a comment:</a></h3></strong>
-  <%= form_for ([@post, @post.comments.build]) do |f| %>
-  <div class="large-4 columns">
-    <div class="field">
-      <%= f.label :user,nil, class: 'post_label' %><br>
-      <%= f.text_field :user,class: 'post_label' %>
+  <strong><h3><p class="comment">Add a comment:</p></h3></strong>
+    <div class="row">
+    <div class="small-12 columns">
+      <%= form_for ([@post, @post.comments.build]) do |f| %>
+        <%= f.label :user,nil, class: 'post_label' %>
+        <%= f.text_area :post_id, class: 'field_label' %>
     </div>
-  </div>
-    <br><br><br>
-  <div class="large-12 columns">
-    <div class="field">
-
-      <%= f.label :body,nil, class: 'post_label'%><br>
-      <%= f.text_area :body, class: 'post_label' %>
     </div>
-    <div class="actions">
-    <%= f.button :submit, class: "radius small" %> <br>
-    <%= link_to 'Back', posts_path,:class => 'small_label' %>
-
+    <div class="row">
+    <div class="small-12 columns">
+      <%= f.label :body,nil, class: 'post_label'%>
+      <%= f.text_area :body, class: 'field_label' %><br>
+      <div class="actions">
+        <%= f.button :submit, class: "radius small" %> <br>
+          <% if current_user.posts.include?(@post) %>
+            <%= link_to 'Edit', edit_post_path(@post), :class => 'small_label' %>
+          <% end %>
+      </div>
     </div>
-  </div>
-  <% end %>
-<% if current_user.posts.include?(@post) %>
-<%= link_to 'Edit', edit_post_path(@post), :class => 'small_label' %>
+    </div>
 <% end %>

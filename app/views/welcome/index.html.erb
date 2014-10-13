@@ -9,9 +9,11 @@
     <h5><%= link_to post.title, post, :class => "small_label" %></h5>
     <h5>Author:
       <%= post.user %></h5><br>
+        <div class='home'>
         <%= markdown(post.body) %>
         <td><%= link_to 'Read More', post, :class => 'read_more' %></td>
         <hr />
+        </div>
     </tr>
   <% end %>
 </tbody>

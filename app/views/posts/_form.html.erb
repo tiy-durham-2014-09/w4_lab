@@ -9,12 +9,13 @@
   </ul>
 </div>
 <% end %>
-
-<div class="large-6 columns">
+<div class="row">
+<div class="small-12 columns">
   <div class="field">
     <%= f.label :title, nil, class: 'post_label' %><br>
     <%= f.text_field :title %>
   </div>
+</div>
 </div>
 <div class="large-12 columns">
   <div class="field">
@@ -23,7 +24,7 @@
   </div>
 </div>
 <div class="row">
-  <div class="small-3 columns">
+  <div class="small-6 columns">
     <div class="field">
       <%= f.label :published_date, nil, class: 'post_label' %><br>
       <%= f.date_select :published_date %>
@@ -33,5 +34,4 @@
 <div class="actions">
 <%= f.button :submit, class: "radius small" %>
 </div>
-
 <% end %>

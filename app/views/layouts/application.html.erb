@@ -2,7 +2,6 @@
 <html>
 <head>
   <%= favicon_link_tag 'favicon.ico' %>
-
   <title>Blogtober</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -20,11 +19,9 @@
     <li><%= link_to "Peace out", logins_path, :method => :delete, :class => "topbar_links" %></li>
     <% end %>
   </ul>
-  
   <%= display_alert(:notice) %>
   <%= display_alert(:alert) %>
   <%= yield %>
   <%= javascript_include_tag "application" %>
-
 </body>
 </html>

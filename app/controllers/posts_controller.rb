@@ -13,6 +13,7 @@ class PostsController < ApplicationController
     @post = Post.new
   end
   def edit
+    @post = Post.update
   end
   def create
     if current_user

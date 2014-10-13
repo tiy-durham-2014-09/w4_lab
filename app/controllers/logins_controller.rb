@@ -11,7 +11,6 @@ class LoginsController < ApplicationController
       render :new
     end
   end
-
   def destroy
     session[:current_user_id] = nil
     redirect_to new_logins_path, notice: "Why must you leave me?"

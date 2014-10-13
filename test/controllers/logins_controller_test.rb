@@ -1,7 +1,8 @@
 require 'test_helper'
 
 class LoginsControllerTest < ActionController::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+  test "create new login page" do
+    get :create
+    assert_response :success
+  end
 end
