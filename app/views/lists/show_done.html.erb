@@ -1,23 +1,18 @@
 <p id="notice"><%= notice %></p>
-
-<p>
-  <strong>User:</strong>
-  <%= @list.user.name %>
-</p>
-
-<p>
-  <strong>Name:</strong>
-  <%= @list.name %>
-</p>
-
-<p>
-  <strong>Did:</strong>
-  <% @list.todos.each do |t| %>
-    <% if t.done %>
-     <li><%= link_to(t.name, todo_path(t.id)) %></li>
-    <% end %>
-  <% end %>
-</p>
+<div class="row">
+  <div class="large-12 columns">
 
 
-<%= link_to 'Back', list_path(@list) %>
+    <p>
+      <strong>Stuff you Did for <%= @list.name %></strong>
+      <% @list.todos.each do |t| %>
+        <% if t.done %>
+         <li><%= link_to(t.name, todo_path(t.id)) %></li>
+        <% end %>
+      <% end %>
+    </p>
+
+
+    <%= link_to 'Back', list_path(@list) %>
+  </div>
+</div>

@@ -1,27 +1,26 @@
 <p id="notice"><%= notice %></p>
 
-<%# if logged_in? %>
+<div class="row">
+  <div class="large-12 columns">
+    <p>
+      <strong>Welcome, <%= current_user.name %>!</strong><br>
+      <strong>Let's get stuff Did.  </strong>
+    </p>
 
-  <p>
-    <strong>Welcome, <%= current_user.name %>!</strong><br>
-    <strong>Let's get stuff Did.  </strong>
-  </p>
 
+    <p>
+      <strong>Lists:</strong>
+      <% @user.lists.all.each do |l| %>
+        <li><%= link_to(l.name, list_path(l.id)) %></li>
+      <% end %>
+      <li><%= link_to 'Add List', new_list_path(@user) %></li>
+    </p>
 
-  <p>
-    <strong>Lists:</strong>
-    <% @user.lists.all.each do |l| %>
-      <li><%= link_to(l.name, list_path(l.id)) %></li>
-    <% end %>
-    <li><%= link_to 'Add List', new_list_path(@user) %></li>
-  </p>
-
-  <p>
-    <strong><%= link_to 'Show All Todos', todos_path %></strong>
-  </p>
-  <br>
-  <%= link_to 'Edit User Info', edit_user_path(@user) %> |
-  <%= link_to 'Log out', login_path, :method => :delete %>
-<%# else %>
-<%# redirect_to new_login_path %>
-<%# end %>
+      <p>
+        <strong><%= link_to 'Show All Todos', todos_path %></strong>
+      </p>
+      <br>
+      <%= link_to 'Log out', login_path, :method => :delete %> |
+      <%= link_to 'Edit User Info', edit_user_path(@user) %>
+  </div>
+</div>

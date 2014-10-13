@@ -1,25 +1,28 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>List:</strong>
-  <%= link_to @todo.list.name, list_path(@todo.list) %>
-</p>
+<div class="row">
+  <div class="large-12 columns">
+    <p>
+      <strong>List:</strong>
+      <%= link_to @todo.list.name, list_path(@todo.list) %>
+    </p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @todo.name %>
-</p>
+    <p>
+      <strong>Name:</strong>
+      <%= @todo.name %>
+    </p>
 
-<p>
-  <strong>Notes:</strong>
-  <%= @todo.note %>
-</p>
+    <p>
+      <strong>Notes:</strong>
+      <%= @todo.note %>
+    </p>
 
-<p>
-  <strong>Due:</strong>
-  <%= @todo.due_date %>
-</p>
+    <p>
+      <strong>Due:</strong>
+      <%= @todo.due_date %>
+    </p>
 
-
-<%= link_to 'Edit', edit_todo_path(@todo) %> |
-<%= link_to 'Back', list_path(@todo.list) %>
+    <%= link_to 'Back', list_path(@todo.list) %> |
+    <%= link_to 'Edit', edit_todo_path(@todo) %>
+  </div>
+</div>

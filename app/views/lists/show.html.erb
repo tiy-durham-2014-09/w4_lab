@@ -1,39 +1,44 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong><%= link_to @list.name, edit_list_path(@list) %></strong>
-  <% @list.todos.each do |t| %>
-    <% unless t.done %>
+<div class="row">
+  <div class="large-12 columns">
+    <p>
+      <strong><%= link_to @list.name, edit_list_path(@list) %></strong>
+      <% @list.todos.each do |t| %>
+        <% unless t.done %>
 
-      <li>
-        <%= form_for(t) do |f|%>
-          <div style="display: inline">
-            <%= f.check_box :done %>
-            <%= f.submit "Did it", class: "button tiny" %>
-          <% end %>
-          <%= link_to(t.name, todo_path(t.id)) %>
+            <%= form_for(t) do |f|%>
+              <div style="display: inline">
+                <%= f.check_box :done %>
+                <%= f.submit "Did it", class: "button tiny" %>
+              <% end %>
+              <%= link_to(t.name, todo_path(t.id)) %>
 
-          <!--display days remaining-->
-          <% unless t.due_date == nil %>
-            <% if t.due_date == Date.today %>
-            | DUE TODAY! Get it Did!
-            <% elsif (t.due_date < Date.today) %>
-            | <%= t.days_remaining.abs %> days past due!
-            <% else %>
-            | Days left: <%= t.days_remaining %>
-            <% end %>
-          <% end %>
-        </div>
+              <!--display days remaining-->
+              <% unless t.due_date == nil %>
+                <% if t.due_date == Date.today %>
+                | DUE TODAY! Get it Did!
+                <% elsif (t.due_date < Date.today) %>
+                | <%= t.days_remaining.abs %> days past due!
+                <% else %>
+                | Due in <%= t.days_remaining %> days
+                <% end %>
+              <% end %>
+            </div>
 
-        <!--check box to mark Todo done-->
+            <!--check box to mark Todo done-->
 
 
-      </li>
+          <!--</li>-->
 
-    <% end %>
-  <% end %>
-<li><%= link_to 'Add Todo', new_todo_path(@list) %></li>
-</p>
+        <% end %>
+      <% end %>
+    </p>
+    <p><%= link_to 'New Todo', new_todo_path(@list), class: "button tiny" %></p>
 
-<%= link_to 'Stuff You Did', show_done_path(id: @list.id) %> |
-<%= link_to 'Back', lists_path %>
+
+    <%= link_to 'Back', lists_path %> |
+    <%= link_to 'Stuff You Did', show_done_path(id: @list.id) %>
+
+  </div>
+</div>
