@@ -1,0 +1,24 @@
+<h1>Your Posts</h1>
+
+<table>
+<tbody>
+  <% @posts1.order(published_date: :desc).each do |post| %>
+    <tr>
+      <td>
+      <h3><%= post.title %></h3>
+      <p><%= post.author%>  <%=  post.published_date %></p>
+      <p><%= truncate(post.body, length: 140) %></p>
+      <p><%= link_to 'Show', post %>
+      <%= link_to 'Edit', edit_post_path(post) %>
+      <%= link_to 'Delete', post, method: :delete, data: { confirm: 'Are you sure?' } %>
+    </p>
+    </td>
+  </tr>
+  <% end %>
+</tbody>
+
+</table>
+
+<br>
+
+<%= link_to 'New Post', new_post_path %>

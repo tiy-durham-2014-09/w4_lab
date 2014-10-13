@@ -1,0 +1,50 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ *= require foundation_and_overrides
+
+
+
+ */
+body{
+  background-color:skyblue;
+  text-align: center;
+  background:
+  linear-gradient(
+  rgba(0, 0, 0, .65),
+  rgba(0, 0, 0, .65)
+),
+  url("http://fc03.deviantart.net/fs71/f/2011/283/2/6/rainbow_glitter_bokeh_texture_by_daftopia-d4ce89t.jpg");
+background-size: 100%;
+}
+body h1{
+  color: white;
+  font-family: 'Indie Flower', cursive;
+  font-size: 65px;
+}
+table{
+    margin-left:auto;
+    margin-right:auto;
+    background-color: grey;
+    border: none;
+}
+form {
+margin-left:auto;
+margin-right:auto;
+width: 290px;
+}
+
+#logo {
+
+}
