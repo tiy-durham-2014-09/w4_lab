@@ -1,4 +1,20 @@
 Rails.application.routes.draw do
+  resources :todos
+
+  resources :lists do
+    resources :todos
+    member do
+      get 'bucket'
+    end
+  end
+
+
+  resource :user
+
+  resource :login, :only => [:new, :create, :destroy]
+
+  root 'users#show'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

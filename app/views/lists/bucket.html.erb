@@ -1,0 +1,28 @@
+<br>
+  <div class="row">
+    <table class="large-12 columns">
+      <thead>
+        <tr>
+          <th>Item</th>
+          <th>Note</th>
+          <th>Date</th>
+          <th>Delete?</th>
+        </tr>
+      </thead>
+      <tbody>
+      <h1 class="large-12 columns"><%= @list %></h1>
+        <% @list.todos.each do |todo| %>
+
+            <% if todo.complete %>
+              <tr>
+                <td><a href="/todos/<%= todo.id %>/edit"><%= todo.item %></a></td>
+                <td><%= todo.note %></td>
+                <td><%=	todo.date %></td>
+                <td><%= link_to "Delete", todo_path(todo), method: :delete, class: "button tiny" %></td>
+              </tr>
+            <% end %>
+        <% end %>
+      </tbody>
+    </table>
+    <br>
+  </div>

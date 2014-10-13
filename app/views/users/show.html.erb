@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+<br>
+<% @user.lists.each do |list| %>
+  <div class="row">
+    <table class="large-12 columns">
+      <thead>
+        <tr>
+          <th>Item</th>
+          <th>Note</th>
+          <th>Date</th>
+          <th>Complete?</th>
+        </tr>
+      </thead>
+      <tbody>
+      <h1 class="large-12 columns"><%= list %></h1>
+        <% list.todos.each do |todo| %>
+            <% if todo.date.past? %>
+              <% c = "overdue" %>
+            <% else %>
+              <% c = "ignore" %>
+            <% end %>
+            <% unless todo.complete %>
+              <tr>
+                <td><%= link_to todo.item, edit_list_todo_path(list, todo) %></td>
+                <td id="<%= c %>"><%= todo.note  %></td>
+                <td id="<%= c %>"><%=	todo.date  %></td>
+                <td>
+                  <%= form_for todo do |f| %>
+                    <%= f.hidden_field :complete, :value => true %>
+                    <%= button_tag "Mark Complete", :class => "button tiny" %>
+                    <% end %>
+                  </form>
+                </td>
+              </tr>
+            <% end %>
+        <% end %>
+      </tbody>
+      <tr>
+        <td><a href="/lists/<%= list.id %>/todos/new" class="button expand">Add Todo</a></td>
+        <td><a href="/lists/<%= list.id %>/bucket" class="button expand">Bucket</a></td>
+      </tr>
+    </table>
+    <br>
+  </div>
+<% end %>
+
+<div class="small-3 small-centered columns" id="bottom-show">
+  <a href="/lists/new" class="button large radius round">Add List</a>
+</div>
