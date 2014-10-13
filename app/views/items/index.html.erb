@@ -1,0 +1,28 @@
+<h1><%= @list.title %></h1>
+
+<table class="items">
+  <% @list.items.each do |item|%>
+      <tr id="<%= dom_id (item) %>">
+        <td><%= item.content %></td>
+        <td>
+          <% if item.completed? %>
+              <%= item.completed_by %>
+          <% else %>
+
+              <%= link_to "mark complete", complete_list_item_path(item), method: :patch %>
+
+          <% end %>
+        </td>
+
+        <td>
+          <%= link_to "edit", edit_list_item_path(item) %>
+          <%= link_to "delete", list_item_path(item), method: :delete %>
+        </td>
+      </tr>
+
+  <% end %>
+</table>
+
+<p>
+  <%= link_to "New Todo Item", new_list_item_path %>
+</p>
