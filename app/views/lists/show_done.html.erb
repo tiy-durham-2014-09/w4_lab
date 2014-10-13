@@ -1,0 +1,18 @@
+<p id="notice"><%= notice %></p>
+<div class="row">
+  <div class="large-12 columns">
+
+
+    <p>
+      <strong>Stuff you Did for <%= @list.name %></strong>
+      <% @list.todos.each do |t| %>
+        <% if t.done %>
+         <li><%= link_to(t.name, todo_path(t.id)) %></li>
+        <% end %>
+      <% end %>
+    </p>
+
+
+    <%= link_to 'Back', list_path(@list) %>
+  </div>
+</div>
