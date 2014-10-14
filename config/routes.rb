@@ -1,9 +1,15 @@
 Rails.application.routes.draw do
   # get 'welcome/index'
 
-  resources :posts
+  resources :posts do
+    resources :comments, shallow: true
+  end
 
-  resources :users
+  resources :users do
+    resources :posts
+  end
+
+  # get 'users/:id/posts' => 'Users#posts', :as => :user_posts
 
   # resource :login, :only => [:new, :create, :destroy]
   resource :session, only: [:new, :create, :destroy]

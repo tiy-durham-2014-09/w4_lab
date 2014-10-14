@@ -3,13 +3,7 @@
   <%= comment.commenter %>
 </p>
 
-<p class="commentborder">
+<div class="commentborder">
   <strong>Comment:</strong>
-  <%= comment.body %>
-</p>
-
-<!-- <p>
-  <%= link_to 'Delete Comment', [comment.post, comment],
-               method: :delete,
-               data: { confirm: 'Are you sure?' } %>
-</p> -->
+  <%= markdown(comment.body) %>
+</div>

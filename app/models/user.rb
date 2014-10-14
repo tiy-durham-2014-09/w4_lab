@@ -14,8 +14,8 @@ class User < ActiveRecord::Base
 
   has_secure_password
 
-  has_many :posts, :foreign_key => :user_id
-  has_many :comments
+  has_many :posts
+  has_many :comments, through: :posts
 
   def to_s
     name

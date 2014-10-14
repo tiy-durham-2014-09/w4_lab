@@ -7,6 +7,7 @@ class PostsController < ApplicationController
   # GET /posts.json
   def index
     @posts = Post.all
+    @comments = Comment.all
     @posts1 = current_user.posts
   end
 
@@ -82,6 +83,6 @@ class PostsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
-      params.require(:post).permit(:title, :published_date, :content, :user, :user_id)
+      params.require(:post).permit(:title, :published_date, :content, :user, :user_id, :body, :comment, :comment_id, :commenter)
     end
 end
