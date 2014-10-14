@@ -1,6 +1,6 @@
-<h1>Your Posts</h1>
+<!-- <h1>Your Posts</h1>
 <%= link_to 'Create New Post', new_post_path %>
-<table>
+<table class="posttable">
   <thead>
     <tr>
       <th class="mythead">Title</th>
@@ -23,6 +23,47 @@
     <% end %>
   </tbody>
 </table>
+
+<br>
+
+
+
+<h1>Your Comments</h1>
+<table>
+  <thead>
+    <tr>
+      <th>Content</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @comments.each do |comment| %>
+      <tr>
+        <% if comment.commenter == current_user.name %>
+        <td><%= link_to comment.post.title, comment.post %></h5>
+        <td><%= comment.body %></p>
+        <td><%= link_to 'Edit', edit_comment_path(comment) %></td>
+        <td><%= link_to 'Destroy', comment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br> -->
+
+<h1>Your Posts</h1>
+<div class="cnp"><%= link_to 'Create New Post', new_post_path %></div>
+<p></p>
+<% @posts1.order(published_date: :desc).each do |post| %>
+  <div class="mytitle"><%= link_to post.title, post %></div>
+  <div class="mydate"><%= post.published_date %></div>
+  <div class="mycontent"><%= post.content %></div>
+  <div><%= link_to 'Show', post %></div> |
+  <div><%= link_to 'Edit', edit_post_path(post) %></div> |
+  <div><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></div>
+<% end %>
 
 <br>
 
