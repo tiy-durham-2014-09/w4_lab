@@ -14,17 +14,50 @@ body {
     }
   }
 
-  .mythead {
-    color: orange;
-    text-decoration: underline;
+  .mytitle {
+    padding-top: 10px;
+    color: indianred;
+
+    a {
+      color: sandybrown;
+    }
   }
 
-  .mydhead {
-
+  .mydate {
+    color: lime;
   }
 
-  .mychead {
+  .mycontent {
+  }
 
+  .mypostlinks {
+    border-bottom: ridge;
+
+    a {
+      color: aqua;
+    }
+  }
+
+  .mycommentpost {
+    padding-top: 10px;
+    color: indianred;
+    a {
+      color: lightsalmon;
+    }
+  }
+
+  .mycommentdate {
+    color: lime;
+  }
+
+  .mycommentlinks {
+    border-bottom: ridge;
+
+    a {
+      color: aqua;
+      padding-bottom: 10px;
+
+    }
   }
 
   .showusertitle {

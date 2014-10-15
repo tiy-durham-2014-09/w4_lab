@@ -13,7 +13,7 @@
     <div class="ftitle"><%= link_to post.title, post_path(post)%></div>
     <div class="fpub"><%= post.published_date %></div>
     <div class="fauthor"><%= link_to post.user, post.user%></div>
-    <div class="fbody"><%= post.content %></div>
+    <div class="fbody"><%= truncate(post.content, length: 200) %></div>
     <% end %>
   </fcontent>
 </formhome>
