@@ -1,0 +1,25 @@
+<h1 class="logo"><span class="b">B</span>
+<span class="l1">L</span>
+<span class="o1">O</span>
+<span class="o2">O</span>
+<span class="g">G</span>
+<span class="l2">L</span>
+<span class="e">E</span>
+<span class="plus"> + </span></h1>
+
+<div class="posts"
+<table class="fronttable">
+	<tbody>
+		<% @posts.order(published_date: :desc).each do |post| %>
+		<tr>
+			<td>
+				<h3> <%= link_to post.title, post %></h3>
+				<p> <strong><%= post.author %></strong> <%= post.published_date %></p>
+				<p> <%= markdown(post.body) %> </p>
+				<p> <%= link_to 'Read', post %></p>
+			</td>
+		</tr>
+		<% end %>
+	</tbody>
+</table>
+</div>

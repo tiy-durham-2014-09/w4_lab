@@ -1,0 +1,33 @@
+<h1 class="head">Listing Bloogles</h1>
+<div class="show">
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Body</th>
+      <th>Author</th>
+      <th>Published date</th>
+      <th colspan="4"></th>
+    </tr>
+  </thead>
+
+
+  <tbody>
+    <% @posts1.order(published_date: :desc).each do |post| %>
+      <tr>
+        <td><%= post.title %></td>
+        <td><%= post.body %></td>
+        <td><%= post.author %></td>
+        <td><%= post.published_date %></td>
+        <td><%= link_to 'Show', post %></td>
+        <td><%= link_to 'Edit', edit_post_path(post) %></td>
+        <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>
+<br>
+<div class="postpath">
+<%= link_to 'New Post', new_post_path %>
+</div>

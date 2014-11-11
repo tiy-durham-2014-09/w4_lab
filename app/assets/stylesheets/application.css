@@ -12,4 +12,24 @@
  *
  *= require_tree .
  *= require_self
+ *= require foundation_and_overrides
+
+
  */
+
+body {
+  background: url("notebook2.png");
+  width:100%;
+  text-align:center;
+}
+
+table {
+  margin-left:auto;
+  margin-right:auto;
+}
+
+form {
+  width:30%;
+  margin-left:auto;
+  margin-right:auto;
+}
