@@ -1,7 +1,7 @@
-<% @post.comments.each do |comment| %>
+<% post.comments.each do |comment| %>
 <p>
 	<strong> User: </strong>
-	<%= comment.user %>
+	<%= comment.user.name %>
 </p>
 
 <p>

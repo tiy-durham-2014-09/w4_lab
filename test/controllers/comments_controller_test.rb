@@ -1,4 +1,4 @@
-require 'test_helper'
+ require 'test_helper'
 
 class CommentsControllerTest < ActionController::TestCase
   setup do
@@ -18,24 +18,9 @@ class CommentsControllerTest < ActionController::TestCase
 
   test "should create comment" do
     assert_difference('Comment.count') do
-      post :create, comment: { article_id: @comment.article_id, body: @comment.body, user: @comment.user }
+      post :create, comment: { body: @comment.body, user: @comment.user }
     end
 
-    assert_redirected_to comment_path(assigns(:comment))
-  end
-
-  test "should show comment" do
-    get :show, id: @comment
-    assert_response :success
-  end
-
-  test "should get edit" do
-    get :edit, id: @comment
-    assert_response :success
-  end
-
-  test "should update comment" do
-    patch :update, id: @comment, comment: { article_id: @comment.article_id, body: @comment.body, user: @comment.user }
     assert_redirected_to comment_path(assigns(:comment))
   end
 

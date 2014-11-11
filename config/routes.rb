@@ -1,10 +1,10 @@
 Rails.application.routes.draw do
 
-  resources :comments
+  resources :comments, :except => [:show, :edit, :update]
   resources :posts do
-    resources :comments
+    resources :comments, :except => [:show, :edit, :update]
 end
-  resources :users
+  resources :users, except: [:edit, :update, :destroy]
   resource :login, :only => [:new, :create]
 
   get 'logout' => 'logins#destroy'

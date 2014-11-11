@@ -1,5 +1,3 @@
-## Put me in lib/tasks/quality.rake
-
 def qpath(filename)
   (Rails.root + 'quality' + filename).to_s
 end

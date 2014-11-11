@@ -7,24 +7,8 @@ class ApplicationController < ActionController::Base
   helper_method :current_user, :logged_in?
   private
 
-  def ensure_user_owns_post
-    if @posts.author != @current_user
-      redirect_to root_path, error: "No access"
-    end
-  end
-
-  # def ensure_user_cant_visit_users
-  #   if current_user == current_user || current_user != current_user
-  #     redirect_to root_path, error: "No access"
-  #   end
-  # end
-
   def current_user
     @current_user ||= User.find_by(id: session[:current_user_id])
-  end
-
-  def logged_in?
-    current_user
   end
 
   def authenticate

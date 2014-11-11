@@ -35,8 +35,13 @@ gem 'pry-rails'
 gem 'simple_form'
 gem 'foundation-rails', '~> 5.4.5'
 gem 'redcarpet', '~> 3.0.0'
+gem 'simplecov', :require => false, :group => :test
+gem 'paperclip'
 
 group :development, :test do
+  gem 'shoulda'
+  gem 'shoulda-context'
+  gem 'shoulda-matchers'
   gem "rubocop", require: false
   gem "rails_best_practices", require: false
   gem "brakeman", require: false
