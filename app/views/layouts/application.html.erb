@@ -1,14 +1,27 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>W4Lab</title>
+  <%= favicon_link_tag 'favicon.ico' %>
+  <title>Blogtober</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
-
+  <ul class="breadcrumbs">
+    <li><%= link_to "Home", root_path, :class => "topbar_links"  %></li>
+    <% if logged_in? == nil %>
+    <li><%= link_to "Login", new_logins_path, :class => "topbar_links" %></li>
+    <li><%= link_to "Sign Up", new_user_path, :class => "topbar_links" %></li>
+    <% end %>
+    <li><%= link_to "Create Post", new_post_path, :class => "topbar_links" %></li>
+    <% if logged_in? %>
+    <li><%= link_to "Logged in as #{current_user}", "#", {:class => "topbar_links"} %></li>
+    <li><%= link_to "Peace out", logins_path, :method => :delete, :class => "topbar_links" %></li>
+    <% end %>
+  </ul>
+  <%= display_alert(:notice) %>
+  <%= display_alert(:alert) %>
+  <%= yield %>
+  <%= javascript_include_tag "application" %>
 </body>
 </html>

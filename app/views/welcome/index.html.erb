@@ -1,0 +1,19 @@
+<h4><div class="title">BLOGTOBER</div></h4>
+<h5 class="first_sub">Check out these blogs:</h5>
+<h6 class="sub">they're spooooky<h6>
+<p class="spook">A</p>
+<hr />
+<tbody>
+  <% @posts.each do |post| %>
+    <tr>
+    <h5><%= link_to post.title, post, :class => "small_label" %></h5>
+    <h5>Author:
+      <%= post.user %></h5><br>
+        <div class='home'>
+        <%= markdown(post.body) %>
+        <td><%= link_to 'Read More', post, :class => 'read_more' %></td>
+        <hr />
+        </div>
+    </tr>
+  <% end %>
+</tbody>
