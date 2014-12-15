@@ -1,0 +1,149 @@
+$trade_color: #77BAAE;
+$trade_color_light: #E6F2F0;
+$trade_color_dark: #328576;
+
+
+.profile-info {
+  h1 {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 2px;
+  }
+
+  h2 {
+    font-size: 16px;
+  }
+
+  h3 {
+    font-size: 14px;
+  }
+
+  p {
+    margin: 10px 0 10px 0;
+    font-size: 14px;
+  }
+
+  h4 {
+    font-size: 14px;
+    margin-top: 0;
+    margin-bottom: 20px;
+  }
+}
+
+.profile-option {
+  background-color: $trade_color_light;
+  border: 1px solid #DDDDDD;
+  margin-top: 5px;
+  padding: 5px;
+  text-align: center;
+}
+
+.profile-button {
+  @extend .form-button;
+  width: 100%;
+
+  a {
+    color: #FFFFFF;
+  }
+
+  color: white;
+}
+
+.profile-button:hover {
+  background: $trade_color_dark;
+}
+
+.profile-panel-left {
+  @extend .profile-info;
+  border: 1px solid black;
+  float: left;
+}
+
+.profile-panel-right {
+  @extend .profile-info;
+  border: 1px solid black;
+  float: right;
+}
+
+.form-button {
+  background-color: $trade_color;
+  border: 1px solid #5EA699;
+  font-size: 13px;
+  letter-spacing: 1px;
+  padding: 4px;
+  margin-bottom: 0;
+}
+
+.form-button:hover {
+  background: $trade_color_dark;
+}
+
+.form-button-lg {
+  @extend .form-button;
+  font-size: 14px;
+  padding: 10px;
+  float: right;
+}
+
+h1.login {
+  font-size: 25px;
+}
+
+h2.login {
+  font-size: 20px;
+}
+
+.custom-button {
+  background-color: #EEEEEE;
+  border: 1px solid #DDDDDD;
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 1px;
+  margin: 2px;
+  padding: 2px;
+
+  a {
+    color: #999999;
+  }
+}
+
+.custom-button:hover {
+  background-color: $trade_color;
+
+  a {
+    color: white;
+  }
+}
+
+
+.posts {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.posts-button {
+  @extend .custom-button;
+
+  float: right;
+}
+
+.posts-small-form {
+  background-color: #FFFFFF;
+  border: 1px solid #CCCCCC;
+  margin-top: 5px;
+  padding: 10px;
+  text-align: right;
+
+  label {
+    text-align: left;
+  }
+}
+
+div.divider {
+  height: 15px;
+}
+
+div.line-divider {
+  @extend .divider;
+  border-top: 2px solid $trade_color;
+}

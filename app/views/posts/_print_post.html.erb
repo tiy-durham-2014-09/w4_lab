@@ -1,0 +1,23 @@
+<% posts.reverse_order.each do |post| %>
+  <% user = post.user %>
+
+  <div class="panel">
+    <div class="posts">
+      <%= image_tag user.gravatar_url(:size => 25) %> <%= link_to user.name, profile_path(user) %> <%= link_to user, profile_path(user) %>
+
+      - <%= time_ago_in_words(post.created_at) %>
+
+      <% if current_user? user %>
+								<span class="posts-button">
+									<%= link_to 'delete', post, method: :delete, data: { confirm: 'Are you sure?' } %>
+								</span>
+      <% end %>
+
+      <p>
+        <%= post %>
+      </p>
+
+    </div>
+  </div>
+
+<% end %>

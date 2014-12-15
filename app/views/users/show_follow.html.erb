@@ -1,0 +1,50 @@
+
+
+
+
+<div class="row">
+  <div class="small-3 columns">
+
+    <%= render 'profiles/profile_box', :displayed_user => User.find(params[:id]) %>
+
+
+  </div>
+  <div class="small-6 columns" %>
+
+  <% provide(:title, @title) %>
+
+  <div class="panel">
+    <div class="span8">
+      <h3><%= @title %></h3>
+    </div>
+
+    <% if @users.any? %>
+      <div class="user">
+        <% @users.each do |user| %>
+          <p><%= image_tag user.gravatar_url(:size => 15) %> <%= link_to user, profile_path(user) %></p>
+        <% end %>
+      </div>
+		<% else %>
+	    None yet!
+    <% end %>
+  </div>
+
+
+</div>
+<div class="small-3 columns">
+
+  <div class="panel">
+    <%= link_to 'Browse All Profiles', profiles_path %>
+  </div>
+
+  <div class="panel">
+
+    <%= render 'users/suggested' %>
+
+  </div>
+</div>
+
+
+
+
+

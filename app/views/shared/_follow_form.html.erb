@@ -1,0 +1,11 @@
+<% if @user == nil %>
+	<% @user = user %>
+<% end %>
+<div id="follow_form">
+  <% if current_user.following?(@user) %>
+      <%= render 'shared/unfollow' %>
+  <% else %>
+      <%= render 'shared/follow' %>
+  <% end %>
+</div>
+

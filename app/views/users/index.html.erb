@@ -1,0 +1,50 @@
+<h1>Listing users</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Handle</th>
+      <th>Email</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= user.name %></td>
+        <td><%= user.handle %></td>
+        <td><%= user.email %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New User', new_user_path %>
+
+
+<div class="row">
+  <h1>Browse Users</h1>
+</div>
+
+<div class="row">
+  <div class="small-2 columns"><h4>User</h4></div>
+  <div class="small-2 columns"><h4>Bio</h4></div>
+  <div class="small-2 columns"><h4>Location</h4></div>
+  <div class="small-2 columns"><h4>Website</h4></div>
+  <div class="small-2 columns"><h4>Last Post</h4></div>
+  <div class="small-2 columns"><h4>Temporary</h4></div>
+</div>
+
+<% @users.each do |user| %>
+    <div class="row">
+      <div class="small-2 columns"><%= link_to user, user.profile %></div>
+      <div class="small-2 columns"><%= user.profile.bio %></div>
+      <div class="small-2 columns"><%= user.profile.location %></div>
+      <div class="small-2 columns"><%= user.profile.website %></div>
+      <div class="small-2 columns"><%= user.posts.first.message %></div>
+      <div class="small-2 columns"><%= link_to 'Destroy', user.profile, method: :delete, data: { confirm: 'Are you sure?' } %></div>
+    </div>
+<% end %>

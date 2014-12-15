@@ -1,0 +1,23 @@
+<% current_user %>
+<% followed_users = Relationship.where(follower_id:current_user.id).pluck(:followed_id) %>
+<% if followed_users.empty? %>
+	<% suggested_follows = User.where.not(id:current_user.id).sample(5) %>
+<% else %>
+	<% followed_users << current_user.id %>
+	<% suggested_follows = User.where("id NOT IN (?)", followed_users).sample(5) %>
+<% end %>
+
+<h5>Follow these <%= site_name %> users</h5>
+
+<div class="profile-info">
+
+  <% if !suggested_follows.empty? %>
+    <% suggested_follows.each do |user| %>
+      <%= image_tag user.gravatar_url(:size => 15) %> <%= link_to user, profile_path(user) %><br>
+    <% end %>
+  <% else %>
+    No unfollowed users!
+  <% end %>
+
+</div>
+

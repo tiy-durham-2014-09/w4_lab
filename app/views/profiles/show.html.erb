@@ -1,0 +1,38 @@
+<div class="row">
+  <div class="small-3 columns">
+
+		<%= render 'profile_box' %>
+
+
+	  <% if current_user? displayed_user %>
+	    <div class="posts-small-form">
+	      <%= new %>
+	      <%= render 'posts/form' %>
+	    </div>
+		<% end %>
+
+  </div>
+  <div class="small-6 columns" %>
+
+	  <% if displayed_user.posts.count == 0 %>
+	    <div class="panel">
+	      <%= displayed_user %> has not posted yet!
+	    </div>
+	  <% end %>
+		<%= render 'posts/print_post', :posts => @profile.user.posts %>
+
+  </div>
+	<div class="small-3 columns">
+
+	  <div class="panel">
+	    <%= link_to 'Browse All Profiles', profiles_path %>
+	  </div>
+
+	  <div class="panel">
+
+	    <%= render 'users/suggested' %>
+
+	  </div>
+	</div>
+
+</div>
