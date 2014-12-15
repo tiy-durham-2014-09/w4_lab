@@ -1,5 +1,9 @@
+require 'bcrypt'
+
 class User < ActiveRecord::Base
 	include Gravtastic
+	include BCrypt
+
 		gravtastic :default => 'identicon',
 		           :size => 120
 
