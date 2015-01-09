@@ -1,0 +1,27 @@
+<h1>Your Posts</h1>
+<div class="cnp"><%= link_to 'Create New Post', new_post_path %></div>
+<p></p>
+<% @posts1.order(published_date: :desc).each do |post| %>
+<div class="mytitle">Title: <%= link_to post.title, post %></div>
+<div class="mydate">Date: <%= post.published_date %></div>
+<div class="mycontent"><%= truncate(post.content, length: 400) %></div>
+<div class="mypostlinks"><%= link_to 'Show', post %> |
+  <%= link_to 'Edit', edit_post_path(post) %> |
+  <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %>
+</div>
+<% end %>
+
+<br>
+
+
+
+<h1>Your Comments</h1>
+<% @comments.order(created_at: :desc).each do |comment| %>
+  <% if comment.commenter == current_user.name %>
+  <div class="mycommentpost">To Post: <%= link_to comment.post.title, comment.post %></div>
+  <div class="mycommentdate">On: <%= comment.created_at %></div>
+    <div class="mycomment"><%= truncate(comment.body, length: 400) %></div>
+      <div class="mycommentlinks"><%= link_to 'Edit', edit_comment_path(comment) %> | <%= link_to 'Destroy', comment, method: :delete, data: { confirm: 'Are you sure?' } %></div>
+      <% end %>
+    <% end %>
+<br>
