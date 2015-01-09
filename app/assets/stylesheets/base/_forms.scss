@@ -2,6 +2,10 @@ body {
   font-family: 'Open Sans', sans-serif;
   @include outer-container;
 
+  .showusercomment {
+    border-bottom: ridge;
+  }
+
   .cnp {
     text-decoration: underline;
 
@@ -83,15 +87,21 @@ body {
         @include span-columns(12);
 
         .tusername {
-          @include span-columns(3);
+          @include span-columns(2);
+          color: aqua;
+        }
 
+        .tuserpic {
+          @include span-columns(2);
         }
         .tuseremail {
-          @include span-columns(3);
+          @include span-columns(2);
+          color: orange;
         }
 
         .tuserjoin {
-          @include span-columns(3);
+          @include span-columns(2);
+          color: lime;
         }
       }
     }
@@ -102,15 +112,27 @@ body {
         @include span-columns(12);
 
         .tusername {
-          @include span-columns(3);
-
+          @include span-columns(2);
+          color: aqua;
         }
+
+        .tuserpic {
+          @include span-columns(2);
+
+          img {
+            border-radius: 30px;
+            height: 20px;
+          }
+        }
+
         .tuseremail {
-          @include span-columns(3);
+          @include span-columns(2);
+          color: orange;
         }
 
         .tuserjoin {
-          @include span-columns(3);
+          @include span-columns(2);
+          color: lime;
         }
       }
     }

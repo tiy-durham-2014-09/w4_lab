@@ -1,14 +1,5 @@
 module ApplicationHelper
 
-  def display_alert(type = :notice)
-    if flash[type]
-      content_tag(:div, "data-alert" => "data-alert", :class => "alert-box #{type}") do
-        flash[type]
-      end
-    end
-  end
-
-
   def markdown(text)
     options = {
       filter_html:     true,

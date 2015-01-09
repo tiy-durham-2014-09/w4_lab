@@ -68,21 +68,14 @@ class PostsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_post
-      @post = Post.find(params[:id])
-      # @post = current_user.posts.find(params[:id])
-    end
 
-    def ensure_user_owns_post
-      if @post.user != current_user
-        render nothing: true, status: :not_found
-        # redirect_to root_path, flash: {alert: "You tried to access a post that does not belong to you."}
-      end
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_post
+    @post = Post.find(params[:id])
+  end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def post_params
-      params.require(:post).permit(:title, :published_date, :content, :user, :user_id, :body, :comment, :comment_id, :commenter)
-    end
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def post_params
+    params.require(:post).permit(:title, :published_date, :content, :user, :user_id, :body, :comment, :comment_id, :commenter)
+  end
 end

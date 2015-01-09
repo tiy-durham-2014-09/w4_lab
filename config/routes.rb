@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   # get 'welcome/index'
 
   resources :posts do
-    resources :comments, shallow: true
+    resources :comments, :only => [:edit, :destroy, :create], shallow: true
   end
 
   resources :users do

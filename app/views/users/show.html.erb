@@ -1,4 +1,7 @@
 <!-- <p id="notice"><%= notice %></p> -->
+<p>
+<%= image_tag @user.avatar.url(:medium) %>
+</p>
 
 <p>
   <strong>Name:</strong>
@@ -12,14 +15,14 @@
 
 <h3>Posts by <%= @user.name %></h3>
 <% @posts.each do |post| %>
-<div class="showusertitle"><%= link_to markdown(post.title), post_path(post) %></div>
+<div class="showusertitle">Title: <%= link_to post.title, post_path(post) %></div>
 <div class="showusercontent"><%= markdown(post.content) %></div>
 <% end %>
 
 
 <h3>Comments by <%= @user.name %></h3>
 <% @comments.each do |comment| %>
-  <h4><%= link_to comment.post.title, comment.post %></h4>
+  <h5><%= link_to comment.post.title, comment.post %></h5>
   <h6>Post Author: <%= comment.post.user.name %></h6>
-  <p><%= comment.body %></p>
+  <p class="showusercomment">Comment: <%= comment.body %></p>
 <% end %>

@@ -4,12 +4,14 @@ class CommentsController < ApplicationController
     @comments = Comment.all
   end
 
-
   def create
     @post = Post.find(params[:post_id])
     @comment = @post.comments.create(comment_params)
     @comment.commenter = current_user
     redirect_to post_path(@post)
+  end
+
+  def edit
   end
 
   def update
@@ -24,15 +26,12 @@ class CommentsController < ApplicationController
 
   def destroy
     @comment = Comment.find(params[:id])
-    @post = @comment.post.find(params[:post_id])
+    @post = @comment.post(params[:post_id])
     @comment.destroy
-    redirect_to post_path(@post)
+    redirect_to posts_path
   end
 
   private
-  def set_comment
-    @comment = Comment.find(params[:id])
-  end
 
   def comment_params
     params.require(:comment).permit(:commenter, :body, :user, :user_id, :post, :post_id)
